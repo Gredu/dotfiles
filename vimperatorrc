@@ -1,0 +1,12 @@
+"3.3 (created: 2011/11/13 17:32:12)
+
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+
+nmap , :
+
+nnoremap j 5<C-e>
+nnoremap k 5<C-y>
+cnoremap <Down> <TAB>
+cnoremap <Up> <S-TAB>
+nmap <C-b> :emenu View.Sidebar.Bookmarks<cr>
+nmap <C-j> :emenu View.Sidebar.Downloads<cr>
