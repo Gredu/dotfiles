@@ -7,7 +7,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc inputrc vimperatorrc vimrc Xdefaults zshrc"   # list of files/folders to symlink in homedir
+files="xmodmap-mac2pc xmodmap-swapper inputrc vimperatorrc vimrc Xdefaults zshrc"   # list of files/folders to symlink in homedir
 
 ##########
 
