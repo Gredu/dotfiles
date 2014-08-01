@@ -25,6 +25,7 @@ Bundle 'mhinz/vim-startify'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
 
 " Looks out the type of the file, and sets correct indenting
 filetype plugin indent on
@@ -34,9 +35,9 @@ filetype plugin indent on
 " Basic sets "
 """"""""""""""
 
-syntax on                       " Syntax colors are on
+syntax enable                       " Syntax colors are on
 
-" More standard
+" Making 'standard'
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -82,7 +83,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256                    " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
-set spelllang=en
+" set spelllang=fi
 
 " Avoid ESC timeouts in terminals
 " let &t_ti.="\e[?7727h"
@@ -100,7 +101,7 @@ nmap <Leader>sv :so $MYVIMRC<CR>
 nmap <Leader>ev :e $MYVIMRC<CR>
 
 " Runs the current scala code
-nmap <Leader>c :!scala %:p<CR>
+nmap <Leader>c :w <CR> :!scala %:p<CR>
 
 
 " Fast swapping
@@ -117,6 +118,9 @@ nmap , :
 " NERDtree toggling
 nmap <Leader>n :NERDTreeToggle <CR>
 
+nmap <Space> <C-d>
+nmap <S-Space> <C-u>
+
 """"""""""""""
 "Abbrevations"
 """"""""""""""
@@ -129,6 +133,7 @@ abbr /*** /*********************************************************************
 """""""""""
 
 colorscheme xoria256
+" colorscheme solarized
 
 " Start these commands only if gui is running
 if has('gui_running')
@@ -335,3 +340,6 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets'
 
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
+
+" Bufferline
+let g:bufferline_echo = 0

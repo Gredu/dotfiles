@@ -10,3 +10,5 @@ cnoremap <Down> <TAB>
 cnoremap <Up> <S-TAB>
 nmap <C-b> :emenu View.Sidebar.Bookmarks<cr>
 nmap <C-j> :emenu View.Sidebar.Downloads<cr>
+
+set gui=nonavigation

@@ -29,6 +29,10 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+<<COMMENT
+
+# zsh is installed seperately
+
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -54,5 +58,7 @@ else
     fi
 fi
 }
+
+COMMENT
 
 # install_zsh
