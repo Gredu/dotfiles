@@ -48,8 +48,9 @@ set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
 set nu                          " Sets numbers
 set cursorline
-" set guifont=Monaco\ 11
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 11
+" set guifont=Monaco\ 10
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+"set guifont=Monospace\ 12
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
@@ -196,14 +197,13 @@ let g:notes_directories = ['~/Documents/Notes']
 let g:startify_custom_header =
             \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
-" Powerline
+" Airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme= 'zenburn'
 
 " Startify
 let g:startify_bookmarks = [ '~/Documents/Notes/' ]
 
-" Airline
-let g:airline_theme= 'zenburn'
 
 " Enable omni completion. Used with neocomplete.
 " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
