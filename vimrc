@@ -5,11 +5,12 @@ filetype off
 " Vundle
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
+" Plugins
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
@@ -20,6 +21,8 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
+
+call vundle#end()
 
 " Looks out the type of the file, and sets correct indenting
 filetype plugin indent on

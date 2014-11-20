@@ -16,7 +16,7 @@ ZSH_THEME="af-magic"
 alias irs='ssh fitzz@vauhtis.thegroup.fi'
 alias v='gvim --remote-silent'
 alias o='ls -latr'
-alias rm='trash-put'
+# alias rm='trash-put'
 alias v='gvim --remote-silent'
 
 # Set to this to use case-sensitive completion
