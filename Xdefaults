@@ -16,7 +16,6 @@ Xft.hintstyle:              hintslight
 !-------------------------------------------------------------------------------
  
 URxvt.depth:                32
-! URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
@@ -28,7 +27,7 @@ URxvt.lineSpace:            0
 URxvt*iconFile:             /usr/share/icons/Faience/apps/scalable/terminal.svg
  
 ! Fonts
-URxvt.allow_bold:           false
+URxvt.allow_bold:           true
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
 ! URxvt*font: xft:UbuntuMonoPowerline:pixelsize=14
 ! URxvt*boldFont: xft:UbuntuMono:pixelsize=14
@@ -38,7 +37,7 @@ urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=12
 urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=12
  
 ! Fix font space
-URxvt*letterSpace: -1
+! URxvt*letterSpace: -1
  
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
@@ -47,7 +46,7 @@ URxvt.scrollBar:            false
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          google-chrome
+URxvt.urlLauncher:          firefox
 URxvt.perl-ext-common:      tabbedex
 iURxvt.tabbed.new-button:   true
  

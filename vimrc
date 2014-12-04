@@ -21,6 +21,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -52,8 +53,8 @@ set incsearch                   " Jumps right to the search
 set nu                          " Sets numbers
 set cursorline
 " set guifont=Monaco\ 10
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
-"set guifont=Monospace\ 12
+ set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+" set guifont=Monospace\ 12
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
