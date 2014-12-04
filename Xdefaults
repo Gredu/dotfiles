@@ -31,10 +31,10 @@ URxvt.allow_bold:           true
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
 ! URxvt*font: xft:UbuntuMonoPowerline:pixelsize=14
 ! URxvt*boldFont: xft:UbuntuMono:pixelsize=14
-urxvt.font:            xft:Ubuntu Mono derivative Powerline:size=12
-urxvt.boldFont:        xft:Ubuntu Mono derivative Powerline::bold:size=12
-urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=12
-urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=12
+urxvt.font:            xft:Ubuntu Mono derivative Powerline:size=10
+urxvt.boldFont:        xft:Ubuntu Mono derivative Powerline::bold:size=10
+urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=10
+urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=10
  
 ! Fix font space
 ! URxvt*letterSpace: -1
