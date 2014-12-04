@@ -53,7 +53,7 @@ set incsearch                   " Jumps right to the search
 set nu                          " Sets numbers
 set cursorline
 " set guifont=Monaco\ 10
- set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 12
+ set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 " set guifont=Monospace\ 12
 set backup                      " Make backup files
 set backupdir=~/.vim/backup

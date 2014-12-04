@@ -3,10 +3,11 @@
 !-------------------------------------------------------------------------------
  
 Xft.dpi:                    96
-Xft.antialias:              false
-Xft.rgba:                   rgb
+Xft.antialias:              true
 Xft.hinting:                true
-Xft.hintstyle:              hintslight
+Xft.rgba:                   rgb
+Xft.lcdfiletr:              lcddefault
+Xft.hintstyle:              hintfull
  
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -37,7 +38,7 @@ urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=10
 urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=10
  
 ! Fix font space
-! URxvt*letterSpace: -1
+URxvt*letterSpace: -1
  
 ! Scrollbar
 URxvt.scrollStyle:          rxvt

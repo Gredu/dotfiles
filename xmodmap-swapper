@@ -8,9 +8,8 @@ keycode 0x42 = Escape
 ! !!!
 keycode  61 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
 keycode 108 = bar underscore slash question endash dead_belowcomma
-!keycode  94 = Super_L NoSymbol Super_L
+keycode  94 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
 ! 61 = left minus
-! 94 = right greater
 ! Super key is still superkey
 
 ! Alt Gr for right hand
@@ -40,7 +39,7 @@ keycode  56 = b B b B underscore B
 ! Additional keys
 ! !!!
 keycode  65 = space space space space space space space space
-keycode  94 = quotedbl dead_tilde less greater bar brokenbar bar brokenbar
+! keycode  94 = quotedbl dead_tilde less greater bar brokenbar bar brokenbar
 keycode  51 = apostrophe backslash backslash bar dead_caron dead_breve
 
 ! Arrow keys
