@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'Shougo/vimshell.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
@@ -65,7 +66,7 @@ set linespace=0
 set showcmd
 set nowrap
 set showmode                    " Show current mode
-set autochdir                   " Always switch to the current file directory
+" set autochdir                 " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
 set hlsearch                    " Hilight the search matches
@@ -180,9 +181,6 @@ let g:netrw_altv = 1
 
 " Default to tree mode
 let g:netrw_liststyle=3
-
-" Change directory to the current buffer when opening files.
-set autochdir
 
 
 
