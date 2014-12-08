@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'jnurmine/Zenburn'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
