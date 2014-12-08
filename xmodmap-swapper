@@ -56,6 +56,6 @@ keycode  60 = period colon period colon bracketright dead_abovedot dead_belowdot
 ! Additional keys
 ! !!!
 ! All space should be space!
-keycode  65 = space space space space BackSpace space space space
+keycode  65 = space space space space space space space space
 ! keycode  94 = quotedbl dead_tilde less greater bar brokenbar bar brokenbar
 keycode  51 = apostrophe backslash backslash bar dead_caron dead_breve

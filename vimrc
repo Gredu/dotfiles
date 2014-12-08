@@ -129,9 +129,6 @@ abbr /*** /*********************************************************************
 "Behaviors"
 """""""""""
 
-" colorscheme xoria256
-" colorscheme solarized
-
 let g:zenburn_high_Contrast = 1
 colors zenburn
 
@@ -214,19 +211,14 @@ map <leader><leader> :CtrlP<CR>
 "YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
 
-" Startify
-" let g:startify_bookmarks = [ '~/Documents/Notes/' ]
-
-
-" Enable omni completion. Used with neocomplete.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
 
 " Bufferline
 let g:bufferline_echo = 0
+
+" Emmet
+let g:user_emmet_leader_key='<C-K>'
+
+" Indent Guides
+let g:indent_guides_guide_size = 1
