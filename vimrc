@@ -20,8 +20,10 @@ Plugin 'mhinz/vim-startify'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
@@ -53,7 +55,7 @@ set incsearch                   " Jumps right to the search
 set nu                          " Sets numbers
 set cursorline
 " set guifont=Monaco\ 10
- set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
 " set guifont=Monospace\ 12
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
@@ -99,8 +101,8 @@ nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>c :w <CR> :!scala %:p<CR>
 
 " Fast swapping
-nmap <C-Tab> :bn <CR>
-nmap <C-S-Tab> :bp <CR>
+nmap <C-n> :bn <CR>
+nmap <C-p> :bp <CR>
 
 " Easier in help link with Finnish keyboard
 nmap <Leader>g <C-]>
@@ -195,7 +197,7 @@ set autochdir
 " autocmd vimenter * if !argc() | NERDTree | endif
 
 " Vim-notes
-let g:notes_directories = ['~/Documents/Notes']
+" let g:notes_directories = ['~/Documents/Notes']
 
 " Startify custom header
 let g:startify_custom_header =
@@ -205,8 +207,14 @@ let g:startify_custom_header =
 let g:airline_powerline_fonts = 1
 let g:airline_theme= 'zenburn'
 
+" Ctrlp
+map <leader><leader> :CtrlP<CR>
+
+"YouCompleteMe
+let g:EclimCompletionMethod = 'omnifunc'
+
 " Startify
-let g:startify_bookmarks = [ '~/Documents/Notes/' ]
+" let g:startify_bookmarks = [ '~/Documents/Notes/' ]
 
 
 " Enable omni completion. Used with neocomplete.
