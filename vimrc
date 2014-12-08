@@ -208,6 +208,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme= 'zenburn'
 
 " Ctrlp
+let g:ctrlp_map = ''
 map <leader><leader> :CtrlP<CR>
 
 "YouCompleteMe
