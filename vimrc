@@ -202,6 +202,8 @@ let g:startify_custom_header =
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme= 'zenburn'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
 
 " Ctrlp
 let g:ctrlp_map = ''

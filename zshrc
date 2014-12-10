@@ -59,7 +59,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games:/home/greatman/bin"
+export PATH="/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
 export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
