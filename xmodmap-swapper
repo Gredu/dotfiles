@@ -19,36 +19,32 @@ keycode  24 = q Q q Q KP_Divide Q
 keycode  25 = w W w W KP_Multiply W
 keycode  26 = e E e E KP_Subtract EuroSign
 keycode  27 = r R r R KP_Add R
-keycode  28 = t T t T percent THORN
+keycode  28 = t T t T quotedbl THORN
 
-keycode  38 = a A a A underscore SCHWA
-keycode  39 = s S s S apostrophe
-keycode  40 = d D d D quotedbl ETH eth
-keycode  41 = f F f F equal F
-keycode  42 = g G g G ampersand G
+keycode 38 = a A a A braceleft SCHWA
+keycode 39 = s S s S parenleft
+keycode 40 = d D Next D parenright ETH
+keycode 41 = f F f F braceright F
+keycode 42 = g G g G equal G
 
-keycode  52 = z Z z Z less U01B7
-keycode  53 = x X x X greater periodcentered
-keycode  54 = c C c C braceleft C                                                   
-keycode  55 = v V v V braceright V
-keycode  56 = b B b B bar B
-
+keycode 52 = z Z z Z less U01B7
+keycode 53 = x X x X bracketleft periodcentered
+keycode 54 = c C c C bracketright C
+keycode 55 = v V v V greater V
+keycode  56 = b B b B underscore B
 
 ! Alt Gr for right hand
 ! !!!
 keycode  29 = y Y y Y numbersign Y y Y y Y y Y
 keycode  30 = u U u U dollar U u U u U u U
-! keycode  31 = i I i I KP_Multiply bar idotless bar i I idotless bar
-! keycode  32 = o O o O percent OE oe OE o O oe OE
-! keycode  33 = p P p P percent dead_hook dead_horn dead_hook p P dead_horn dead_hook
 
 keycode  43 = h H h H Left H
 keycode  44 = j J j J Down J
 keycode  45 = k K k K Up kra
 keycode  46 = l L l L Right
 
-keycode  57 = n N n N parenleft ENG eng ENG n N eng ENG
-keycode  58 = m M m M parenright emdash mu emdash m M mu emdash
+keycode  57 = n N n N bar ENG eng ENG n N eng ENG
+keycode  58 = m M m M ampersand emdash mu emdash m M mu emdash
 keycode  59 = comma semicolon comma semicolon bracketleft leftsinglequotemark rightsinglequotemark
 keycode  60 = period colon period colon bracketright dead_abovedot dead_belowdot
 
