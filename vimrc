@@ -120,12 +120,16 @@ nmap <Leader>n :NERDTreeToggle <CR>
 nmap <Space> <C-d>
 nmap <S-Space> <C-u>
 
-""""""""""""""
-"Abbrevations"
-""""""""""""""
-
-abbr /*** /*****************************************************************************/
-
+" Characters that needs Alt Gr to type
+imap åa {
+imap åf }
+imap ås [
+imap åd ]
+imap åat @
+imap ådo $
+imap ådo $
+imap åbs \
+imap åcu ~
 
 
 """""""""""
