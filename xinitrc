@@ -3,10 +3,10 @@
 xsetroot -cursor_name left_ptr
 
 # set German keyboard layout
-# setxkbmap -layout fi
+setxkbmap -layout fi
 
 # change to the custom keyboard layout
-xmodmap ~/.keymap-simple
+xmodmap ~/dotfiles/keymap-simple
 
 # no mouse accelaration
 xset m 0 0
