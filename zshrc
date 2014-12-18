@@ -16,17 +16,6 @@ alias o='ls -latr'
 # alias rm='trash-put'
 alias v='gvim --remote-silent'
 
-# Arch related aliases
-alias pacupg='sudo pacman -Syu'        # Synchronize with repositories before upgrading packages that are out of date on the local system.
-alias pacin='sudo pacman -S'           # Install specific package(s) from the repositories
-alias pacins='sudo pacman -U'          # Install specific package not from the repositories but from a file
-alias pacre='sudo pacman -R'           # Remove the specified package(s), retaining its configuration(s) and required dependencies
-alias pacrem='sudo pacman -Rns'        # Remove the specified package(s), its configuration(s) and unneeded dependencies
-alias pacrep='pacman -Si'              # Display information about a given package in the repositories
-alias pacreps='pacman -Ss'             # Search for package(s) in the repositories
-alias pacloc='pacman -Qi'              # Display information about a given package in the local database
-alias paclocs='pacman -Qs'             # Search for package(s) in the local database
-
 # Start Eclim server
 alias eclim='/usr/share/eclipse/eclimd'
 
@@ -64,7 +53,7 @@ alias eclim='/usr/share/eclipse/eclimd'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github extract)
+plugins=(git github extract arch)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,8 +76,6 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# recover bindings
-bindkey -v
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -101,11 +88,5 @@ SAVEHIST=1000
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-# Bindkeys to work with zsh/zle
-bindkey -s '^[Oj' '*'
-bindkey -s '^[Oo' '/'
-bindkey -s '^[Om' '-'
-bindkey -s '^[Ok' '+'
 
 export TERM='xterm-256color'
