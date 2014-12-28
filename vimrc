@@ -125,7 +125,6 @@ imap ås [
 imap åd ]
 imap åat @
 imap ådo $
-imap ådo $
 imap åbs \
 imap åcu ~
 
@@ -135,7 +134,6 @@ imap åcu ~
 "Behaviors"
 """""""""""
 
-let g:zenburn_high_Contrast = 1
 colors hybrid
 
 " Clearing GUI bars if GUI is present
@@ -195,7 +193,7 @@ let g:startify_custom_header =
             \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme= 'hybrid'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 0
