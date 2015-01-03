@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Shougo/vimshell.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
 Plugin 'vim-scripts/VimRepress'
@@ -132,7 +132,6 @@ imap ådo $
 imap ådo $
 imap åbs \
 imap åcu ~
->>>>>>> 58bed3fabd7bc97382eabb15ad89df91452eee56
 
 
 
@@ -200,7 +199,6 @@ let g:startify_custom_header =
             \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " Airline
-<<<<<<< HEAD
 let g:airline_powerline_fonts = 0
 let g:airline_theme= 'zenburn'
 
