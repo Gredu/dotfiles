@@ -3,10 +3,11 @@
 !-------------------------------------------------------------------------------
  
 Xft.dpi:                    96
-Xft.antialias:              false
-Xft.rgba:                   rgb
+Xft.antialias:              true
 Xft.hinting:                true
-Xft.hintstyle:              hintslight
+Xft.rgba:                   rgb
+Xft.lcdfiletr:              lcddefault
+Xft.hintstyle:              hintfull
  
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -16,7 +17,6 @@ Xft.hintstyle:              hintslight
 !-------------------------------------------------------------------------------
  
 URxvt.depth:                32
-! URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
 ! URxvt.urgentOnBell:         true
@@ -28,14 +28,14 @@ URxvt.lineSpace:            0
 URxvt*iconFile:             /usr/share/icons/Faience/apps/scalable/terminal.svg
  
 ! Fonts
-URxvt.allow_bold:           false
+URxvt.allow_bold:           true
 /* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
 ! URxvt*font: xft:UbuntuMonoPowerline:pixelsize=14
 ! URxvt*boldFont: xft:UbuntuMono:pixelsize=14
-urxvt.font:            xft:Ubuntu Mono derivative Powerline:size=12
-urxvt.boldFont:        xft:Ubuntu Mono derivative Powerline::bold:size=12
-urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=12
-urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=12
+urxvt.font:            xft:Ubuntu Mono derivative Powerline:size=10
+urxvt.boldFont:        xft:Ubuntu Mono derivative Powerline::bold:size=10
+urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=10
+urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=10
  
 ! Fix font space
 URxvt*letterSpace: -1
@@ -47,7 +47,7 @@ URxvt.scrollBar:            false
 ! Perl extensions
 URxvt.perl-ext-common:      default,matcher
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          google-chrome
+URxvt.urlLauncher:          firefox
 URxvt.perl-ext-common:      tabbedex
 iURxvt.tabbed.new-button:   true
  
@@ -60,58 +60,34 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
  
 
-#bubblegum colorscheme, based on bloom's vim theme and xoria----------------------
+! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
+! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
+! vim: ft=xdefaults
 
-!black.normal     : xoria256.LineNr.guibg
-!black.bright     : black.normal.rgb - 8
-URxvt.color0      : #121212
-!URxvt.color8      : #0a0a0a
-URxvt.color8      : #444444
+*background: #1D1F21
+*foreground: #C5C8C6
+! black
+*color0: #282A2E
+*color8: #373B41
+! red
+*color1: #A54242
+*color9: #CC6666
+! green
+*color2: #8C9440
+*color10: #B5BD68
+! yellow
+*color3: #DE935F
+*color11: #F0C674
+! blue
+*color4: #5F819D
+*color12: #81A2BE
+! magenta
+*color5: #85678F
+*color13: #B294BB
+! cyan
+*color6: #5E8D87
+*color14: #8ABEB7
+! white
+*color7: #707880
+*color15: #C5C8C6
 
-!red.normal       : red.bright.r - 8
-!red.bright       : xoria256.Special.guifg
-URxvt.color1      : #d75f5f
-URxvt.color9      : #d787af
-
-!green.normal     : green.bright.g - 8
-!green.bright     : xoria256.PreProc.guifg
-URxvt.color2      : #00af87
-URxvt.color10     : #5faf5f
-
-!yellow.normal    : yellow.bright.rg - 8
-!yellow.bright    : xoria256.Special.guifg
-URxvt.color3      : #afd75f
-URxvt.color11     : #d7af5f
-
-!blue.normal      : blue.bright.b - 8
-!blue.bright      : xoria256.Statement.guifg
-URxvt.color4      : #5fafd7
-URxvt.color12     : #87afd7
-
-!magenta.normal   : magenta.bright.rb - 8
-!magenta.bright   : xoria256.Identifier.guifg
-URxvt.color5      : #8787af
-URxvt.color13     : #8787d7
-
-!cyan.normal      : cyan.bright.gb - 8
-!cyan.bright      : green.bright + blue.bright
-URxvt.color6      : #00afd7
-URxvt.color14     : #87afff
-
-!white.normal     : white.bright.rgb - 8
-!white.bright     : xoria256.Folded.guifg
-URxvt.color7      : #ffffff
-URxvt.color15     : #ffffff
-
-!foreground       : xoria256.Normal.guifg
-!background       : xoria256.Normal.guibg
-!cursor           : xoria256.Cursor.guibg
-URxvt.foreground  : #a8a8a8
-URxvt.background  : #1c1c1c
-!URxvt.background  : #121212
-URxvt.cursorColor : #ffaf00
-
-!bold             : xoria256.Type.guifg
-!underline        : xoria256.htmlValue.guifg
-URxvt.colorBD     : #5fafd7
-URxvt.colorUL     : #00afd7

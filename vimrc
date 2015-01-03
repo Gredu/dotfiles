@@ -8,9 +8,12 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'w0ng/vim-hybrid'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Shougo/vimshell.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'bling/vim-bufferline'
@@ -20,7 +23,10 @@ Plugin 'mhinz/vim-startify'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'tpope/vim-fugitive'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
@@ -62,11 +68,11 @@ set linespace=0
 set showcmd
 set nowrap
 set showmode                    " Show current mode
-set autochdir                   " Always switch to the current file directory
+" Vimshell needs this to be closed
+" set autochdir                 " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
 set hlsearch                    " Hilight the search matches
-set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%v\ Buf:#%n\ [%b][0x%B]
 set laststatus=2                " Status is always on
 set scrolloff=5
 set foldenable                  " Autofold
@@ -79,11 +85,6 @@ set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
 " set spelllang=fi
 
-" Avoid ESC timeouts in terminals
-" let &t_ti.="\e[?7727h"
-" let &t_te.="\e[?7727l"
-" noremap <Esc>O[ <Esc>
-" noremap! <Esc>O[ <Esc>
 
 
 """"""""""
@@ -98,10 +99,10 @@ nmap <Leader>ev :e $MYVIMRC<CR>
 nmap <Leader>c :w <CR> :!scala %:p<CR>
 
 " Fast swapping
-nmap <C-Tab> :bn <CR>
-nmap <C-S-Tab> :bp <CR>
+nmap <C-n> :bn <CR>
+nmap <C-p> :bp <CR>
 
-" Easier in help link with Finnish keyboard
+" Go to link in Vim help, hard without mapping in Finnish keyboard
 nmap <Leader>g <C-]>
 
 " Quickly enter to command line, easier in Finnish keyboard
@@ -110,16 +111,28 @@ nmap , :
 " NERDtree toggling
 nmap <Leader>n :NERDTreeToggle <CR>
 
+" Eclim project tree toggle
+nmap <Leader>e :ProjectTreeToggle <CR>
+
 " Page Down and Up like WebBrowser
 nmap <Space> <C-d>
 nmap <S-Space> <C-u>
-
 
 """"""""""""""
 "Abbrevations"
 """"""""""""""
 
-abbr /*** /*****************************************************************************/
+" Characters that needs Alt Gr to type
+imap åa {
+imap åf }
+imap ås [
+imap åd ]
+imap åat @
+imap ådo $
+imap ådo $
+imap åbs \
+imap åcu ~
+>>>>>>> 58bed3fabd7bc97382eabb15ad89df91452eee56
 
 
 
@@ -127,20 +140,17 @@ abbr /*** /*********************************************************************
 "Behaviors"
 """""""""""
 
-" colorscheme xoria256
-" colorscheme solarized
-
 let g:zenburn_high_Contrast = 1
-colors zenburn
+colors hybrid
 
-" Start these commands only if gui is running
+" Clearing GUI bars if GUI is present
 if has('gui_running')
-	" Clearing GUI bars
 	set go-=m
 	set go-=T
 	set go-=r
 	set go-=b
 	set go-=l
+	set go-=L
 endif
 
 
@@ -170,9 +180,6 @@ function! Browser ()
 endfunction
 map <Leader>o :call Browser ()<CR>
 
-" Toggle Vexplore with Ctrl-E
-" http://modal.us/blog/2013/07/27/back-to-vim-with-nerdtree-nope-netrw/
-" removed because of some strange bugs
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
@@ -182,42 +189,43 @@ let g:netrw_altv = 1
 " Default to tree mode
 let g:netrw_liststyle=3
 
-" Change directory to the current buffer when opening files.
-set autochdir
-
 
 
 """""""""""""""""
 "Plugin settings"
 """""""""""""""""
 
-" NerdTree
-" autocmd vimenter * if !argc() | NERDTree | endif
-
-" Vim-notes
-let g:notes_directories = ['~/Documents/Notes']
-
 " Startify custom header
 let g:startify_custom_header =
             \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " Airline
+<<<<<<< HEAD
 let g:airline_powerline_fonts = 0
 let g:airline_theme= 'zenburn'
 
 " Startify
 let g:startify_bookmarks = [ '~/Documents/Notes/' ]
+let g:airline_powerline_fonts = 0
+let g:airline_theme= 'hybrid'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
 
+" Ctrlp
+let g:ctrlp_map = ''
+map <leader><leader> :CtrlP<CR>
 
-" Enable omni completion. Used with neocomplete.
-" autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-" autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-" autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"YouCompleteMe
+let g:EclimCompletionMethod = 'omnifunc'
 
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
 
 " Bufferline
 let g:bufferline_echo = 0
+
+" Emmet
+let g:user_emmet_leader_key='<C-K>'
+
+" Indent Guides
+let g:indent_guides_guide_size = 1

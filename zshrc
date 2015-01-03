@@ -5,10 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="agnoster"
 ZSH_THEME="af-magic"
-# ZSH_THEME="jonathan"
-# ZSH_THEME="avit"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -18,6 +15,9 @@ alias v='gvim --remote-silent'
 alias o='ls -latr'
 # alias rm='trash-put'
 alias v='gvim --remote-silent'
+
+# Start Eclim server
+alias eclim='/usr/share/eclipse/eclimd'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -53,7 +53,7 @@ alias v='gvim --remote-silent'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github extract)
+plugins=(git github extract archlinux vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -64,10 +64,12 @@ export PATH="/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/her
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
+
+bindkey -M vicmd '?' history-incremental-search-backward
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -75,8 +77,6 @@ export PATH="/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/her
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# recover bindings
-bindkey -v
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -89,12 +89,6 @@ SAVEHIST=1000
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-# Bindkeys to work with zsh/zle
-bindkey -s '^[Oj' '*'
-bindkey -s '^[Oo' '/'
-bindkey -s '^[Om' '-'
-bindkey -s '^[Ok' '+'
 
 export TERM='xterm-256color'
 export JAVA_HOME=$(/usr/libexec/java_home)

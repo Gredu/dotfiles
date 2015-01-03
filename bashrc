@@ -31,8 +31,7 @@ if [ -f ~/.bash_local ]; then
 fi
 
 export EDITOR="vim"
-export PATH=$PATH:~/bin
 export HISTCONTROL=ignoredups
 shopt -s cdspell
 # exec zsh -d
-export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
+export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin:~/bin
