@@ -199,7 +199,7 @@ let g:startify_custom_header =
             \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " Airline
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 let g:airline_theme= 'zenburn'
 
 " Startify
