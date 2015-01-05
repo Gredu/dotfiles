@@ -125,7 +125,6 @@ imap ås [
 imap åd ]
 imap åat @
 imap ådo $
-imap ådo $
 imap åbs \
 imap åcu ~
 
