@@ -57,9 +57,7 @@ set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
 set nu                          " Sets numbers
 set cursorline
-" set guifont=Monaco\ 10
-set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 10
-" set guifont=Monospace\ 12
+set guifont=Monaco\ 14
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
@@ -117,6 +115,12 @@ nmap <Leader>e :ProjectTreeToggle <CR>
 " Page Down and Up like WebBrowser
 nmap <Space> <C-d>
 nmap <S-Space> <C-u>
+
+
+
+""""""""""""""
+"Abbrevations"
+""""""""""""""
 
 " Characters that needs Alt Gr to type
 imap åa {
@@ -194,7 +198,7 @@ let g:startify_custom_header =
             \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 let g:airline_theme= 'hybrid'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 0
