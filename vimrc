@@ -57,7 +57,7 @@ set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
 set nu                          " Sets numbers
 set cursorline
-set guifont=Monaco\ 14
+set guifont=Ubuntu\ Mono\ Powerline\ 12
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
@@ -138,7 +138,6 @@ imap åcu ~
 "Behaviors"
 """""""""""
 
-let g:zenburn_high_Contrast = 1
 colors hybrid
 
 " Clearing GUI bars if GUI is present
@@ -221,3 +220,6 @@ let g:user_emmet_leader_key='<C-K>'
 
 " Indent Guides
 let g:indent_guides_guide_size = 1
+
+" YCM
+let g:ycm_filetype_specific_completion_to_disable = 'mkd'

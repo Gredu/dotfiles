@@ -91,4 +91,4 @@ compinit
 # End of lines added by compinstall
 
 export TERM='xterm-256color'
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
