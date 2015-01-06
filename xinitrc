@@ -11,6 +11,9 @@ xmodmap ~/dotfiles/keymap-simple
 # no mouse accelaration
 xset m 0 0
 
+# start dropbox
+dropbox start
+
 # setting dual screens
 xrandr --auto --output DVI-0 --mode 1680x1050 --left-of DVI-1 --output DVI-1 --primary
 
