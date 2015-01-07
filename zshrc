@@ -15,6 +15,7 @@ alias v='gvim --remote-silent'
 alias o='ls -latr'
 # alias rm='trash-put'
 alias v='gvim --remote-silent'
+alias mplayer='mplayer -msgcolor -msgmodule'
 
 # Start Eclim server
 alias eclim='/usr/share/eclipse/eclimd'
