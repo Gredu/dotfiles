@@ -70,7 +70,7 @@ export EDITOR='vim'
 #   export EDITOR='mvim'
 # fi
 
-bindkey -M vicmd '?' history-incremental-search-backward
+bindkey -M vicmd '/' history-incremental-search-backward
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
