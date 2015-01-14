@@ -81,6 +81,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256                    " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
+" set t_ut=                       " Disable Background Color Erase
 " set spelllang=fi
 
 
@@ -198,7 +199,7 @@ let g:startify_custom_header =
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme= 'hybrid'
+let g:airline_theme= 'base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#bufferline#enabled = 0
 
