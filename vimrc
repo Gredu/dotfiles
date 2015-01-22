@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Plugins
+Plugin 'scrooloose/syntastic'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Shougo/vimshell.vim'
