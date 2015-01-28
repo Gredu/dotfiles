@@ -93,48 +93,51 @@ set mousehide                   " Hide when characters typed
 """"""""""
 
 " Makes it easier to edit this source
-nmap <Leader>sv :so $MYVIMRC<CR>
-nmap <Leader>ev :e $MYVIMRC<CR>
+" nmap <Leader>sv :so $MYVIMRC<CR>
+" nmap <Leader>ev :e $MYVIMRC<CR>
 
 " Runs the current scala code
-nmap <Leader>c :w <CR> :!scala %:p<CR>
+" nmap <Leader>c :w <CR> :!scala %:p<CR>
 
 " Fast swapping
 nmap <C-n> :bn <CR>
 nmap <C-p> :bp <CR>
 
-" Go to link in Vim help, hard without mapping in Finnish keyboard
+" Go to link in Vim help, easier in Finnish keyboard
 nmap <Leader>g <C-]>
 
 " Quickly enter to command line, easier in Finnish keyboard
 nmap , :
 
 " NERDtree toggling
-nmap <Leader>n :NERDTreeToggle <CR>
+" nmap <Leader>n :NERDTreeToggle <CR>
 
 " Eclim project tree toggle
 nmap <Leader>e :ProjectTreeToggle <CR>
 
-" Page Down and Up like WebBrowser
+" Page Down and Up like WebBrowser works only in gvim
 nmap <Space> <C-d>
 nmap <S-Space> <C-u>
 
-
-
-""""""""""""""
-"Abbrevations"
-""""""""""""""
-
 " Characters that needs Alt Gr to type
-imap åa {
-imap åf }
-imap ås [
-imap åd ]
-imap åat @
-imap ådo $
-imap åbs \
-imap åcu ~
+" imap åa {
+" imap åf }
+" imap ås [
+" imap åd ]
+" imap åz @
+" imap åx $
+" imap åc \
+" imap åv ~
 
+" Make df act as Alt Gr, to type special characters in Finnish keyboard
+imap df7 {
+imap df0 }
+imap df8 [
+imap df9 ]
+imap df2 @
+imap df4 $
+imap df+ \
+imap df' ~
 
 
 """""""""""
