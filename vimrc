@@ -83,7 +83,7 @@ set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 set t_Co=256                    " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
-" set t_ut=                       " Disable Background Color Erase
+set t_ut=                       " Disable Background Color Erase
 " set spelllang=fi
 
 
@@ -119,25 +119,22 @@ nmap <Leader>e :ProjectTreeToggle <CR>
 nmap <Space> <C-d>
 nmap <S-Space> <C-u>
 
-" Characters that needs Alt Gr to type
-" imap åa {
-" imap åf }
-" imap ås [
-" imap åd ]
-" imap åz @
-" imap åx $
-" imap åc \
-" imap åv ~
-
 " Make df act as Alt Gr, to type special characters in Finnish keyboard
-imap df7 {
-imap df0 }
-imap df8 [
-imap df9 ]
-imap df2 @
-imap df4 $
-imap df+ \
-imap df' ~
+imap åa {
+imap åf }
+imap ås [
+imap åd ]
+imap åz @
+imap åx $
+imap åc \
+imap åv ~
+imap åb <bar>
+
+" Resize current buffer by +/- 5 .
+" nnoremap <S-left> :vertical resize -5<cr>
+" nnoremap <S-down> :resize +5<cr>
+" nnoremap <S-up> :resize -5<cr>
+" nnoremap <S-right> :vertical resize +5<cr>
 
 
 """""""""""
@@ -214,6 +211,7 @@ map <leader><leader> :CtrlP<CR>
 
 "YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_filetype_specific_completion_to_disable = 'mkd'
 
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
