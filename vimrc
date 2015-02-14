@@ -130,6 +130,9 @@ imap åc \
 imap åv ~
 imap åb <bar>
 
+" Send rspec spec to VimShell
+nmap <leader>r :VimShellSendString rspec spec<CR>
+
 " Resize current buffer by +/- 5 .
 " nnoremap <S-left> :vertical resize -5<cr>
 " nnoremap <S-down> :resize +5<cr>
