@@ -2,7 +2,9 @@ set nocompatible                " Use Vim settings, and no vi
 filetype off
 
 
-" Vundle
+"""""""""""
+" Plugins "
+"""""""""""
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -10,7 +12,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-" Plugins
+" Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'terryma/vim-expand-region'
+Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/vimproc'
 Plugin 'scrooloose/syntastic'
 Plugin 'w0ng/vim-hybrid'
@@ -18,7 +23,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'Shougo/vimshell.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
-Plugin 'bling/vim-bufferline'
+" Plugin 'bling/vim-bufferline'
 Plugin 'vim-scripts/VimRepress'
 Plugin 'vim-scripts/Vimchant'
 Plugin 'mhinz/vim-startify'
@@ -48,7 +53,7 @@ set tabstop=4
 set shiftwidth=4
 
 set clipboard=unnamedplus
-let mapleader = "å"
+let mapleader = "\<Space>"
 
 set encoding=utf8
 set showmatch
@@ -99,7 +104,7 @@ set t_ut=                       " Disable Background Color Erase
 " Runs the current scala code
 " nmap <Leader>c :w <CR> :!scala %:p<CR>
 
-" Fast swapping
+" Fast switching between buffers
 nmap <C-n> :bn <CR>
 nmap <C-p> :bp <CR>
 
@@ -110,34 +115,73 @@ nmap <Leader>g <C-]>
 nmap , :
 
 " NERDtree toggling
-" nmap <Leader>n :NERDTreeToggle <CR>
+nmap <Leader>n :NERDTreeToggle <CR>
 
 " Eclim project tree toggle
-nmap <Leader>e :ProjectTreeToggle <CR>
+" nmap <Leader>e :ProjectTreeToggle <CR>
 
-" Page Down and Up like WebBrowser works only in gvim
-nmap <Space> <C-d>
-nmap <S-Space> <C-u>
+" Mappings to make it easier to type 
+" imap åa {
+" imap åf }
+" imap ås [
+" imap åd ]
+" imap åz @
+" imap åx $
+" imap åc \
+" imap åv ~
+" imap åb <bar>
 
-" Make df act as Alt Gr, to type special characters in Finnish keyboard
-imap åa {
-imap åf }
-imap ås [
-imap åd ]
-imap åz @
-imap åx $
-imap åc \
-imap åv ~
-imap åb <bar>
+" CodingMode changes ö and ä to something more interesting for vim
+map ö {
+map ä }
+map Ö [
+map Ä ]
+cmap ö {
+cmap ä }
+cmap Ö [
+cmap Ä ]
+imap ö {
+imap ä }
+imap Ö [
+imap Ä ]
+
+nnoremap <leader>c :call CodingMode()<cr>
+
+let g:codemode_toggle = 0
+
+function! CodingMode()
+    if g:codemode_toggle
+        imap ö {
+        imap ä }
+        imap Ö [
+        imap Ä ]
+        echo 'CodingMode enabled'
+        let g:codemode_toggle = 0
+    else
+        iunmap ö
+        iunmap ä
+        iunmap Ö
+        iunmap Ä
+        echo 'CodingMode disabled'
+        let g:codemode_toggle = 1
+    endif
+endfunction
+
 
 " Send rspec spec to VimShell
 nmap <leader>r :VimShellSendString rspec spec<CR>
 
-" Resize current buffer by +/- 5 .
-" nnoremap <S-left> :vertical resize -5<cr>
-" nnoremap <S-down> :resize +5<cr>
-" nnoremap <S-up> :resize -5<cr>
-" nnoremap <S-right> :vertical resize +5<cr>
+" Resize current buffer
+nnoremap <down> :resize -1<cr>
+nnoremap <up> :resize +1<cr>
+nnoremap <left> :vertical resize -1<cr>
+nnoremap <right> :vertical resize +1<cr>
+
+" vim-expand-region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+
 
 
 """""""""""
@@ -184,10 +228,11 @@ endfunction
 map <Leader>o :call Browser ()<CR>
 
 
+" netrw
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
 
 " Default to tree mode
 let g:netrw_liststyle=3
@@ -204,13 +249,13 @@ let g:startify_custom_header =
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme= 'base16'
+let g:airline_theme= 'hybrid'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Ctrlp
 let g:ctrlp_map = ''
-map <leader><leader> :CtrlP<CR>
+map <leader>f :CtrlP<CR>
 
 "YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
@@ -223,10 +268,31 @@ let g:vimchant_spellcheck_lang = 'fi'
 let g:bufferline_echo = 0
 
 " Emmet
-let g:user_emmet_leader_key='<C-K>'
+" let g:user_emmet_leader_key='<c-m>'
 
-" Indent Guides
-let g:indent_guides_guide_size = 1
+" IndentLine
+let g:indentLine_color_term = 236
 
-" YCM
-let g:ycm_filetype_specific_completion_to_disable = 'mkd'
+" VimShell
+let g:vimshell_enable_smart_case   = 1
+let g:vimshell_prompt              = '➤ '
+" let g:vimshell_cd_command = 'TabpageCD'
+" let g:vimshell_user_prompt         = 'fnamemodify(getcwd(), ":~")'
+" let g:vimshell_right_prompt        = 'system("date")'
+" let g:vimshell_temporary_directory = " '~/tmp/vimshell'
+"                                        change these quotes!
+
+" NerdTree, to open if no file is open
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+
+""""""""""
+"Filetype"
+""""""""""
+
+au FileType markdown,mkd set wrap lbr 
+au FileType markdown,mkd,txt nnoremap j gj
+au FileType markdown,mkd,txt nnoremap k gk
+au FileType ruby set tabstop=2 shiftwidth=2

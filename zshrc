@@ -71,6 +71,10 @@ export EDITOR='vim'
 # fi
 
 bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -s 'ö' '{'
+bindkey -s 'Ö' '['
+bindkey -s 'ä' '}'
+bindkey -s 'Ä' ']'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,3 +100,6 @@ export TERM='xterm-256color'
 
 export VIM="$HOME/.local/usr/local/share/vim/vim74"
 eval "$(rbenv init -)"
+export APIKEY="7a700ad0762213f3a25a67de7a5de226"
+export GITHUB_KEY="2941e20cafd98da9daab"
+export GITHUB_SECRET="3469e6d6fcbe873e7b1921d19a9bf5287735ad4d"
