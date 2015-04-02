@@ -33,5 +33,5 @@ fi
 export EDITOR="vim"
 export HISTCONTROL=ignoredups
 shopt -s cdspell
-# exec zsh -d
 export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin:~/bin
+exec zsh -d

@@ -60,7 +60,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=":$HOME/bin:$HOME/Applications/homebrew/bin:$HOME/.xmonad/bin:/usr/local/heroku/bin:$HOME/.rbenv/shims:$HOME/.cabal/bin:$HOME/.rbenv/bin:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$HOME/heroku-client/bin:$HOME/bin:$HOME/.rbenv/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.rbenv/shims:/home/greatman/.cabal/bin:/home/greatman/.rbenv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -71,6 +71,10 @@ export EDITOR='vim'
 # fi
 
 bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -s 'ö' '{'
+bindkey -s 'Ö' '['
+bindkey -s 'ä' '}'
+bindkey -s 'Ä' ']'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -93,3 +97,13 @@ compinit
 
 export TERM='xterm-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
+
+# Use locally installed vim if exist
+if [ -d ~/.local/usr/local/share/vim/vim74 ]; then
+  export VIM="$HOME/.local/usr/local/share/vim/vim74"
+fi
+
+eval "$(rbenv init -)"
+export APIKEY="7a700ad0762213f3a25a67de7a5de226"
+export GITHUB_KEY="2941e20cafd98da9daab"
+export GITHUB_SECRET="3469e6d6fcbe873e7b1921d19a9bf5287735ad4d"
