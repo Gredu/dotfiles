@@ -98,7 +98,11 @@ compinit
 export TERM='xterm-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
 
-export VIM="$HOME/.local/usr/local/share/vim/vim74"
+# Use locally installed vim if exist
+if [ -d ~/.local/usr/local/share/vim/vim74 ]; then
+  export VIM="$HOME/.local/usr/local/share/vim/vim74"
+fi
+
 eval "$(rbenv init -)"
 export APIKEY="7a700ad0762213f3a25a67de7a5de226"
 export GITHUB_KEY="2941e20cafd98da9daab"

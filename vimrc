@@ -12,6 +12,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'pangloss/vim-javascript'
 " Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-expand-region'
@@ -49,8 +50,8 @@ syntax enable                       " Syntax colors are on
 
 " Making 'standard'
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 set clipboard=unnamedplus
 let mapleader = "\<Space>"
