@@ -61,7 +61,7 @@ set noiec
 
 " Selected color scheme
 
-colorscheme Default
+colorscheme solarized-dark
 
 " The FUSE_HOME directory will be used as a root dir for all FUSE mounts.
 " Unless it exists with write/exec permissions set, vifm will attempt to
@@ -182,31 +182,31 @@ filextype *.djvu
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma,*.ape,*.ac3
-       \ {Play using ffplay}
-       \ ffplay -nodisp %c,
        \ {Play using MPlayer}
        \ mplayer %f,
+       \ {Play using ffplay}
+       \ ffplay -nodisp %c,
        \ ffplay %c,
 fileviewer *.mp3 mp3info
 fileviewer *.flac soxi
 
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
+        \ {View using mplayer}
+        \ mplayer %f,
         \ {View using ffplay}
         \ ffplay -fs %c,
         \ {View using Dragon}
         \ dragon %f,
-        \ {View using mplayer}
-        \ mplayer %f,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
          \ ffprobe -pretty %c 2>&1
 
 " Web
 filextype *.html,*.htm
-        \ {Open with dwb}
-        \ dwb %f %i &,
         \ {Open with firefox}
         \ firefox %f &,
+        \ {Open with dwb}
+        \ dwb %f %i &,
         \ {Open with uzbl}
         \ uzbl-browser %f %i &,
 filetype *.html,*.htm links, lynx
@@ -220,6 +220,8 @@ fileviewer *.[1-8] gtbl %c | groff -Tascii -man | col -b
 
 " Image
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+        \ {View in feh}
+        \ feh_browser,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
@@ -391,9 +393,9 @@ nnoremap A cw<c-w>
 nnoremap ,t :!xterm &<cr>
 
 " Open vim to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | execute ':!vim $MYVIFMRC' | restart<cr>
+nnoremap åc :write | execute ':!vim $MYVIFMRC' | restart<cr>
 " Open gvim to edit vifmrc
-nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
+nnoremap åC :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
@@ -421,3 +423,6 @@ nnoremap <f8> :delete<cr>
 " Block particular shortcut
 "
 " nnoremap <left> <nop>
+
+" Quickly enter to command line, easier in Finnish keyboard
+nmap , :
