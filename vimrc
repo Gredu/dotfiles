@@ -1,4 +1,4 @@
-set nocompatible                " Use Vim settings, and no vi
+" set nocompatible
 filetype off
 
 
@@ -6,7 +6,7 @@ filetype off
 " Plugins "
 """""""""""
 
-" set the runtime path to include Vundle and initialize
+"" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -38,6 +38,10 @@ Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 
+" call plug#begin('~/.vim/bundle')
+"
+" call plug#end()
+
 " Looks out the type of the file, and sets correct indenting
 filetype plugin indent on
 
@@ -59,7 +63,7 @@ let mapleader = "\<Space>"
 set encoding=utf8
 set showmatch
 set ruler
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+" set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set ignorecase                  " You always want this
 set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
@@ -85,11 +89,11 @@ set foldenable                  " Autofold
 set bs=2                        " Makes backspace work again
 set lazyredraw                  " Don't update display while executing macros
 " Powerline
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-set t_Co=256                    " Set this only if your terminal supports 256 colors
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" set t_Co=256                    " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
-set t_ut=                       " Disable Background Color Erase
+" set t_ut=                       " Disable Background Color Erase
 " set spelllang=fi
 
 
