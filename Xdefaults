@@ -29,13 +29,16 @@ URxvt*iconFile:             /usr/share/icons/Faience/apps/scalable/terminal.svg
  
 ! Fonts
 URxvt.allow_bold:           true
-/* URxvt.font:                 -*-terminus-medium-r-normal-*-12-120-72-72-c-60-iso8859-1 */
-! URxvt*font: xft:UbuntuMonoPowerline:pixelsize=14
-! URxvt*boldFont: xft:UbuntuMono:pixelsize=14
 urxvt.font:            xft:Ubuntu Mono derivative Powerline:size=10
 urxvt.boldFont:        xft:Ubuntu Mono derivative Powerline::bold:size=10
 urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=10
 urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=10
+
+! These are uglier than Ubuntu, but Ubuntu fonts makes some weird artifacts in vim-airline
+! urxvt.font:            xft:Droid Sans Mono for Powerline:size=8
+! urxvt.boldFont:        xft:Droid Sans Mono for Powerline::bold:size=8
+! urxvt.italicFont:      xft:Droid Sans Mono for Powerline::italic:size=8
+! urxvt.boldItalicFont:  xft:Droid Sans Mono for Powerline::bolditalic:size=8
  
 ! Fix font space
 URxvt*letterSpace: -1
