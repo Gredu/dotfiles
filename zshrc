@@ -1,3 +1,4 @@
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -54,9 +55,14 @@ alias eclim='/usr/share/eclipse/eclimd'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github extract archlinux vi-mode)
+plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init
 
 # User configuration
 
@@ -72,6 +78,7 @@ export EDITOR='vim'
 # fi
 
 bindkey -M vicmd '/' history-incremental-search-backward
+bindkey '^j' vi-forward-word
 bindkey -s 'ö' '{'
 bindkey -s 'Ö' '['
 bindkey -s 'ä' '}'
