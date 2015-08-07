@@ -35,10 +35,10 @@ urxvt.italicFont:      xft:Ubuntu Mono derivative Powerline::italic:size=10
 urxvt.boldItalicFont:  xft:Ubuntu Mono derivative Powerline::bolditalic:size=10
 
 ! These are uglier than Ubuntu, but Ubuntu fonts makes some weird artifacts in vim-airline
-! urxvt.font:            xft:Droid Sans Mono for Powerline:size=8
-! urxvt.boldFont:        xft:Droid Sans Mono for Powerline::bold:size=8
-! urxvt.italicFont:      xft:Droid Sans Mono for Powerline::italic:size=8
-! urxvt.boldItalicFont:  xft:Droid Sans Mono for Powerline::bolditalic:size=8
+! urxvt.font:            xft:Droid Sans Mono for Powerline:size=9
+! urxvt.boldFont:        xft:Droid Sans Mono for Powerline::bold:size=9
+! urxvt.italicFont:      xft:Droid Sans Mono for Powerline::italic:size=9
+! urxvt.boldItalicFont:  xft:Droid Sans Mono for Powerline::bolditalic:size=9
  
 ! Fix font space
 URxvt*letterSpace: -1
