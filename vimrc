@@ -17,7 +17,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-expand-region'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Shougo/vimproc'
 Plugin 'scrooloose/syntastic'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'Yggdroot/indentLine'
@@ -268,7 +267,7 @@ let g:vimchant_spellcheck_lang = 'fi'
 let g:bufferline_echo = 0
 
 " Emmet
-" let g:user_emmet_leader_key='<c-m>'
+let g:user_emmet_leader_key='<c-m>'
 
 " IndentLine
 let g:indentLine_color_term = 236
