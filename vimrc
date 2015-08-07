@@ -21,7 +21,6 @@ Plugin 'Shougo/vimproc'
 Plugin 'scrooloose/syntastic'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'Yggdroot/indentLine'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 " Plugin 'bling/vim-bufferline'
@@ -78,7 +77,6 @@ set linespace=0
 set showcmd
 set nowrap
 set showmode                    " Show current mode
-" Vimshell needs this to be closed
 " set autochdir                 " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
@@ -173,9 +171,6 @@ function! CodingMode()
 endfunction
 
 
-" Send rspec spec to VimShell
-nmap <leader>r :VimShellSendString rspec spec<CR>
-
 " Resize current buffer
 nnoremap <down> :resize -1<cr>
 nnoremap <up> :resize +1<cr>
@@ -260,7 +255,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Ctrlp
 let g:ctrlp_map = ''
-map <leader>f :CtrlP<CR>
+map <leader>p :CtrlP<CR>
 
 "YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
@@ -277,15 +272,6 @@ let g:bufferline_echo = 0
 
 " IndentLine
 let g:indentLine_color_term = 236
-
-" VimShell
-let g:vimshell_enable_smart_case   = 1
-let g:vimshell_prompt              = '➤ '
-" let g:vimshell_cd_command = 'TabpageCD'
-" let g:vimshell_user_prompt         = 'fnamemodify(getcwd(), ":~")'
-" let g:vimshell_right_prompt        = 'system("date")'
-" let g:vimshell_temporary_directory = " '~/tmp/vimshell'
-"                                        change these quotes!
 
 " NerdTree, to open if no file is open
 autocmd StdinReadPre * let s:std_in=1
