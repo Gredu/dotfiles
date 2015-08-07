@@ -57,7 +57,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 let mapleader = "\<Space>"
 
 set encoding=utf8
