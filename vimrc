@@ -235,7 +235,7 @@ map <Leader>o :call Browser ()<CR>
 " let g:netrw_altv = 1
 
 " Default to tree mode
-let g:netrw_liststyle=3
+" let g:netrw_liststyle=3
 
 
 
@@ -249,7 +249,7 @@ let g:startify_custom_header =
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme= 'hybrid'
+let g:airline_theme= 'base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_left_sep=''
