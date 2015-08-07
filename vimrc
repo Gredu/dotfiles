@@ -267,7 +267,7 @@ let g:vimchant_spellcheck_lang = 'fi'
 let g:bufferline_echo = 0
 
 " Emmet
-let g:user_emmet_leader_key='<c-m>'
+let g:user_emmet_leader_key='<c-k>'
 
 " IndentLine
 let g:indentLine_color_term = 236
