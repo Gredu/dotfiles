@@ -285,4 +285,3 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 au FileType markdown,mkd set wrap lbr 
 au FileType markdown,mkd,txt nnoremap j gj
 au FileType markdown,mkd,txt nnoremap k gk
-au FileType ruby set tabstop=2 shiftwidth=2
