@@ -270,7 +270,7 @@ let g:vimchant_spellcheck_lang = 'fi'
 let g:bufferline_echo = 0
 
 " Emmet
-let g:user_emmet_leader_key='<c-k>'
+let g:user_emmet_leader_key='<c-e>'
 
 " IndentLine
 let g:indentLine_color_term = 236
@@ -278,6 +278,16 @@ let g:indentLine_color_term = 236
 " NerdTree, to open if no file is open
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+" 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 
 
