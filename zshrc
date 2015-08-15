@@ -1,21 +1,45 @@
+# Use zgen to handle all plugins
+source "${HOME}/.zgen/zgen.zsh"
 
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+# check if there's no init script
+if ! zgen saved; then
+    echo "Creating a zgen save"
 
-# Set name of the theme to load.
+    zgen oh-my-zsh
+
+    # plugins
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/github
+    zgen oh-my-zsh plugins/extract
+    zgen oh-my-zsh plugins/archlinux
+    zgen oh-my-zsh plugins/vi-mode
+    zgen oh-my-zsh plugins/command-not-found
+
+    zgen load jimmijj/zsh-syntax-highlighting
+
+    # theme
+    # Order matters
+    zgen load mafredri/zsh-async
+    zgen load sindresorhus/pure
+
+    # completions
+    zgen load zsh-users/zsh-completions src
+
+    # save all to init script
+    zgen save
+fi
+
+
+# Set name of the theme to load
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="af-magic"
+# ZSH_THEME="af-magic"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Aliases
 alias irs='ssh fitzz@vauhtis.thegroup.fi'
-alias v='gvim --remote-silent'
 alias o='ls -latr'
 # alias rm='trash-put'
-alias v='gvim --remote-silent'
 alias mplayer='mplayer -msgcolor -msgmodule'
 
 # Start Eclim server
@@ -58,22 +82,9 @@ alias eclim='/usr/share/eclipse/eclimd'
 # plugins=(git github extract archlinux vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 # plugins=(git github extract archlinux vi-mode zsh-autosuggestions)
 # plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
-plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
+# plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
 
-source $ZSH/oh-my-zsh.sh
-
-## Load zsh-syntax-highlighting.
-# source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-## Load zsh-autosuggestions.
-# source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
-
-## Enable autosuggestions automatically.
-# zle-line-init() {
-    # zle autosuggest-start
-# }
-# zle -N zle-line-init
-
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -83,17 +94,13 @@ export PATH="$HOME/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
 
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey '^j' vi-forward-word
-# bindkey -s 'ö' '{'
-# bindkey -s 'Ö' '['
-# bindkey -s 'ä' '}'
-# bindkey -s 'Ä' ']'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
