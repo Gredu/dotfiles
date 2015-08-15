@@ -90,10 +90,10 @@ export EDITOR='vim'
 
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey '^j' vi-forward-word
-bindkey -s 'ö' '{'
-bindkey -s 'Ö' '['
-bindkey -s 'ä' '}'
-bindkey -s 'Ä' ']'
+# bindkey -s 'ö' '{'
+# bindkey -s 'Ö' '['
+# bindkey -s 'ä' '}'
+# bindkey -s 'Ä' ']'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
