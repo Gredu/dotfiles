@@ -58,21 +58,21 @@ alias eclim='/usr/share/eclipse/eclimd'
 # plugins=(git github extract archlinux vi-mode zsh-autosuggestions zsh-syntax-highlighting)
 # plugins=(git github extract archlinux vi-mode zsh-autosuggestions)
 # plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
-plugins=(git github extract archlinux vi-mode)
+plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Load zsh-syntax-highlighting.
-source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+## Load zsh-syntax-highlighting.
+# source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Load zsh-autosuggestions.
-source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
+## Load zsh-autosuggestions.
+# source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/autosuggestions.zsh
 
-# Enable autosuggestions automatically.
-zle-line-init() {
-    zle autosuggest-start
-}
-zle -N zle-line-init
+## Enable autosuggestions automatically.
+# zle-line-init() {
+    # zle autosuggest-start
+# }
+# zle -N zle-line-init
 
 
 # User configuration
