@@ -13,7 +13,6 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/archlinux
     zgen oh-my-zsh plugins/vi-mode
-    zgen oh-my-zsh plugins/command-not-found
 
     zgen load jimmijj/zsh-syntax-highlighting
 
