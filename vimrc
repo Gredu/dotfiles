@@ -176,11 +176,13 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 
 
-"""""""""""
-"Behaviors"
-"""""""""""
+"""""""
+"Looks"
+"""""""
 
 colors hybrid
+set background=dark
+let g:hybrid_use_Xresources = 1
 
 " Clearing GUI bars if GUI is present
 if has('gui_running')
