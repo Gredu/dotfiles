@@ -11,13 +11,13 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/github
   zgen oh-my-zsh plugins/extract
-  zgen oh-my-zsh plugins/archlinux
+  # zgen oh-my-zsh plugins/archlinux
   zgen oh-my-zsh plugins/vi-mode
 
   zgen load zsh-users/zsh-syntax-highlighting
 
   # completions
-  zgen load zsh-users/zsh-completions src
+  # zgen load zsh-users/zsh-completions src
 
   # theme
   # Order matters
@@ -25,17 +25,12 @@ if ! zgen saved; then
   zgen load sindresorhus/pure
 
   # autosuggestions should be loaded last
-  zgen load tarruda/zsh-autosuggestions
+  # zgen load tarruda/zsh-autosuggestions
 
   # save all to init script
   zgen save
 fi
 
-#enable autosuggestions automatically.
-zle-line-init() {
-  zle autosuggest-start
-}
-zle -N zle-line-init
 
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -106,7 +101,7 @@ export EDITOR='nvim'
 # fi
 
 bindkey -M vicmd '/' history-incremental-search-backward
-bindkey '^j' vi-forward-word
+# bindkey '^j' vi-forward-word
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
