@@ -3,33 +3,40 @@ source "${HOME}/.zgen/zgen.zsh"
 
 # check if there's no init script
 if ! zgen saved; then
-    echo "Creating a zgen save"
+  echo "Creating a zgen save"
 
-    zgen oh-my-zsh
+  zgen oh-my-zsh
 
-    # plugins
-    zgen oh-my-zsh plugins/git
-    zgen oh-my-zsh plugins/github
-    zgen oh-my-zsh plugins/extract
-    zgen oh-my-zsh plugins/archlinux
-    zgen oh-my-zsh plugins/vi-mode
+  # plugins
+  zgen oh-my-zsh plugins/git
+  zgen oh-my-zsh plugins/github
+  zgen oh-my-zsh plugins/extract
+  zgen oh-my-zsh plugins/archlinux
+  zgen oh-my-zsh plugins/vi-mode
 
-    zgen load jimmijj/zsh-syntax-highlighting
+  zgen load zsh-users/zsh-syntax-highlighting
 
-    # theme
-    # Order matters
-    zgen load mafredri/zsh-async
-    zgen load sindresorhus/pure
+  # completions
+  zgen load zsh-users/zsh-completions src
 
-    # completions
-    zgen load zsh-users/zsh-completions src
+  # theme
+  # Order matters
+  zgen load mafredri/zsh-async
+  zgen load sindresorhus/pure
 
-    # save all to init script
-    zgen save
+  # autosuggestions should be loaded last
+  zgen load tarruda/zsh-autosuggestions
+
+  # save all to init script
+  zgen save
 fi
 
+#enable autosuggestions automatically.
+zle-line-init() {
+  zle autosuggest-start
+}
+zle -N zle-line-init Set name of the theme to load
 
-# Set name of the theme to load
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
@@ -116,8 +123,9 @@ SAVEHIST=1000
 # The following lines were added by compinstall
 # zstyle :compinstall filename '/home/greatman/.zshrc'
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
+
 # End of lines added by compinstall
 
 export TERM='xterm-256color'
