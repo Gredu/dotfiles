@@ -35,7 +35,7 @@ fi
 zle-line-init() {
   zle autosuggest-start
 }
-zle -N zle-line-init Set name of the theme to load
+zle -N zle-line-init
 
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
