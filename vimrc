@@ -184,18 +184,6 @@ colors hybrid
 set background=dark
 let g:hybrid_use_Xresources = 1
 
-" Clearing GUI bars if GUI is present
-if has('gui_running')
-	set go-=m
-	set go-=T
-	set go-=r
-	set go-=b
-	set go-=l
-	set go-=L
-endif
-
-
-
 """""""""""
 "Functions"
 """""""""""
