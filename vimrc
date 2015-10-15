@@ -1,45 +1,37 @@
-" set nocompatible
-filetype off
+" set nocompatible, enable it later
+" filetype off
 
 
 """""""""""
 " Plugins "
 """""""""""
 
-"" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Plugin 'itchyny/lightline.vim'
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 " Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'terryma/vim-expand-region'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'Yggdroot/indentLine'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'bling/vim-airline'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'terryma/vim-expand-region'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'w0ng/vim-hybrid'
+Plug 'Yggdroot/indentLine'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'bling/vim-airline'
 " Plugin 'bling/vim-bufferline'
-Plugin 'vim-scripts/VimRepress'
-Plugin 'vim-scripts/Vimchant'
-Plugin 'mhinz/vim-startify'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'mattn/emmet-vim'
+Plug 'vim-scripts/VimRepress'
+Plug 'vim-scripts/Vimchant'
+Plug 'mhinz/vim-startify'
+Plug 'plasticboy/vim-markdown'
+Plug 'derekwyatt/vim-scala'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'mattn/emmet-vim'
 
-call vundle#end()
-
-" call plug#begin('~/.vim/bundle')
-"
-" call plug#end()
+call plug#end()
 
 " Looks out the type of the file, and sets correct indenting
 filetype plugin indent on
