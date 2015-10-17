@@ -85,6 +85,7 @@ set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
 " set t_ut=                       " Disable Background Color Erase
 " set spelllang=fi
+set shell=/bin/zsh
 
 
 
@@ -225,9 +226,6 @@ map <Leader>o :call Browser ()<CR>
 "Plugin settings"
 """""""""""""""""
 
-" Startify custom header
-let g:startify_custom_header =
-            \ map(split(system('fortune | cowsay'), '\n'), '"   ". v:val') + ['','']
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -268,6 +266,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Python
+let g:python_host_prog = '/usr/bin/python'
+" let g:python_host_prog = '/usr/local/bin/python'
 
 
 
