@@ -113,6 +113,11 @@ nmap , :
 " NERDtree toggling
 nmap <Leader>n :NERDTreeToggle <CR>
 
+" Tmux bugging around
+ if has('nvim')
+     nmap <BS> <C-W>h
+ endif
+
 " Eclim project tree toggle
 " nmap <Leader>e :ProjectTreeToggle <CR>
 
@@ -248,7 +253,7 @@ let g:vimchant_spellcheck_lang = 'fi'
 let g:bufferline_echo = 0
 
 " Emmet
-let g:user_emmet_leader_key='<c-e>'
+let g:user_emmet_leader_key='<C-e>'
 
 " IndentLine
 let g:indentLine_color_term = 236
