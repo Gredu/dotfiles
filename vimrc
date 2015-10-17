@@ -118,6 +118,9 @@ nmap <Leader>n :NERDTreeToggle <CR>
      nmap <BS> <C-W>h
  endif
 
+" tnoremap <S-CR> <C-\><C-n>
+tnoremap <Leader>å <C-\><C-n>
+
 " Eclim project tree toggle
 " nmap <Leader>e :ProjectTreeToggle <CR>
 
