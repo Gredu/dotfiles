@@ -17,7 +17,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+" Can't get python support work
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'bling/vim-airline'
 " Plugin 'bling/vim-bufferline'
 Plug 'vim-scripts/VimRepress'
