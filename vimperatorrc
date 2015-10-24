@@ -4,7 +4,8 @@ set hintchars=hjklasdfgyuiopqwertnmzxcvb
 highlight Hint font-family: monospace; font-size: 12px; font-weight: none; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
 
 nmap , :
-nmap e :panorama switch 
+nmap s :panorama switch 
+nmap e :emenu 
 
 nnoremap j 5<C-e>
 nnoremap k 5<C-y>
