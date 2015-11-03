@@ -125,53 +125,9 @@ tnoremap å <C-\><C-n>
 " Eclim project tree toggle
 " nmap <Leader>e :ProjectTreeToggle <CR>
 
-" Mappings to make it easier to type 
-" imap åa {
-" imap åf }
-" imap ås [
-" imap åd ]
-" imap åz @
-" imap åx $
-" imap åc \
-" imap åv ~
-" imap åb <bar>
-
-" CodingMode changes ö and ä to something more interesting for vim
-map ö {
-map ä }
-map Ö [
-map Ä ]
-cmap ö {
-cmap ä }
-cmap Ö [
-cmap Ä ]
-imap ö {
-imap ä }
-imap Ö [
-imap Ä ]
-
 nnoremap <leader>c :call CodingMode()<cr>
 
 let g:codemode_toggle = 0
-
-function! CodingMode()
-    if g:codemode_toggle
-        imap ö {
-        imap ä }
-        imap Ö [
-        imap Ä ]
-        echo 'CodingMode enabled'
-        let g:codemode_toggle = 0
-    else
-        iunmap ö
-        iunmap ä
-        iunmap Ö
-        iunmap Ä
-        echo 'CodingMode disabled'
-        let g:codemode_toggle = 1
-    endif
-endfunction
-
 
 " Resize current buffer
 nnoremap <down> :resize -1<cr>
