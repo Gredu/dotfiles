@@ -14,7 +14,8 @@ Plug 'pangloss/vim-javascript'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-expand-region'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
 " Can't get python support work
@@ -235,6 +236,9 @@ let g:syntastic_check_on_wq = 0
 " Python
 let g:python_host_prog = '/usr/bin/python'
 " let g:python_host_prog = '/usr/local/bin/python'
+
+" Use Neomake when writing to a file
+autocmd! BufWritePost * Neomake
 
 
 
