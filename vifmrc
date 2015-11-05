@@ -332,7 +332,7 @@ fileviewer .*/,*/ tree %f
 " For *nix:
 " filetype * xdg-open
 " For OS X:
-" filetype * open
+filetype * open
 " For Windows:
 " filetype * start, explorer
 
