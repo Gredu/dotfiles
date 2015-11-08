@@ -8,29 +8,58 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'flowtype/vim-flow'
-Plug 'pangloss/vim-javascript'
+" Javascript {{{
+
+" JS syntax, supports ES6
+Plug 'othree/yajs.vim', {
+\   'for': ['javascript']
+\ }
+
+" Better indentation
+" Plug 'gavocanov/vim-js-indent', {
+" \   'for': ['javascript']
+" \ }
+
+" JS syntax for common libraries
+Plug 'othree/javascript-libraries-syntax.vim', {
+\   'for': ['javascript']
+\ }
+
+" Tern auto-completion engine for JS (requires node/npm)
+if executable('node')
+  Plug 'marijnh/tern_for_vim', {
+\     'do': 'npm install',
+\     'for': ['javascript', 'coffee']
+\   }
+endif
+
+" Makes gf work on node require statements
+Plug 'moll/vim-node', {
+\   'for': ['javascript']
+\ }
+" }}}
+
+" Plug 'flowtype/vim-flow'
 " Plugin 'vim-pandoc/vim-pandoc'
+" Plug 'scrooloose/syntastic'
+" Plugin 'bling/vim-bufferline'
+"
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'vim-scripts/Vimchant'
+Plug 'benekastah/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'terryma/vim-expand-region'
 Plug 'scrooloose/nerdtree'
-" Plug 'scrooloose/syntastic'
-Plug 'benekastah/neomake'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
-" Can't get python support work
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'bling/vim-airline'
-" Plugin 'bling/vim-bufferline'
 Plug 'vim-scripts/VimRepress'
-Plug 'vim-scripts/Vimchant'
 Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mattn/emmet-vim'
 
 call plug#end()
@@ -51,7 +80,7 @@ set tabstop=2
 set shiftwidth=2
 
 set clipboard+=unnamedplus
-let mapleader = "\<Space>"
+" let mapleader = "\<Space>"
 
 set encoding=utf8
 set showmatch
@@ -71,7 +100,7 @@ set linespace=0
 set showcmd
 set nowrap
 set showmode                    " Show current mode
-" set autochdir                 " Always switch to the current file directory
+set autochdir                   " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
 set hlsearch                    " Hilight the search matches
