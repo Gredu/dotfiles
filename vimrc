@@ -8,7 +8,6 @@
 
 call plug#begin('~/.vim/plugged')
 
-" Plugin 'itchyny/lightline.vim'
 Plug 'pangloss/vim-javascript'
 " Plugin 'vim-pandoc/vim-pandoc'
 Plug 'christoomey/vim-tmux-navigator'
