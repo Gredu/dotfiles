@@ -19,7 +19,7 @@ Plug 'benekastah/neomake'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
 " Can't get python support work
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'bling/vim-airline'
 " Plugin 'bling/vim-bufferline'
 Plug 'vim-scripts/VimRepress'
@@ -207,6 +207,9 @@ map <leader>p :CtrlP<CR>
 let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_filetype_specific_completion_to_disable = 'mkd'
 
+" Python
+let g:pthon_host_prog = '/usr/bin/python2.7'
+
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
 
@@ -232,10 +235,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
-
-" Python
-let g:python_host_prog = '/usr/bin/python'
-" let g:python_host_prog = '/usr/local/bin/python'
 
 " Neomake
 " Use Neomake when writing to a file
