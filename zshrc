@@ -46,6 +46,9 @@ alias mplayer='mplayer -msgcolor -msgmodule'
 # Start Eclim server
 alias eclim='/usr/share/eclipse/eclimd'
 
+# Use finnish language in periscope
+alias sub='periscope -l fi'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -89,7 +92,8 @@ alias eclim='/usr/share/eclipse/eclimd'
 
 # User configuration
 
-export PATH="$HOME/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.cabal/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/bin:$HOME/.bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
+# export PATH="$HOME/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.cabal/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
 # export PATH="$HOME/heroku-client/bin:$HOME/bin:$HOME/.rbenv/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.rbenv/shims:/home/greatman/.cabal/bin:/home/greatman/.rbenv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
