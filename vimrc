@@ -8,6 +8,7 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'flowtype/vim-flow'
 Plug 'pangloss/vim-javascript'
 " Plugin 'vim-pandoc/vim-pandoc'
 Plug 'christoomey/vim-tmux-navigator'
@@ -146,9 +147,9 @@ vmap <C-v> <Plug>(expand_region_shrink)
 "Looks"
 """""""
 
+let g:hybrid_use_Xresources = 1
 colors hybrid
 set background=dark
-let g:hybrid_use_Xresources = 1
 
 """""""""""
 "Functions"
@@ -223,22 +224,36 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 " 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " Python
 let g:python_host_prog = '/usr/bin/python'
 " let g:python_host_prog = '/usr/local/bin/python'
 
+" Neomake
 " Use Neomake when writing to a file
 autocmd! BufWritePost * Neomake
 
+" let g:neomake_open_list = 1
+" let g:neomake_list_height = 4
+" let g:neomake_javascript_jshint_maker = {
+    " \ 'args': ['--verbose'],
+    " \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    " \ }
+" let g:neomake_javascript_flow_maker = {
+    " \ 'args': ['check', '--all'],
+    " \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    " \ }
+" let g:neomake_javascript_enabled_makers = ['jshint']
+" let g:neomake_javascript_enabled_makers = ['jslint']
+" let g:neomake_javascript_enabled_makers = ['flow']
 
 
 """"""""""
