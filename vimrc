@@ -39,7 +39,7 @@ Plug 'moll/vim-node', {
 \ }
 " }}}
 
-" Plug 'flowtype/vim-flow'
+Plug 'flowtype/vim-flow'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plug 'scrooloose/syntastic'
 " Plugin 'bling/vim-bufferline'
@@ -80,7 +80,7 @@ set tabstop=2
 set shiftwidth=2
 
 set clipboard+=unnamedplus
-" let mapleader = "\<Space>"
+let mapleader = "\<Space>"
 
 set encoding=utf8
 set showmatch
