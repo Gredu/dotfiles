@@ -44,6 +44,7 @@ Plug 'flowtype/vim-flow'
 " Plug 'scrooloose/syntastic'
 " Plugin 'bling/vim-bufferline'
 "
+Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-scripts/Vimchant'
 Plug 'benekastah/neomake'
