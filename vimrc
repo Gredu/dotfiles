@@ -39,11 +39,16 @@ Plug 'moll/vim-node', {
 \ }
 " }}}
 
-Plug 'flowtype/vim-flow'
+" Plug 'flowtype/vim-flow'
+
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plug 'scrooloose/syntastic'
 " Plugin 'bling/vim-bufferline'
-"
+" Plug 'easymotion/vim-easymotion'
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-scripts/Vimchant'
@@ -55,13 +60,15 @@ Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'vim-scripts/VimRepress'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'plasticboy/vim-markdown'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -104,7 +111,7 @@ set showmode                    " Show current mode
 set autochdir                   " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
-set hlsearch                    " Hilight the search matches
+" set hlsearch                  " Hilight the search matches
 set laststatus=2                " Status is always on
 set scrolloff=5
 set foldenable                  " Autofold
@@ -112,12 +119,15 @@ set bs=2                        " Makes backspace work again
 set lazyredraw                  " Don't update display while executing macros
 " Powerline
 " set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-" set t_Co=256                    " Set this only if your terminal supports 256 colors
+" set t_Co=256                  " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
-" set t_ut=                       " Disable Background Color Erase
+" set rnu                       " Use relative numbers
+" set t_ut=                     " Disable Background Color Erase
 " set spelllang=fi
 set shell=/bin/zsh
+set splitbelow                  " Use more natural splitting
+set splitright
 
 
 
@@ -269,8 +279,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Neomake
 " Use Neomake when writing to a file
 autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
+" let g:neomake_open_list = 2
 
-" let g:neomake_open_list = 1
+" let g:neomake_open_list = m
 " let g:neomake_list_height = 4
 " let g:neomake_javascript_jshint_maker = {
     " \ 'args': ['--verbose'],
