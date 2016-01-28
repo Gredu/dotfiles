@@ -1,7 +1,3 @@
-" set nocompatible, enable it later
-" filetype off
-
-
 """""""""""
 " Plugins "
 """""""""""
@@ -40,12 +36,12 @@ Plug 'moll/vim-node', {
 " }}}
 
 " Plug 'flowtype/vim-flow'
-
 " Plugin 'vim-pandoc/vim-pandoc'
-" Plug 'scrooloose/syntastic'
 " Plugin 'bling/vim-bufferline'
 " Plug 'easymotion/vim-easymotion'
 
+Plug 'ap/vim-css-color'
+Plug 'justinmk/vim-sneak'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
@@ -64,12 +60,11 @@ Plug 'vim-scripts/VimRepress'
 Plug 'plasticboy/vim-markdown'
 Plug 'derekwyatt/vim-scala'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/goyo.vim'
-
 call plug#end()
 
 " Looks out the type of the file, and sets correct indenting
@@ -90,14 +85,13 @@ set shiftwidth=2
 set clipboard+=unnamedplus
 let mapleader = "\<Space>"
 
-set encoding=utf8
+" set encoding=utf8
 set showmatch
 set ruler
 " set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set ignorecase                  " You always want this
 set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
-set nu                          " Sets numbers
 set cursorline
 set guifont=Ubuntu\ Mono\ Powerline\ 12
 set backup                      " Make backup files
@@ -108,12 +102,13 @@ set linespace=0
 set showcmd
 set nowrap
 set showmode                    " Show current mode
-set autochdir                   " Always switch to the current file directory
+" set autochdir                 " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
 " set hlsearch                  " Hilight the search matches
 set laststatus=2                " Status is always on
 set scrolloff=5
+set sidescrolloff=5
 set foldenable                  " Autofold
 set bs=2                        " Makes backspace work again
 set lazyredraw                  " Don't update display while executing macros
@@ -122,13 +117,14 @@ set lazyredraw                  " Don't update display while executing macros
 " set t_Co=256                  " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
+set number                      " Show line numbers
 " set rnu                       " Use relative numbers
 " set t_ut=                     " Disable Background Color Erase
 " set spelllang=fi
 set shell=/bin/zsh
 set splitbelow                  " Use more natural splitting
 set splitright
-
+set wildmode=full
 
 
 """"""""""
@@ -165,10 +161,6 @@ tnoremap å <C-\><C-n>
 
 " Eclim project tree toggle
 " nmap <Leader>e :ProjectTreeToggle <CR>
-
-nnoremap <leader>c :call CodingMode()<cr>
-
-let g:codemode_toggle = 0
 
 " Resize current buffer
 nnoremap <down> :resize -1<cr>
@@ -214,7 +206,7 @@ function! Browser ()
   ":endif
   exec ':silent !firefox' . "\"" . line . "\""
 endfunction
-map <Leader>o :call Browser ()<CR>
+map <Leader>w :call Browser ()<CR>
 
 
 " netrw
@@ -232,16 +224,36 @@ map <Leader>o :call Browser ()<CR>
 "Plugin settings"
 """""""""""""""""
 
+" Sneak
+nmap f <Plug>Sneak_s
+nmap F <Plug>Sneak_S
+xmap f <Plug>Sneak_s
+xmap F <Plug>Sneak_S
+omap f <Plug>Sneak_s
+omap F <Plug>Sneak_S
+let g:sneak#s_next = 1
+
+" YCM
+let g:UltiSnipsExpandTrigger = '<C-Space>'
+let g:UltiSnipsJumpForwardTrigger = 'ö'
+let g:UltiSnipsJumpBackwardTrigger = 'ä'
+
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme= 'hybrid'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+
 " Ctrlp
+" Open file menu
+nnoremap <Leader>o :CtrlP<CR>
+" Open buffer menu
+nnoremap <Leader>b :CtrlPBuffer<CR>
+" Open most recently used files
+nnoremap <Leader>f :CtrlPMRUFiles<CR>
 let g:ctrlp_map = ''
-map <leader>p :CtrlP<CR>
 
 "YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
@@ -254,7 +266,7 @@ let g:pthon_host_prog = '/usr/bin/python2.7'
 let g:vimchant_spellcheck_lang = 'fi'
 
 " Bufferline
-let g:bufferline_echo = 0
+" let g:bufferline_echo = 0
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
