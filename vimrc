@@ -40,6 +40,8 @@ Plug 'moll/vim-node', {
 " Plugin 'bling/vim-bufferline'
 " Plug 'easymotion/vim-easymotion'
 
+Plug 'github.com/vim-airline/vim-airline-themes'
+Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak'
 Plug 'SirVer/ultisnips'
