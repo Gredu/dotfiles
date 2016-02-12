@@ -40,7 +40,7 @@ Plug 'moll/vim-node', {
 " Plugin 'bling/vim-bufferline'
 " Plug 'easymotion/vim-easymotion'
 
-Plug 'github.com/vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
 Plug 'justinmk/vim-sneak'
@@ -174,6 +174,8 @@ nnoremap <right> :vertical resize +1<cr>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+" run in node
+" nmap <Leader>j :!node %<CR>
 
 
 
