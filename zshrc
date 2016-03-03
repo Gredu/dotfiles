@@ -44,7 +44,8 @@ alias o='ls -latr'
 alias mplayer='mplayer -msgcolor -msgmodule'
 
 # Start Eclim server
-alias eclim='/usr/share/eclipse/eclimd'
+# alias eclim='/usr/share/eclipse/eclimd'
+alias eclim='/opt/homebrew-cask/Caskroom/eclipse-ide/4.5.1/Eclipse.app/Contents/Eclipse/eclimd'
 
 # Use finnish language in periscope
 alias sub='periscope -l fi'
