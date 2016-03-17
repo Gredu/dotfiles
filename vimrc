@@ -279,8 +279,8 @@ let g:user_emmet_leader_key='<C-e>'
 let g:indentLine_color_term = 236
 
 " NerdTree, to open if no file is open
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "Syntastic
 " set statusline+=%#warningmsg#
