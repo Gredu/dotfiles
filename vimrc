@@ -312,6 +312,8 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " let g:neomake_javascript_enabled_makers = ['jslint']
 " let g:neomake_javascript_enabled_makers = ['flow']
 
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
 """"""""""
 "Filetype"
