@@ -36,7 +36,6 @@ Plug 'moll/vim-node', {
 " }}}
 
 " Plug 'flowtype/vim-flow'
-" Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'bling/vim-bufferline'
 " Plug 'easymotion/vim-easymotion'
 
