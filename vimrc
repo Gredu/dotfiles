@@ -85,7 +85,6 @@ set shiftwidth=2
 set clipboard+=unnamedplus
 let mapleader = "\<Space>"
 
-" set encoding=utf8
 set showmatch
 set ruler
 " set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
