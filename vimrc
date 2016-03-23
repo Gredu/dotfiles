@@ -38,11 +38,11 @@ Plug 'moll/vim-node', {
 " Plug 'flowtype/vim-flow'
 " Plugin 'bling/vim-bufferline'
 " Plug 'easymotion/vim-easymotion'
+" Plug 'justinmk/vim-sneak'
 
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
-Plug 'justinmk/vim-sneak'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
@@ -228,13 +228,13 @@ map <Leader>w :call Browser ()<CR>
 """""""""""""""""
 
 " Sneak
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
-xmap f <Plug>Sneak_s
-xmap F <Plug>Sneak_S
-omap f <Plug>Sneak_s
-omap F <Plug>Sneak_S
-let g:sneak#s_next = 1
+" nmap f <Plug>Sneak_s
+" nmap F <Plug>Sneak_S
+" xmap f <Plug>Sneak_s
+" xmap F <Plug>Sneak_S
+" omap f <Plug>Sneak_s
+" omap F <Plug>Sneak_S
+" let g:sneak#s_next = 1
 
 " YCM
 let g:UltiSnipsExpandTrigger = '<C-Space>'
