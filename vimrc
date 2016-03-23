@@ -92,7 +92,6 @@ set ignorecase                  " You always want this
 set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
 set cursorline
-set guifont=Ubuntu\ Mono\ Powerline\ 12
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
