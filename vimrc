@@ -118,7 +118,7 @@ set lazyredraw                  " Don't update display while executing macros
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
 set number                      " Show line numbers
-" set rnu                       " Use relative numbers
+set rnu                         " Use relative numbers
 " set t_ut=                     " Disable Background Color Erase
 " set spelllang=fi
 set shell=/bin/zsh
