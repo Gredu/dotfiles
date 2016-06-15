@@ -1,8 +1,11 @@
 "3.3 (created: 2011/11/13 17:32:12)
 
 colorscheme molokai
-set hintchars=hjklasdfgyuiopqwertnmzxcvb
 highlight Hint font-family: monospace; font-size: 12px; font-weight: none; text-transform: uppercase; color: white; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+
+set hintchars=hjklasdfgyuiopqwertnmzxcvb
+set gui=nonavigation
+set editor="urxvt -e nvim"
 
 nmap , :
 nmap s :panorama switch 
@@ -14,51 +17,3 @@ cnoremap <Down> <TAB>
 cnoremap <Up> <S-TAB>
 nmap <C-b> :emenu View.Sidebar.Bookmarks<cr>
 nmap <C-j> :emenu View.Sidebar.Downloads<cr>
-
-set gui=nonavigation
-set editor="urxvt -e nvim"
-
-"javascript to hide statusbar
-noremap <silent> <F8> :js toggle_bottombar()<CR>
-noremap : :js toggle_bottombar('on')<CR>:
-noremap o :js toggle_bottombar('on')<CR>o
-noremap O :js toggle_bottombar('on')<CR>O
-noremap t :js toggle_bottombar('on')<CR>t
-noremap T :js toggle_bottombar('on')<CR>t
-noremap / :js toggle_bottombar('on')<CR>/
-cnoremap <CR> <CR>:js toggle_bottombar('off')<CR>
-cnoremap <Esc> <Esc>:js toggle_bottombar('off')<CR>
-
-:js << EOF
-var hl = highlight.get('ContentSeparator');
-var cs_current = hl.value;
-
-function toggle_bottombar(p) {
-    var bb = document.getElementById('liberator-bottombar');
-    if (!bb)
-        return;
-    if (p == 'on'){
-        show_bottombar(bb);
-        return;
-    }
-    if (p == 'off'){
-        hide_bottombar(bb)
-        return;
-    }
-    bb.style.height == '' ? hide_bottombar(bb) : show_bottombar(bb);
-}
-
-function show_bottombar(bb) {
-    bb.style.height = '';
-    bb.style.overflow = '';
-    liberator.execute('highlight ContentSeparator ' + cs_current);
-}
-
-function hide_bottombar(bb) {
-    bb.style.height = '0px';
-    bb.style.overflow = 'hidden';
-    liberator.execute('highlight ContentSeparator display: none;');
-}
-
-toggle_bottombar();
-EOF
