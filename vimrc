@@ -35,11 +35,9 @@ Plug 'moll/vim-node', {
 \ }
 " }}}
 
-" Plug 'flowtype/vim-flow'
-" Plugin 'bling/vim-bufferline'
-" Plug 'easymotion/vim-easymotion'
-" Plug 'justinmk/vim-sneak'
-
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'ap/vim-css-color'
@@ -59,7 +57,6 @@ Plug 'bling/vim-airline'
 Plug 'vim-scripts/VimRepress'
 Plug 'plasticboy/vim-markdown'
 Plug 'derekwyatt/vim-scala'
-Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
@@ -235,8 +232,12 @@ map <Leader>w :call Browser ()<CR>
 
 " YCM
 let g:UltiSnipsExpandTrigger = '<C-Space>'
-let g:UltiSnipsJumpForwardTrigger = 'ö'
-let g:UltiSnipsJumpBackwardTrigger = 'ä'
+let g:UltiSnipsJumpForwardTrigger = '<C-n'
+let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
+
+" let g:UltiSnipsJumpForwardTrigger = '<CR>'
+" let g:UltiSnipsJumpBackwardTrigger = '<S-CR>'
+
 
 
 " Airline
