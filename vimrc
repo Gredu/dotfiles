@@ -35,6 +35,7 @@ Plug 'moll/vim-node', {
 \ }
 " }}}
 
+Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
