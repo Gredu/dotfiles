@@ -35,6 +35,8 @@ Plug 'moll/vim-node', {
 \ }
 " }}}
 
+
+Plug 'majutsushi/tagbar'
 Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -170,6 +172,9 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 " run in node
 " nmap <Leader>j :!node %<CR>
+
+" tagbar toggle
+nnoremap <Leader>t :Tagbar<CR>
 
 
 
@@ -307,6 +312,8 @@ let g:vim_markdown_folding_disabled = 1
 """"""""""
 "Filetype"
 """"""""""
+
+au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
 
 au FileType markdown,mkd set wrap lbr 
 au FileType markdown,mkd,txt nnoremap j gj
