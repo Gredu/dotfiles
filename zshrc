@@ -50,6 +50,9 @@ alias eclim='/opt/homebrew-cask/Caskroom/eclipse-ide/4.5.1/Eclipse.app/Contents/
 # Use finnish language in periscope
 alias sub='periscope -l fi'
 
+# Look weather
+alias weather='curl wttr.in/'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
