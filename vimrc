@@ -266,9 +266,6 @@ let g:ctrlp_map = ''
 let g:EclimCompletionMethod = 'omnifunc'
 let g:ycm_filetype_specific_completion_to_disable = 'mkd'
 
-" Python
-let g:pthon_host_prog = '/usr/bin/python2.7'
-
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
 
