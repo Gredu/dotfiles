@@ -176,6 +176,8 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " tagbar toggle
 nnoremap <Leader>t :Tagbar<CR>
 
+" tmp, Karabiner stop working
+inoremap jk <esc>
 
 
 """""""
