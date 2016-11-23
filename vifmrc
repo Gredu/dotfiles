@@ -113,6 +113,7 @@ mark h ~/
 mark d ~/Downloads
 mark d ~/Dropbox
 mark s ~/Dropbox/School
+mark v /Volumes
 
 " ------------------------------------------------------------------------------
 
