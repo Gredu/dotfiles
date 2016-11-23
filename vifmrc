@@ -111,7 +111,6 @@ set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 mark b ~/bin/
 mark h ~/
 mark d ~/Downloads
-mark d ~/Dropbox
 mark s ~/Dropbox/School
 mark v /Volumes
 
