@@ -52,8 +52,6 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-scripts/Vimchant'
 Plug 'benekastah/neomake'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'terryma/vim-expand-region'
-Plug 'scrooloose/nerdtree'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
@@ -87,7 +85,6 @@ let mapleader = "\<Space>"
 
 set showmatch
 set ruler
-" set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
 set ignorecase                  " You always want this
 set smartcase                   " Smarter case search
 set incsearch                   " Jumps right to the search
@@ -103,21 +100,16 @@ set showmode                    " Show current mode
 " set autochdir                 " Always switch to the current file directory
 set hidden                      " You don't have to save constantly when switching between buffers
 set wildmenu                    " Enchanced completion
-" set hlsearch                  " Hilight the search matches
 set laststatus=2                " Status is always on
 set scrolloff=5
 set sidescrolloff=5
 set foldenable                  " Autofold
 set bs=2                        " Makes backspace work again
 set lazyredraw                  " Don't update display while executing macros
-" Powerline
-" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
-" set t_Co=256                  " Set this only if your terminal supports 256 colors
 set mouse=a                     " Enable mouse
 set mousehide                   " Hide when characters typed
 set number                      " Show line numbers
 set rnu                         " Use relative numbers
-" set t_ut=                     " Disable Background Color Erase
 " set spelllang=fi
 set shell=/bin/zsh
 set splitbelow                  " Use more natural splitting
@@ -130,21 +122,16 @@ lan en_GB
 "Mappings"
 """"""""""
 
-" Makes it easier to edit this source
-" nmap <Leader>sv :so $MYVIMRC<CR>
-" nmap <Leader>ev :e $MYVIMRC<CR>
-
 " Runs the current scala code
-" nmap <Leader>c :w <CR> :!scala %:p<CR>
 
 " Fast switching between buffers
 nmap <C-n> :bn <CR>
 nmap <C-p> :bp <CR>
 
-" Go to link in Vim help, easier in Finnish keyboard
+" Go to link in Vim help, easier for Finnish keyboard
 nmap <Leader>g <C-]>
 
-" Quickly enter to command line, easier in Finnish keyboard
+" Quickly enter to command line, easier for Finnish keyboard
 nmap , :
 
 " NERDtree toggling
@@ -167,18 +154,8 @@ nnoremap <up> :resize +1<cr>
 nnoremap <left> :vertical resize -1<cr>
 nnoremap <right> :vertical resize +1<cr>
 
-" vim-expand-region
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-" run in node
-" nmap <Leader>j :!node %<CR>
-
 " tagbar toggle
 nnoremap <Leader>t :Tagbar<CR>
-
-" tmp, Karabiner stop working
-inoremap jk <esc>
 
 
 """""""
@@ -189,72 +166,26 @@ let g:hybrid_use_Xresources = 1
 colors hybrid
 set background=dark
 
+
 """""""""""
 "Functions"
 """""""""""
-
-" function to open URL, just use <Leader>o
-" is next line even needed?
-" let $PATH = $PATH . ';c:\Programs\FireFox1.5'
-" Evoke a web browser
-function! Browser ()
-  let line0 = getline (".")
-  let line = matchstr (line0, "http[^ ]*")
-  :if line==""
-  let line = matchstr (line0, "ftp[^ ]*")
-  :endif
-  :if line==""
-  let line = matchstr (line0, "file[^ ]*")
-  :endif
-  let line = escape (line, "#?&;|%")
-  ":if line==""
-  " let line = "\"" . (expand("%:p")) . "\""
-  ":endif
-  exec ':silent !firefox' . "\"" . line . "\""
-endfunction
-map <Leader>w :call Browser ()<CR>
-
-
-" netrw
-" Hit enter in the file browser to open the selected
-" file with :vsplit to the right of the browser.
-" let g:netrw_browse_split = 4
-" let g:netrw_altv = 1
-
-" Default to tree mode
-" let g:netrw_liststyle=3
-
 
 
 """""""""""""""""
 "Plugin settings"
 """""""""""""""""
 
-" Sneak
-" nmap f <Plug>Sneak_s
-" nmap F <Plug>Sneak_S
-" xmap f <Plug>Sneak_s
-" xmap F <Plug>Sneak_S
-" omap f <Plug>Sneak_s
-" omap F <Plug>Sneak_S
-" let g:sneak#s_next = 1
-
 " YCM
 let g:UltiSnipsExpandTrigger = '<C-Space>'
 let g:UltiSnipsJumpForwardTrigger = '<C-n'
 let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
-
-" let g:UltiSnipsJumpForwardTrigger = '<CR>'
-" let g:UltiSnipsJumpBackwardTrigger = '<S-CR>'
-
-
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme= 'hybrid'
 let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'
-
 
 " Ctrlp
 " Open file menu
@@ -280,10 +211,6 @@ let g:user_emmet_leader_key='<C-e>'
 
 " IndentLine
 let g:indentLine_color_term = 236
-
-" NerdTree, to open if no file is open
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Neomake
 " Use Neomake when writing to a file
@@ -338,9 +265,14 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+
 """"""""""
 "Filetype"
 """"""""""
+
+au Filetype javascript nnoremap <Leader>r :!node %<CR>
+
+au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
 
 au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
 
