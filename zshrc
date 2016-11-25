@@ -51,8 +51,8 @@ alias eclim='/opt/homebrew-cask/Caskroom/eclipse-ide/4.5.1/Eclipse.app/Contents/
 alias weather='curl wttr.in/'
 
 # Dictionary
-alias en='trans en:fi '
-alias fi='trans fi:en '
+alias enfi='trans en:fi '
+alias fien='trans fi:en '
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
