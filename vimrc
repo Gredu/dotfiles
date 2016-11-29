@@ -122,8 +122,6 @@ lan en_GB
 "Mappings"
 """"""""""
 
-" Runs the current scala code
-
 " Fast switching between buffers
 nmap <C-n> :bn <CR>
 nmap <C-p> :bp <CR>
