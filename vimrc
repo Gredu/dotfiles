@@ -138,9 +138,9 @@ nmap , :
 nmap <Leader>n :NERDTreeToggle <CR>
 
 " Tmux bugging around
- if has('nvim')
-     nmap <BS> <C-W>h
- endif
+if has('nvim')
+  nmap <BS> <C-W>h
+endif
 
 " tnoremap <S-CR> <C-\><C-n>
 tnoremap å <C-\><C-n>
