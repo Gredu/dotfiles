@@ -176,8 +176,8 @@ set background=dark
 
 " YCM
 let g:UltiSnipsExpandTrigger = '<C-Space>'
-let g:UltiSnipsJumpForwardTrigger = '<C-n'
-let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
+let g:UltiSnipsJumpForwardTrigger = 'ö'
+let g:UltiSnipsJumpBackwardTrigger = 'å'
 
 " Airline
 let g:airline_powerline_fonts = 1
