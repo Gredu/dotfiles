@@ -2,8 +2,6 @@
 " Plugins "
 """""""""""
 
-call plug#begin('~/.vim/plugged')
-
 " Javascript {{{
 
 " JS syntax, supports ES6
@@ -176,8 +174,9 @@ set background=dark
 
 " YCM
 let g:UltiSnipsExpandTrigger = '<C-Space>'
-let g:UltiSnipsJumpForwardTrigger = 'ö'
-let g:UltiSnipsJumpBackwardTrigger = 'å'
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
+let g:UltiSnipsSnippetDirectories = ['~/.vim/plugged/vim-snippets/UltiSnips', '~/.vim/UltiSnips', 'UltiSnips']
 
 " Airline
 let g:airline_powerline_fonts = 1
