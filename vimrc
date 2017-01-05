@@ -2,6 +2,8 @@
 " Plugins "
 """""""""""
 
+call plug#begin('~/.vim/plugged')
+
 " Javascript {{{
 
 " JS syntax, supports ES6
