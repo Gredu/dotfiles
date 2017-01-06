@@ -11,7 +11,6 @@ if ! zgen saved; then
   zgen oh-my-zsh plugins/git
   zgen oh-my-zsh plugins/github
   zgen oh-my-zsh plugins/extract
-  # zgen oh-my-zsh plugins/archlinux
   zgen oh-my-zsh plugins/vi-mode
 
   zgen load zsh-users/zsh-syntax-highlighting
