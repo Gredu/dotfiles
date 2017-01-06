@@ -40,8 +40,6 @@ fi
 # Aliases
 alias irs='ssh fitzz@vauhtis.thegroup.fi'
 alias o='ls -latr'
-# alias rm='trash-put'
-alias mplayer='mplayer -msgcolor -msgmodule'
 
 # Start Eclim server
 # alias eclim='/usr/share/eclipse/eclimd'
