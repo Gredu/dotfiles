@@ -136,11 +136,6 @@ SAVEHIST=1000
 export TERM='xterm-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
 
-# Use locally installed vim if exist
-if [ -d ~/.local/usr/local/share/vim/vim74 ]; then
-  export VIM="$HOME/.local/usr/local/share/vim/vim74"
-fi
-
 # Ruby on Rails course
 # eval "$(rbenv init -)"
 # export APIKEY="7a700ad0762213f3a25a67de7a5de226"
