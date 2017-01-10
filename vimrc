@@ -115,7 +115,6 @@ set shell=/bin/zsh
 set splitbelow                  " Use more natural splitting
 set splitright
 set wildmode=full
-lan en_GB
 
 
 """"""""""
