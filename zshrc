@@ -85,10 +85,6 @@ alias fien='trans fi:en '
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(git github extract archlinux vi-mode zsh-autosuggestions zsh-syntax-highlighting)
-# plugins=(git github extract archlinux vi-mode zsh-autosuggestions)
-# plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
-# plugins=(git github extract archlinux vi-mode zsh-syntax-highlighting)
 
 # source $ZSH/oh-my-zsh.sh
 
