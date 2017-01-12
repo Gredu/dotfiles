@@ -116,6 +116,13 @@ set splitbelow                  " Use more natural splitting
 set splitright
 set wildmode=full
 
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    lan en_US
+  endif
+endif
+
 
 """"""""""
 "Mappings"
