@@ -129,21 +129,21 @@ endif
 """"""""""
 
 " Fast switching between buffers
-nmap <C-n> :bn <CR>
-nmap <C-p> :bp <CR>
+nnoremap <C-n> :bn <CR>
+nnoremap <C-p> :bp <CR>
 
 " Go to link in Vim help, easier for Finnish keyboard
-nmap <Leader>g <C-]>
+nnoremap <Leader>g <C-]>
 
 " Quickly enter to command line, easier for Finnish keyboard
-nmap , :
+nnoremap , :
 
 " NERDtree toggling
-nmap <Leader>n :NERDTreeToggle <CR>
+nnoremap <Leader>n :NERDTreeToggle <CR>
 
 " Tmux bugging around
 if has('nvim')
-  nmap <BS> <C-W>h
+  nnoremap <BS> <C-W>h
 endif
 
 " tnoremap <S-CR> <C-\><C-n>
