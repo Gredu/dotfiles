@@ -285,5 +285,6 @@ au FileType markdown,mkd set wrap lbr
 au FileType markdown,mkd,txt nnoremap j gj
 au FileType markdown,mkd,txt nnoremap k gk
 
-au InsertEnter *.md setlocal conceallevel=0 concealcursor=
-au InsertLeave *.md setlocal conceallevel=2 concealcursor=inc
+" au InsertEnter *.md setlocal conceallevel=0 concealcursor=
+" au InsertLeave *.md setlocal conceallevel=2 concealcursor=inc
+set conceallevel=0
