@@ -136,7 +136,7 @@ nmap <Leader>n :NERDTreeToggle <CR>
 
 " Tmux bugging around
 if has('nvim')
-  nmap <BS> <C-W>h
+  nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 endif
 
 " tnoremap <S-CR> <C-\><C-n>
