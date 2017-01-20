@@ -51,6 +51,10 @@ alias weather='curl wttr.in/'
 alias enfi='trans en:fi '
 alias fien='trans fi:en '
 
+# Subtitles
+alias suben='subliminal download -s -l en '
+alias subfi='subliminal download -s -l fi '
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
