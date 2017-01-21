@@ -116,23 +116,30 @@ set splitbelow                  " Use more natural splitting
 set splitright
 set wildmode=full
 
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    lan en_US
+  endif
+endif
+
 
 """"""""""
 "Mappings"
 """"""""""
 
 " Fast switching between buffers
-nmap <C-n> :bn <CR>
-nmap <C-p> :bp <CR>
+nnoremap <C-n> :bn <CR>
+nnoremap <C-p> :bp <CR>
 
 " Go to link in Vim help, easier for Finnish keyboard
-nmap <Leader>g <C-]>
+nnoremap <Leader>g <C-]>
 
 " Quickly enter to command line, easier for Finnish keyboard
-nmap , :
+nnoremap , :
 
 " NERDtree toggling
-nmap <Leader>n :NERDTreeToggle <CR>
+nnoremap <Leader>n :NERDTreeToggle <CR>
 
 " Tmux bugging around
 if has('nvim')
@@ -278,5 +285,6 @@ au FileType markdown,mkd set wrap lbr
 au FileType markdown,mkd,txt nnoremap j gj
 au FileType markdown,mkd,txt nnoremap k gk
 
-au InsertEnter *.md setlocal conceallevel=0 concealcursor=
-au InsertLeave *.md setlocal conceallevel=2 concealcursor=inc
+" au InsertEnter *.md setlocal conceallevel=0 concealcursor=
+" au InsertLeave *.md setlocal conceallevel=2 concealcursor=inc
+set conceallevel=0

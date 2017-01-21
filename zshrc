@@ -51,6 +51,10 @@ alias weather='curl wttr.in/'
 alias enfi='trans en:fi '
 alias fien='trans fi:en '
 
+# Subtitles
+alias suben='subliminal download -s -l en '
+alias subfi='subliminal download -s -l fi '
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -134,3 +138,6 @@ export TERM='xterm-256color'
 # export APIKEY="7a700ad0762213f3a25a67de7a5de226"
 # export GITHUB_KEY="2941e20cafd98da9daab"
 # export GITHUB_SECRET="3469e6d6fcbe873e7b1921d19a9bf5287735ad4d"
+
+# Ruby on Rail project for Kisällioppiminen
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
