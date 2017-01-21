@@ -3,7 +3,7 @@
 xsetroot -cursor_name left_ptr
 
 # set German keyboard layout
-setxkbmap -layout fi
+setxkbmap -layout fi -variant programmer
 
 # no mouse accelaration
 xset m 0 0
