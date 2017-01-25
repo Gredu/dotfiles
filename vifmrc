@@ -137,8 +137,8 @@ command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
 command! reload :write | restart
-command! subfi subliminal download -l fi %f
-command! suben subliminal download -l en %f
+command! subfi subliminal download -s -l fi %f
+command! suben subliminal download -s -l en %f
 
 " ------------------------------------------------------------------------------
 
