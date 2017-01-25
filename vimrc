@@ -238,6 +238,20 @@ let g:neomake_go_enabled_makers = ['golint']
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
+" vimfiler
+let g:vimfiler_as_default_explorer = 1
+let g:loaded_netrwPlugin = 1
+let g:vimfiler_quick_look_command = 'qlmanage -p'  " for Mac
+" Reserver for moving right
+autocmd FileType vimfiler nunmap <buffer> <C-l>
+" Reserved for leader
+autocmd FileType vimfiler nunmap <buffer> <Space>
+let g:vimfiler_quick_look_command = 'qlmanage -p'
+" For reference: 
+" <Plug>(vimfiler_toggle_mark_current_line)
+" <S-Space>		<Plug>(vimfiler_toggle_mark_current_line_up)
+" autocmd FileType vimfiler nmap <buffer> <C-r>  <Plug>(vimfiler_redraw_screen)
+
 " Tagbar for golang
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
