@@ -6,20 +6,16 @@ call plug#begin('~/.vim/plugged')
 
 " Javascript {{{
 
-" JS syntax, supports ES6
-Plug 'othree/yajs.vim', {
-\   'for': ['javascript']
-\ }
-
 " Better indentation
 " Plug 'gavocanov/vim-js-indent', {
 " \   'for': ['javascript']
 " \ }
 
+" JS syntax, supports ES6
+Plug 'othree/yajs.vim', {'for': ['javascript'] }
+
 " JS syntax for common libraries
-Plug 'othree/javascript-libraries-syntax.vim', {
-\   'for': ['javascript']
-\ }
+Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript'] }
 
 " Tern auto-completion engine for JS (requires node/npm)
 if executable('node')
@@ -36,33 +32,32 @@ Plug 'moll/vim-node', {
 " }}}
 
 
+Plug 'fatih/vim-go', {'for': ['go']}
+Plug 'ap/vim-css-color', {'for': ['css', 'sass']}
+Plug 'derekwyatt/vim-scala', {'for': ['scala']}
+Plug 'mattn/emmet-vim', {'for': ['html']}
+Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'majutsushi/tagbar'
-Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
-Plug 'ap/vim-css-color'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-scripts/Vimchant'
 Plug 'benekastah/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
-Plug 'vim-scripts/VimRepress'
 Plug 'plasticboy/vim-markdown'
-Plug 'derekwyatt/vim-scala'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'mattn/emmet-vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'junegunn/goyo.vim'
 call plug#end()
 
 " Looks out the type of the file, and sets correct indenting
