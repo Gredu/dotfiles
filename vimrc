@@ -38,6 +38,8 @@ Plug 'derekwyatt/vim-scala', {'for': ['scala']}
 Plug 'mattn/emmet-vim', {'for': ['html']}
 Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Shougo/unite.vim'
+Plug 'shougo/vimfiler.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -133,8 +135,8 @@ nnoremap <Leader>g <C-]>
 " Quickly enter to command line, easier for Finnish keyboard
 nnoremap , :
 
-" NERDtree toggling
-nnoremap <Leader>n :NERDTreeToggle <CR>
+" Vimfiler Toggler
+nnoremap <Leader>n :VimFilerExplorer <CR>
 
 " Tmux bugging around
 if has('nvim')
