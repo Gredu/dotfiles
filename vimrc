@@ -112,6 +112,8 @@ set shell=/bin/zsh
 set splitbelow                  " Use more natural splitting
 set splitright
 set wildmode=full
+set conceallevel=0
+set concealcursor=0
 
 if has("unix")
   let s:uname = system("uname")
@@ -248,9 +250,49 @@ autocmd FileType vimfiler nunmap <buffer> <C-l>
 autocmd FileType vimfiler nunmap <buffer> <Space>
 let g:vimfiler_quick_look_command = 'qlmanage -p'
 " For reference: 
+" autocmd FileType vimfiler nunmap <buffer> za
+" autocmd FileType vimfiler nmap <buffer> za <Plug>(vimfiler_toggle_visible_dot_files)
+" autocmd FileType vimfiler nmap <buffer> <C-r>  <Plug>(vimfiler_redraw_screen)
 " <Plug>(vimfiler_toggle_mark_current_line)
 " <S-Space>		<Plug>(vimfiler_toggle_mark_current_line_up)
 " autocmd FileType vimfiler nmap <buffer> <C-r>  <Plug>(vimfiler_redraw_screen)
+
+" Beautify VimFiler
+let g:vimfiler_as_default_explorer = 1
+let g:vimfiler_restore_alternate_file = 1
+let g:vimfiler_tree_indentation = 1
+let g:vimfiler_tree_leaf_icon = ''
+let g:vimfiler_tree_opened_icon = '▼'
+let g:vimfiler_tree_closed_icon = '▷'
+let g:vimfiler_readonly_file_icon = '*'
+let g:vimfiler_marked_file_icon = '√'
+"let g:vimfiler_preview_action = 'auto_preview'
+let g:vimfiler_ignore_pattern = [
+            \ '^\.git$',
+            \ '^\.DS_Store$',
+            \ '^\.init\.vim-rplugin\~$',
+            \ '^\.netrwhist$',
+            \ '\.class$'
+            \]
+
+call vimfiler#custom#profile('default', 'context', {
+            \ 'explorer' : 1,
+            \ 'winwidth' : 30,
+            \ 'winminwidth' : 30,
+            \ 'toggle' : 1,
+            \ 'columns' : 'type',
+            \ 'auto_expand': 1,
+            \ 'direction' : 'rightbelow',
+            \ 'parent': 0,
+            \ 'explorer_columns' : 'type',
+            \ 'status' : 1,
+            \ 'safe' : 0,
+            \ 'split' : 1,
+            \ 'hidden': 1,
+            \ 'no_quit' : 1,
+            \ 'force_hide' : 0,
+						\ })
+
 
 " Tagbar for golang
 let g:tagbar_type_go = {
@@ -295,7 +337,3 @@ au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
 au FileType markdown,mkd set wrap lbr 
 au FileType markdown,mkd,txt nnoremap j gj
 au FileType markdown,mkd,txt nnoremap k gk
-
-" au InsertEnter *.md setlocal conceallevel=0 concealcursor=
-" au InsertLeave *.md setlocal conceallevel=2 concealcursor=inc
-set conceallevel=0
