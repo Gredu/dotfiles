@@ -12,7 +12,7 @@ call plug#begin('~/.vim/plugged')
 " \ }
 
 " JS syntax, supports ES6
-Plug 'othree/yajs.vim', {'for': ['javascript'] }
+Plug 'othree/yajs.vim', { 'for': ['javascript'] }
 
 " JS syntax for common libraries
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript'] }
@@ -26,17 +26,15 @@ if executable('node')
 endif
 
 " Makes gf work on node require statements
-Plug 'moll/vim-node', {
-\   'for': ['javascript']
-\ }
+Plug 'moll/vim-node', { 'for': ['javascript'] }
 " }}}
 
 
-Plug 'fatih/vim-go', {'for': ['go']}
-Plug 'ap/vim-css-color', {'for': ['css', 'sass']}
-Plug 'derekwyatt/vim-scala', {'for': ['scala']}
-Plug 'mattn/emmet-vim', {'for': ['html']}
-Plug 'junegunn/goyo.vim', {'for': ['markdown', 'text']}
+Plug 'fatih/vim-go', { 'for': ['go'] }
+Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
+Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
+Plug 'mattn/emmet-vim', { 'for': ['html'] }
+Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text'] }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
