@@ -130,7 +130,7 @@ SAVEHIST=1000
 
 # End of lines added by compinstall
 
-export TERM='xterm-256color'
+export TERM='tmux-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Ruby on Rails course
