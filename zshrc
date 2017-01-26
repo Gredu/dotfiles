@@ -95,7 +95,8 @@ alias subfi='subliminal download -s -l fi '
 # User configuration
 
 export GOPATH="${HOME}/Code/go"
-export PATH="${GOPATH}/bin:/usr/local/bin:$HOME/.bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
+export RUBYPATH="${HOME}/.gem/ruby/2.4.0"
+export PATH="${RUBYPATH}/bin:${GOPATH}/bin:/usr/local/bin:$HOME/.bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
 # export PATH="$HOME/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.cabal/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
 # export PATH="$HOME/heroku-client/bin:$HOME/bin:$HOME/.rbenv/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.rbenv/shims:/home/greatman/.cabal/bin:/home/greatman/.rbenv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
