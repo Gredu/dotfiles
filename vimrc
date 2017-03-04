@@ -337,6 +337,6 @@ au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
 
 au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
 
-au FileType markdown,mkd set wrap lbr 
-au FileType markdown,mkd,txt nnoremap j gj
-au FileType markdown,mkd,txt nnoremap k gk
+au FileType markdown,mkd,tex set wrap lbr 
+au FileType markdown,mkd,txt,tex nnoremap j gj
+au FileType markdown,mkd,txt,tex nnoremap k gk
