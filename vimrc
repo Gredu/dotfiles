@@ -34,7 +34,7 @@ Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
-Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text'] }
+Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
