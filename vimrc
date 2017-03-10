@@ -17,27 +17,25 @@ Plug 'othree/yajs.vim', { 'for': ['javascript'] }
 " JS syntax for common libraries
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript'] }
 
-" Tern auto-completion engine for JS (requires node/npm)
-if executable('node')
-  Plug 'marijnh/tern_for_vim', {
-\     'do': 'npm install',
-\     'for': ['javascript', 'coffee']
-\   }
-endif
-
 " Makes gf work on node require statements
 Plug 'moll/vim-node', { 'for': ['javascript'] }
 " }}}
 
 
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
+Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -296,7 +294,6 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'force_hide' : 0,
 						\ })
 
-
 " Tagbar for golang
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -325,6 +322,25 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+
+" Tern
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
+" Supertab
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 
 """"""""""
