@@ -219,7 +219,7 @@ let g:indentLine_color_term = 236
 
 " Neomake
 " Use Neomake when writing to a file
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost,BufEnter * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_go_enabled_makers = ['golint']
 " let g:neomake_open_list = 2
