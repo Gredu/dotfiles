@@ -17,27 +17,25 @@ Plug 'othree/yajs.vim', { 'for': ['javascript'] }
 " JS syntax for common libraries
 Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript'] }
 
-" Tern auto-completion engine for JS (requires node/npm)
-if executable('node')
-  Plug 'marijnh/tern_for_vim', {
-\     'do': 'npm install',
-\     'for': ['javascript', 'coffee']
-\   }
-endif
-
 " Makes gf work on node require statements
 Plug 'moll/vim-node', { 'for': ['javascript'] }
 " }}}
 
 
+Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
+Plug 'ervandew/supertab'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -49,7 +47,7 @@ Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/Vimchant'
-Plug 'benekastah/neomake'
+Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
@@ -221,7 +219,7 @@ let g:indentLine_color_term = 236
 
 " Neomake
 " Use Neomake when writing to a file
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost,BufEnter * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_go_enabled_makers = ['golint']
 " let g:neomake_open_list = 2
@@ -296,7 +294,6 @@ call vimfiler#custom#profile('default', 'context', {
             \ 'force_hide' : 0,
 						\ })
 
-
 " Tagbar for golang
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
@@ -326,6 +323,25 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
 \ }
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+
+" Tern
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
+" Supertab
+let g:SuperTabClosePreviewOnPopupClose = 1
+let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
 
 """"""""""
 "Filetype"
@@ -337,6 +353,6 @@ au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
 
 au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
 
-au FileType markdown,mkd,tex set wrap lbr 
+au FileType markdown,mkd,txt,tex set wrap lbr 
 au FileType markdown,mkd,txt,tex nnoremap j gj
 au FileType markdown,mkd,txt,tex nnoremap k gk
