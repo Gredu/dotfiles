@@ -32,13 +32,18 @@ URxvt.allow_bold:           true
 ! Fonts
 
 ! URxvt.font:            xft:Inconsolata-g for Powerline::regular:size=8
-URxvt.font:            xft:DejaVu Sans Mono for Powerline:size=8
-URxvt.boldFont:        xft:DejaVu Sans Mono for Powerline::bold:size=8
-URxvt.italicFont:      xft:DejaVu Sans Mono for Powerline::italic:size=8
-URxvt.boldItalicFont:  xft:DejaVu Sans Mono for Powerline::bolditalic:size=8
+! URxvt.font:            xft:DejaVu Sans Mono for Powerline:size=8
+! URxvt.boldFont:        xft:DejaVu Sans Mono for Powerline::bold:size=8
+! URxvt.italicFont:      xft:DejaVu Sans Mono for Powerline::italic:size=8
+! URxvt.boldItalicFont:  xft:DejaVu Sans Mono for Powerline::bolditalic:size=8
+
+URxvt.font:              xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=8
+! URxvt.boldFont:        xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons::bold:size=8
+! URxvt.italicFont:      xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons::italic:size=8
+! URxvt.boldItalicFont:  xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons::bolditalic:size=8
 
 ! Fix font space
-URxvt*letterSpace: -1
+! URxvt*letterSpace: -1
  
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
