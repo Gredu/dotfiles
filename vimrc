@@ -349,7 +349,7 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 "Filetype"
 """"""""""
 
-au Filetype javascript nnoremap <Leader>r :!node %<CR>
+au Filetype javascript nnoremap <Leader>r :w<CR> :!node %<CR>
 
 au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
 
