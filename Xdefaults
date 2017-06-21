@@ -43,7 +43,7 @@ URxvt.font:              xft:DejaVu Sans Mono for Powerline Plus Nerd File Types
 ! URxvt.boldItalicFont:  xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons::bolditalic:size=8
 
 ! Fix font space
-! URxvt*letterSpace: -1
+URxvt*letterSpace: -1
  
 ! Scrollbar
 URxvt.scrollStyle:          rxvt
