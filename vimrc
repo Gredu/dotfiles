@@ -73,7 +73,7 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
-set clipboard+=unnamedplus
+set clipboard+=unnamed
 let mapleader = "\<Space>"
 
 set showmatch
