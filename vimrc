@@ -1,3 +1,10 @@
+"""""""""""""
+" Reference "
+"""""""""""""
+"
+" setting up for javascript
+" https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
+
 """""""""""
 " Plugins "
 """""""""""
