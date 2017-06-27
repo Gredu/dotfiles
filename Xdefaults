@@ -62,6 +62,10 @@ URxvt.cursorUnderline:      false
  
 ! Pointer
 URxvt.pointerBlank:         true
+
+! Other
+! Do not break line with these characters
+URxvt*cutchars:             `"()'*<>[]{|}
  
 
 ! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
