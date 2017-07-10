@@ -33,7 +33,8 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
-Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
+" Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
+Plug 'shmargum/vim-sass-colors'
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
