@@ -35,6 +35,7 @@ Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
 " Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'shmargum/vim-sass-colors'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
@@ -62,7 +63,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
-Plug 'cakebaker/scss-syntax.vim'
 call plug#end()
 
 " Looks out the type of the file, and sets correct indenting
