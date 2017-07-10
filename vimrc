@@ -30,7 +30,6 @@ Plug 'moll/vim-node', { 'for': ['javascript'] }
 
 
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
-" Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'], 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
@@ -38,7 +37,6 @@ Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
