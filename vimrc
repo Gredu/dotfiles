@@ -92,7 +92,9 @@ set cursorline
 set backup                      " Make backup files
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
-set wildignore=*.o,*.obj,*.bak,*.exe
+set wildignore+=*.o,*.obj,*.bak,*.exe,*.so,*.swp,*.zip,*.so
+set wildignore+=*/tmp/*         " MacOSX/Linux
+set wildignore+=*\\tmp\\*       " Windows
 set linespace=0
 set showcmd
 set nowrap
