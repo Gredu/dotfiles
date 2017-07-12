@@ -211,7 +211,7 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " Open most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 let g:ctrlp_map = ''
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|optimized|compiled|node_modules)$'
 
 "YouCompleteMe
 let g:EclimCompletionMethod = 'omnifunc'
