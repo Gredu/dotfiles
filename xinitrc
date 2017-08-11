@@ -2,7 +2,8 @@
 # set the cursor
 xsetroot -cursor_name left_ptr
 
-# set German keyboard layout
+# set Finnish programming keyboard layout
+# source: https://eagleflow.fi/posts/2015-01-10/keyboard-layout
 setxkbmap -layout fi -variant programmer
 
 # no mouse accelaration
