@@ -225,9 +225,10 @@ filetype *.[1-8] gtbl %c | groff -Tascii -man | less
 fileviewer *.[1-8] gtbl %c | groff -Tascii -man | col -b
 
 " Image
+" Source: https://wiki.archlinux.org/index.php/Vifm#Browse_images_in_current_directory_with_Feh
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in feh}
-        \ feh_browser,
+        \ feh -FZ %d --start-at %d/%c 2>/dev/null,
         \ {View in sxiv}
         \ sxiv,
         \ {View in gpicview}
