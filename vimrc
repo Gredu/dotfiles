@@ -217,10 +217,6 @@ nnoremap <Leader>f :CtrlPMRUFiles<CR>
 let g:ctrlp_map = ''
 let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|optimized|compiled|node_modules)$'
 
-"YouCompleteMe
-let g:EclimCompletionMethod = 'omnifunc'
-let g:ycm_filetype_specific_completion_to_disable = 'mkd'
-
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
 
