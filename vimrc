@@ -36,6 +36,7 @@ Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
+Plug 'zchee/deoplete-go', { 'do': 'make' }
 " Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'shmargum/vim-sass-colors'
 Plug 'cakebaker/scss-syntax.vim'
@@ -236,7 +237,7 @@ let g:indentLine_color_term = 236
 " Use Neomake when writing to a file
 autocmd! BufWritePost,BufEnter * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_go_enabled_makers = ['golint']
+let g:neomake_go_enabled_makers = ['go']
 " let g:neomake_open_list = 2
 
 " let g:neomake_open_list = m
@@ -356,6 +357,17 @@ let g:tern#arguments = ['--persistent']
 " Supertab
 let g:SuperTabClosePreviewOnPopupClose = 1
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
+" Vim-go
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
+
+" turn highlighting on
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
 
 """"""""""
