@@ -237,7 +237,6 @@ let g:indentLine_color_term = 236
 " Use Neomake when writing to a file
 call neomake#configure#automake('w')
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_go_enabled_makers = ['golint']
 let g:neomake_open_list = 2
 
 " let g:neomake_open_list = m
