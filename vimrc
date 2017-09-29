@@ -375,6 +375,7 @@ au Filetype javascript nnoremap <Leader>r :w<CR> :!node %<CR>
 au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
 
 au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
+au Filetype go nnoremap <leader>t :w<CR>:GoTest<CR>
 
 au FileType markdown,mkd,txt,tex set wrap lbr 
 au FileType markdown,mkd,txt,tex nnoremap j gj
