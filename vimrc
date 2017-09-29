@@ -4,6 +4,9 @@
 "
 " setting up for javascript
 " https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
+"
+" setting up for go-lang
+" https://coolaj86.com/articles/getting-started-with-golang-and-vim/
 
 """""""""""
 " Plugins "
