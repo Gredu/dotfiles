@@ -2,11 +2,12 @@
 " Reference "
 """""""""""""
 "
-" setting up for javascript
+" settings for javascript
 " https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
 "
-" setting up for go-lang
+" settings for go
 " https://coolaj86.com/articles/getting-started-with-golang-and-vim/
+" https://github.com/alecthomas/gometalinter
 
 """""""""""
 " Plugins "
