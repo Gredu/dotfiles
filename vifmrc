@@ -104,9 +104,10 @@ set slowfs=curlftpfs
 
 set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
-" Use relative numbers
+" Use relative and absolute numbers
 
 set relativenumber
+set number
 
 " ------------------------------------------------------------------------------
 
