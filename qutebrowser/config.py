@@ -1248,7 +1248,14 @@ c.editor.command = ['nvim', '-f', '{}']
 ## used by prepending the search engine name to the search term, e.g.
 ## `:open google qutebrowser`.
 ## Type: Dict
-# c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}'}
+c.url.searchengines = {
+        'DEFAULT': 'https://www.google.com/search?hl=en&q={}',
+        'yt': 'https://www.youtube.com/results?search_query={}',
+        't': 'https://thehiddenbay.cc/search/{}/0/99/0',
+        'r': 'https://www.rottentomatoes.com/search/?search={}',
+        'git': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
+        'wa': 'https://wiki.archlinux.org/?search={}'
+        }
 
 ## The page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
