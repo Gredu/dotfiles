@@ -709,7 +709,7 @@
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-# c.editor.command = ['gvim', '-f', '{}']
+c.editor.command = ['nvim', '-f', '{}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
