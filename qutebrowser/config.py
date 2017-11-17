@@ -924,7 +924,7 @@ c.editor.command = ['nvim', '-f', '{}']
 ## Enable Opera-like mouse rocker gestures. This disables the context
 ## menu.
 ## Type: Bool
-# c.input.rocker_gestures = False
+c.input.rocker_gestures = True
 
 ## Enable Spatial Navigation. Spatial navigation consists in the ability
 ## to navigate between focusable elements in a Web page, such as
@@ -1196,13 +1196,12 @@ c.tabs.background = True
 ## Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
 ## private mode is enabled.
 ## Type: FormatString
-# c.tabs.title.format = '{index}: {title}'
 c.tabs.title.format = ' {title}'
 
 ## The format to use for the tab title for pinned tabs. The same
 ## placeholders like for `tabs.title.format` are defined.
 ## Type: FormatString
-# c.tabs.title.format_pinned = '{index}'
+c.tabs.title.format_pinned = ''
 
 ## The width of the tab bar if it's vertical, in px or as percentage of
 ## the window.
