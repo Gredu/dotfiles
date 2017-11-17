@@ -1197,6 +1197,7 @@ c.tabs.background = True
 ## private mode is enabled.
 ## Type: FormatString
 # c.tabs.title.format = '{index}: {title}'
+c.tabs.title.format = ' {title}'
 
 ## The format to use for the tab title for pinned tabs. The same
 ## placeholders like for `tabs.title.format` are defined.
