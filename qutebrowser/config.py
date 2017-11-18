@@ -1253,7 +1253,7 @@ c.url.searchengines = {
         'yt': 'https://www.youtube.com/results?search_query={}',
         't': 'https://thehiddenbay.cc/search/{}/0/99/0',
         'r': 'https://www.rottentomatoes.com/search/?search={}',
-        'git': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
+        'github': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
         'wa': 'https://wiki.archlinux.org/?search={}'
         }
 
