@@ -609,7 +609,7 @@
 ##   - true
 ##   - false
 ##   - ask
-c.content.notifications = 'true'
+c.content.notifications = True
 
 ## Enable pdf.js to view PDF files in the browser. Note that the files
 ## can still be downloaded by clicking the download button in the pdf.js
