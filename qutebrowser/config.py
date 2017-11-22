@@ -312,7 +312,7 @@ c.colors.statusbar.url.hover.fg = tomorrow['aqua']
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-c.colors.statusbar.url.success.http.fg = tomorrow['green']
+c.colors.statusbar.url.success.http.fg = tomorrow['red']
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
