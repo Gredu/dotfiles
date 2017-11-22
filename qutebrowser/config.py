@@ -781,7 +781,7 @@ c.editor.command = ['nvim', '-f', '{}']
 
 ## Font used in the tab bar.
 ## Type: QtFont
-# c.fonts.tabs = '8pt monospace'
+c.fonts.tabs = '8pt DejaVu Sans Mono'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
