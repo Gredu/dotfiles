@@ -366,19 +366,19 @@ c.colors.tabs.odd.fg = tomorrow['foreground']
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.bg = tomorrow['green']
+c.colors.tabs.selected.even.bg = tomorrow['comment']
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
-c.colors.tabs.selected.even.fg = tomorrow['selection']
+c.colors.tabs.selected.even.fg = tomorrow['background']
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.bg = tomorrow['green']
+c.colors.tabs.selected.odd.bg = tomorrow['comment']
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
-c.colors.tabs.selected.odd.fg = tomorrow['selection']
+c.colors.tabs.selected.odd.fg = tomorrow['background']
 
 ## Background color for webpages if unset (or empty to use the theme's
 ## color)
