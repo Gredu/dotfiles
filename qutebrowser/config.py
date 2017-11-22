@@ -3,6 +3,21 @@
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
 
+tomorrow = {
+        'background' : "#1d1f21",
+        'current' : "#282a2e",
+        'selection' : "#373b41",
+        'foreground' : "#c5c8c6",
+        'comment' : "#969896",
+        'red' : "#cc6666",
+        'orange' : "#de935f",
+        'yellow' : "#f0c674",
+        'green' : "#b5bd68",
+        'aqua' : "#8abeb7",
+        'blue' : "#81a2be",
+        'purple' : "#b294bb"
+        }
+
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig()
