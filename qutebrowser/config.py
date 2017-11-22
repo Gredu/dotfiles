@@ -271,11 +271,11 @@ c.colors.statusbar.command.private.fg = tomorrow['foreground']
 
 ## Background color of the statusbar in insert mode.
 ## Type: QssColor
-c.colors.statusbar.insert.bg = tomorrow['green']
+c.colors.statusbar.insert.bg = tomorrow['red']
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
-c.colors.statusbar.insert.fg = tomorrow['foreground']
+c.colors.statusbar.insert.fg = tomorrow['background']
 
 ## Background color of the statusbar.
 ## Type: QssColor
