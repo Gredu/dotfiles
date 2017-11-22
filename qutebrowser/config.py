@@ -84,7 +84,7 @@ c.colors.completion.fg = tomorrow['foreground']
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = tomorrow['selection']
+c.colors.completion.item.selected.bg = tomorrow['current']
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
