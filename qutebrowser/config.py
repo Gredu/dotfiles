@@ -60,87 +60,87 @@ tomorrow = {
 
 ## Background color of the completion widget category headers.
 ## Type: QssColor
-# c.colors.completion.category.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #888888, stop:1 #505050)'
+c.colors.completion.category.bg = tomorrow['selection']
 
 ## Bottom border color of the completion widget category headers.
 ## Type: QssColor
-# c.colors.completion.category.border.bottom = 'black'
+c.colors.completion.category.border.bottom = tomorrow['background']
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-# c.colors.completion.category.border.top = 'black'
+c.colors.completion.category.border.top = tomorrow['background']
 
 ## Foreground color of completion widget category headers.
 ## Type: QtColor
-# c.colors.completion.category.fg = 'white'
+c.colors.completion.category.fg = tomorrow['foreground']
 
 ## Background color of the completion widget for even rows.
 ## Type: QssColor
-# c.colors.completion.even.bg = '#333333'
+c.colors.completion.even.bg = tomorrow['background']
 
 ## Text color of the completion widget.
 ## Type: QtColor
-# c.colors.completion.fg = 'white'
+c.colors.completion.fg = tomorrow['foreground']
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-# c.colors.completion.item.selected.bg = '#e8c000'
+c.colors.completion.item.selected.bg = tomorrow['selection']
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-# c.colors.completion.item.selected.border.bottom = '#bbbb00'
+c.colors.completion.item.selected.border.bottom = tomorrow['comment']
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-# c.colors.completion.item.selected.border.top = '#bbbb00'
+c.colors.completion.item.selected.border.top = tomorrow['comment']
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
-# c.colors.completion.item.selected.fg = 'black'
+c.colors.completion.item.selected.fg = tomorrow['orange']
 
 ## Foreground color of the matched text in the completion.
 ## Type: QssColor
-# c.colors.completion.match.fg = '#ff4444'
+c.colors.completion.match.fg = tomorrow['red']
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor
-# c.colors.completion.odd.bg = '#444444'
+c.colors.completion.odd.bg = tomorrow['background']
 
 ## Color of the scrollbar in completion view
 ## Type: QssColor
-# c.colors.completion.scrollbar.bg = '#333333'
+c.colors.completion.scrollbar.bg = tomorrow['background']
 
 ## Color of the scrollbar handle in completion view.
 ## Type: QssColor
-# c.colors.completion.scrollbar.fg = 'white'
+c.colors.completion.scrollbar.fg = tomorrow['foreground']
 
 ## Background color for the download bar.
 ## Type: QssColor
-# c.colors.downloads.bar.bg = 'black'
+c.colors.downloads.bar.bg = tomorrow['background']
 
 ## Background color for downloads with errors.
 ## Type: QtColor
-# c.colors.downloads.error.bg = 'red'
+c.colors.downloads.error.bg = tomorrow['red']
 
 ## Foreground color for downloads with errors.
 ## Type: QtColor
-# c.colors.downloads.error.fg = 'white'
+c.colors.downloads.error.fg = tomorrow['foreground']
 
 ## Color gradient start for download backgrounds.
 ## Type: QtColor
-# c.colors.downloads.start.bg = '#0000aa'
+c.colors.downloads.start.bg = tomorrow['comment']
 
 ## Color gradient start for download text.
 ## Type: QtColor
-# c.colors.downloads.start.fg = 'white'
+c.colors.downloads.start.fg = tomorrow['foreground']
 
 ## Color gradient stop for download backgrounds.
 ## Type: QtColor
-# c.colors.downloads.stop.bg = '#00aa00'
+c.colors.downloads.stop.bg = tomorrow['blue']
 
 ## Color gradient end for download text.
 ## Type: QtColor
-# c.colors.downloads.stop.fg = 'white'
+c.colors.downloads.stop.fg = tomorrow['foreground']
 
 ## Color gradient interpolation system for download backgrounds.
 ## Type: ColorSystem
@@ -163,15 +163,15 @@ tomorrow = {
 ## Background color for hints. Note that you can use a `rgba(...)` value
 ## for transparency.
 ## Type: QssColor
-# c.colors.hints.bg = 'qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(255, 247, 133, 0.8), stop:1 rgba(255, 197, 66, 0.8))'
+c.colors.hints.bg = tomorrow['background']
 
 ## Font color for hints.
 ## Type: QssColor
-# c.colors.hints.fg = 'black'
+c.colors.hints.fg = tomorrow['foreground']
 
 ## Font color for the matched part of hints.
 ## Type: QssColor
-# c.colors.hints.match.fg = 'green'
+c.colors.hints.match.fg = tomorrow['red']
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -179,51 +179,51 @@ tomorrow = {
 
 ## Text color for the keyhint widget.
 ## Type: QssColor
-# c.colors.keyhint.fg = '#FFFFFF'
+c.colors.keyhint.fg = tomorrow['foreground']
 
 ## Highlight color for keys to complete the current keychain.
 ## Type: QssColor
-# c.colors.keyhint.suffix.fg = '#FFFF00'
+c.colors.keyhint.suffix.fg = tomorrow['green']
 
 ## Background color of an error message.
 ## Type: QssColor
-# c.colors.messages.error.bg = 'red'
+c.colors.messages.error.bg = tomorrow['red']
 
 ## Border color of an error message.
 ## Type: QssColor
-# c.colors.messages.error.border = '#bb0000'
+c.colors.messages.error.border = tomorrow['red']
 
 ## Foreground color of an error message.
 ## Type: QssColor
-# c.colors.messages.error.fg = 'white'
+c.colors.messages.error.fg = tomorrow['foreground']
 
 ## Background color of an info message.
 ## Type: QssColor
-# c.colors.messages.info.bg = 'black'
+c.colors.messages.info.bg = tomorrow['background']
 
 ## Border color of an info message.
 ## Type: QssColor
-# c.colors.messages.info.border = '#333333'
+c.colors.messages.info.border = tomorrow['yellow']
 
 ## Foreground color an info message.
 ## Type: QssColor
-# c.colors.messages.info.fg = 'white'
+c.colors.messages.info.fg = tomorrow['foreground']
 
 ## Background color of a warning message.
 ## Type: QssColor
-# c.colors.messages.warning.bg = 'darkorange'
+c.colors.messages.warning.bg = tomorrow['orange']
 
 ## Border color of a warning message.
 ## Type: QssColor
-# c.colors.messages.warning.border = '#d47300'
+c.colors.messages.warning.border = tomorrow['red']
 
 ## Foreground color a warning message.
 ## Type: QssColor
-# c.colors.messages.warning.fg = 'white'
+c.colors.messages.warning.fg = tomorrow['red']
 
 ## Background color for prompts.
 ## Type: QssColor
-# c.colors.prompts.bg = '#444444'
+c.colors.prompts.bg = tomorrow['background']
 
 ## Border used around UI elements in prompts.
 ## Type: String
@@ -231,121 +231,121 @@ tomorrow = {
 
 ## Foreground color for prompts.
 ## Type: QssColor
-# c.colors.prompts.fg = 'white'
+c.colors.prompts.fg = tomorrow['foreground']
 
 ## Background color for the selected item in filename prompts.
 ## Type: QssColor
-# c.colors.prompts.selected.bg = 'grey'
+c.colors.prompts.selected.bg = tomorrow['selection']
 
 ## Background color of the statusbar in caret mode.
 ## Type: QssColor
-# c.colors.statusbar.caret.bg = 'purple'
+c.colors.statusbar.caret.bg = tomorrow['purple']
 
 ## Foreground color of the statusbar in caret mode.
 ## Type: QssColor
-# c.colors.statusbar.caret.fg = 'white'
+c.colors.statusbar.caret.fg = tomorrow['foreground']
 
 ## Background color of the statusbar in caret mode with a selection.
 ## Type: QssColor
-# c.colors.statusbar.caret.selection.bg = '#a12dff'
+c.colors.statusbar.caret.selection.bg = tomorrow['blue']
 
 ## Foreground color of the statusbar in caret mode with a selection.
 ## Type: QssColor
-# c.colors.statusbar.caret.selection.fg = 'white'
+c.colors.statusbar.caret.selection.fg = tomorrow['foreground']
 
 ## Background color of the statusbar in command mode.
 ## Type: QssColor
-# c.colors.statusbar.command.bg = 'black'
+c.colors.statusbar.command.bg = tomorrow['background']
 
 ## Foreground color of the statusbar in command mode.
 ## Type: QssColor
-# c.colors.statusbar.command.fg = 'white'
+c.colors.statusbar.command.fg = tomorrow['foreground']
 
 ## Background color of the statusbar in private browsing + command mode.
 ## Type: QssColor
-# c.colors.statusbar.command.private.bg = 'grey'
+c.colors.statusbar.command.private.bg = tomorrow['selection']
 
 ## Foreground color of the statusbar in private browsing + command mode.
 ## Type: QssColor
-# c.colors.statusbar.command.private.fg = 'white'
+c.colors.statusbar.command.private.fg = tomorrow['foreground']
 
 ## Background color of the statusbar in insert mode.
 ## Type: QssColor
-# c.colors.statusbar.insert.bg = 'darkgreen'
+c.colors.statusbar.insert.bg = tomorrow['green']
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
-# c.colors.statusbar.insert.fg = 'white'
+c.colors.statusbar.insert.fg = tomorrow['foreground']
 
 ## Background color of the statusbar.
 ## Type: QssColor
-# c.colors.statusbar.normal.bg = 'black'
+c.colors.statusbar.normal.bg = tomorrow['background']
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
-# c.colors.statusbar.normal.fg = 'white'
+c.colors.statusbar.normal.fg = tomorrow['foreground']
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor
-# c.colors.statusbar.private.bg = '#666666'
+c.colors.statusbar.private.bg = tomorrow['selection']
 
 ## Foreground color of the statusbar in private browsing mode.
 ## Type: QssColor
-# c.colors.statusbar.private.fg = 'white'
+c.colors.statusbar.private.fg = tomorrow['foreground']
 
 ## Background color of the progress bar.
 ## Type: QssColor
-# c.colors.statusbar.progress.bg = 'white'
+c.colors.statusbar.progress.bg = tomorrow['foreground']
 
 ## Foreground color of the URL in the statusbar on error.
 ## Type: QssColor
-# c.colors.statusbar.url.error.fg = 'orange'
+c.colors.statusbar.url.error.fg = tomorrow['orange']
 
 ## Default foreground color of the URL in the statusbar.
 ## Type: QssColor
-# c.colors.statusbar.url.fg = 'white'
+c.colors.statusbar.url.fg = tomorrow['foreground']
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
-# c.colors.statusbar.url.hover.fg = 'aqua'
+c.colors.statusbar.url.hover.fg = tomorrow['aqua']
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
 ## Type: QssColor
-# c.colors.statusbar.url.success.http.fg = 'white'
+c.colors.statusbar.url.success.http.fg = tomorrow['foreground']
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (https).
 ## Type: QssColor
-# c.colors.statusbar.url.success.https.fg = 'lime'
+c.colors.statusbar.url.success.https.fg = tomorrow['yellow']
 
 ## Foreground color of the URL in the statusbar when there's a warning.
 ## Type: QssColor
-# c.colors.statusbar.url.warn.fg = 'yellow'
+c.colors.statusbar.url.warn.fg = tomorrow['yellow']
 
 ## Background color of the tab bar.
 ## Type: QtColor
-# c.colors.tabs.bar.bg = '#555555'
+c.colors.tabs.bar.bg = tomorrow['background']
 
 ## Background color of unselected even tabs.
 ## Type: QtColor
-# c.colors.tabs.even.bg = 'darkgrey'
+c.colors.tabs.even.bg = tomorrow['background']
 
 ## Foreground color of unselected even tabs.
 ## Type: QtColor
-# c.colors.tabs.even.fg = 'white'
+c.colors.tabs.even.fg = tomorrow['foreground']
 
 ## Color for the tab indicator on errors.
 ## Type: QtColor
-# c.colors.tabs.indicator.error = '#ff0000'
+c.colors.tabs.indicator.error = tomorrow['red']
 
 ## Color gradient start for the tab indicator.
 ## Type: QtColor
-# c.colors.tabs.indicator.start = '#0000aa'
+c.colors.tabs.indicator.start = tomorrow['green']
 
 ## Color gradient end for the tab indicator.
 ## Type: QtColor
-# c.colors.tabs.indicator.stop = '#00aa00'
+c.colors.tabs.indicator.stop = tomorrow['green']
 
 ## Color gradient interpolation system for the tab indicator.
 ## Type: ColorSystem
@@ -358,27 +358,27 @@ tomorrow = {
 
 ## Background color of unselected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.odd.bg = 'grey'
+c.colors.tabs.odd.bg = tomorrow['background']
 
 ## Foreground color of unselected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.odd.fg = 'white'
+c.colors.tabs.odd.fg = tomorrow['foreground']
 
 ## Background color of selected even tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.even.bg = 'black'
+c.colors.tabs.selected.even.bg = tomorrow['green']
 
 ## Foreground color of selected even tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.even.fg = 'white'
+c.colors.tabs.selected.even.fg = tomorrow['selection']
 
 ## Background color of selected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.odd.bg = 'black'
+c.colors.tabs.selected.odd.bg = tomorrow['green']
 
 ## Foreground color of selected odd tabs.
 ## Type: QtColor
-# c.colors.tabs.selected.odd.fg = 'white'
+c.colors.tabs.selected.odd.fg = tomorrow['selection']
 
 ## Background color for webpages if unset (or empty to use the theme's
 ## color)
