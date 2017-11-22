@@ -341,11 +341,11 @@ c.colors.tabs.indicator.error = tomorrow['red']
 
 ## Color gradient start for the tab indicator.
 ## Type: QtColor
-c.colors.tabs.indicator.start = tomorrow['green']
+c.colors.tabs.indicator.start = tomorrow['background']
 
 ## Color gradient end for the tab indicator.
 ## Type: QtColor
-c.colors.tabs.indicator.stop = tomorrow['green']
+c.colors.tabs.indicator.stop = tomorrow['background']
 
 ## Color gradient interpolation system for the tab indicator.
 ## Type: ColorSystem
