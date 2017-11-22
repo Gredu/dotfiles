@@ -88,11 +88,11 @@ c.colors.completion.item.selected.bg = tomorrow['current']
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.bottom = tomorrow['comment']
+c.colors.completion.item.selected.border.bottom = tomorrow['selection']
 
 ## Top border color of the completion widget category headers.
 ## Type: QssColor
-c.colors.completion.item.selected.border.top = tomorrow['comment']
+c.colors.completion.item.selected.border.top = tomorrow['selection']
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
