@@ -120,27 +120,27 @@ c.colors.downloads.bar.bg = tomorrow['background']
 
 ## Background color for downloads with errors.
 ## Type: QtColor
-c.colors.downloads.error.bg = tomorrow['red']
+c.colors.downloads.error.bg = tomorrow['background']
 
 ## Foreground color for downloads with errors.
 ## Type: QtColor
-c.colors.downloads.error.fg = tomorrow['foreground']
+c.colors.downloads.error.fg = tomorrow['red']
 
 ## Color gradient start for download backgrounds.
 ## Type: QtColor
-c.colors.downloads.start.bg = tomorrow['comment']
+c.colors.downloads.start.bg = tomorrow['background']
 
 ## Color gradient start for download text.
 ## Type: QtColor
-c.colors.downloads.start.fg = tomorrow['foreground']
+c.colors.downloads.start.fg = tomorrow['yellow']
 
 ## Color gradient stop for download backgrounds.
 ## Type: QtColor
-c.colors.downloads.stop.bg = tomorrow['blue']
+c.colors.downloads.stop.bg = tomorrow['background']
 
 ## Color gradient end for download text.
 ## Type: QtColor
-c.colors.downloads.stop.fg = tomorrow['foreground']
+c.colors.downloads.stop.fg = tomorrow['green']
 
 ## Color gradient interpolation system for download backgrounds.
 ## Type: ColorSystem
