@@ -215,7 +215,7 @@ c.colors.messages.warning.bg = tomorrow['background']
 
 ## Border color of a warning message.
 ## Type: QssColor
-c.colors.messages.warning.border = tomorrow['red']
+c.colors.messages.warning.border = tomorrow['background']
 
 ## Foreground color a warning message.
 ## Type: QssColor
