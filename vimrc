@@ -365,6 +365,9 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 
+" Compile less
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
 
 """"""""""
 "Filetype"
