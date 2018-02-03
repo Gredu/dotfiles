@@ -50,7 +50,7 @@ Plug 'shmargum/vim-sass-colors'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
-Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex'] }
+Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex', 'fountain'] }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
@@ -380,6 +380,8 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 "Filetype"
 """"""""""
 
+au BufNewFile,BufRead *.fountain set filetype=fountain
+
 au Filetype javascript nnoremap <Leader>r :w<CR> :!node %<CR>
 
 au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
@@ -387,6 +389,6 @@ au Filetype scala nnoremap <Leader>r :w<CR> :!scala %:p<CR>
 au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
 au Filetype go nnoremap <leader>t :w<CR>:GoTest<CR>
 
-au FileType markdown,mkd,txt,tex set wrap lbr 
-au FileType markdown,mkd,txt,tex nnoremap j gj
-au FileType markdown,mkd,txt,tex nnoremap k gk
+au FileType markdown,mkd,txt,tex,fountain set wrap lbr 
+au FileType markdown,mkd,txt,tex,fountain nnoremap j gj
+au FileType markdown,mkd,txt,tex,fountain nnoremap k gk
