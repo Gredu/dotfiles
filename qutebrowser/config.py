@@ -1271,7 +1271,8 @@ c.url.searchengines = {
         'github': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
         'wa': 'https://wiki.archlinux.org/?search={}',
         'fi': 'https://fi.wikipedia.org/wiki/{}',
-        'en': 'https://en.wikipedia.org/wiki/{}'
+        'en': 'https://en.wikipedia.org/wiki/{}',
+        'a': 'https://www.aliexpress.com/wholesale?SearchText={}'
         }
 
 ## The page(s) to open at the start.
