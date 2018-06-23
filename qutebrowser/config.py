@@ -724,7 +724,7 @@ c.colors.tabs.selected.odd.fg = tomorrow['background']
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-c.editor.command = ['nvim', '-f', '{}']
+c.editor.command = ['urxvt', '-e', 'nvim', '{}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
