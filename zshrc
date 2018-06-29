@@ -56,8 +56,10 @@ alias suben='subliminal download -s -l en '
 alias subfi='subliminal download -s -l fi '
 
 # Programming keyboard
-# Sometimes reset to default?
 alias setkb='setxkbmap -layout fi -variant programmer'
+
+# Torrent
+alias stig='transmission-daemon; stig'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
