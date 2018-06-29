@@ -16,7 +16,7 @@ if ! zgen saved; then
   zgen load zsh-users/zsh-syntax-highlighting
 
   # completions
-  # zgen load zsh-users/zsh-completions src
+  zgen load zsh-users/zsh-completions src
 
   # theme
   # Order matters
