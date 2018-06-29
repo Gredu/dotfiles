@@ -117,7 +117,7 @@ mark b ~/bin/
 mark h ~/
 mark d ~/Downloads
 mark s ~/Dropbox/School
-mark t ~/Downloads/rtorrent/downloads
+mark t ~/Downloads/transmission/downloads
 mark v /Volumes
 
 " ------------------------------------------------------------------------------
