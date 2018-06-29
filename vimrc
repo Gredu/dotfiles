@@ -237,6 +237,7 @@ let g:user_emmet_leader_key='<C-e>'
 
 " IndentLine
 let g:indentLine_color_term = 236
+let g:indentLine_concealcursor=""
 
 " Neomake
 " Use Neomake when writing to a file
