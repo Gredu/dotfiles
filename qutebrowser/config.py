@@ -1266,7 +1266,7 @@ c.tabs.title.format_pinned = ''
 c.url.searchengines = {
         'DEFAULT': 'https://www.google.com/search?hl=en&q={}',
         'yt': 'https://www.youtube.com/results?search_query={}',
-        't': 'https://thehiddenbay.cc/search/{}/0/99/0',
+        't': 'https://baypirateproxy.org/s/?q={}&page=0&orderby=99',
         'r': 'https://www.rottentomatoes.com/search/?search={}',
         'github': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
         'wa': 'https://wiki.archlinux.org/?search={}',
