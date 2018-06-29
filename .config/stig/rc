@@ -1,1 +1,3 @@
 bind , tui show cli
+bind ctrl-d <pgdn>
+bind ctrl-u <pgup>
