@@ -45,7 +45,6 @@ Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'zchee/deoplete-go', { 'do': 'make' }
-" Plug 'ap/vim-css-color', { 'for': ['css', 'sass'] }
 Plug 'shmargum/vim-sass-colors'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
