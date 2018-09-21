@@ -10,7 +10,7 @@ setxkbmap -layout fi -variant programmer
 xset m 0 0
 
 # start dropbox
-dropbox start
+dropbox start &
 
 # setting dual screens
 # xrandr --auto --output DVI-1 --mode 1680x1050 --left-of DVI-0 --output DVI-0 --primary
