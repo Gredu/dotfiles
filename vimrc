@@ -75,6 +75,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
+Plug 'rhysd/vim-grammarous'
 call plug#end()
 
 " Looks out the type of the file, and sets correct indenting
