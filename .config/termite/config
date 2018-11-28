@@ -1,5 +1,6 @@
 [options]
 allow_bold = true
+allow_italic = true
 #audible_bell = false
 clickable_url = true
 dynamic_title = true
