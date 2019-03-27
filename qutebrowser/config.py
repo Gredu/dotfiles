@@ -527,7 +527,7 @@ c.colors.tabs.selected.odd.fg = tomorrow['background']
 
 ## User agent to send. Unset to send the default.
 ## Type: String
-# c.content.headers.user_agent = None
+c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.128 Safari/537.36'
 
 ## Whether host blocking is enabled.
 ## Type: Bool
