@@ -724,7 +724,7 @@ c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-c.editor.command = ['urxvt', '-e', 'nvim', '{}']
+c.editor.command = ['termite', '-e', 'nvim {}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
