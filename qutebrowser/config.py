@@ -500,7 +500,7 @@ c.colors.tabs.selected.odd.fg = tomorrow['background']
 ##   - true
 ##   - false
 ##   - ask
-# c.content.geolocation = 'ask'
+c.content.geolocation = 'false'
 
 ## Value to send in the `Accept-Language` header.
 ## Type: String
