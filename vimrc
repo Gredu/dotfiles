@@ -129,7 +129,7 @@ set rnu                         " Use relative numbers
 set shell=/bin/zsh
 set splitbelow                  " Use more natural splitting
 set splitright
-set wildmode=full
+set wildmode=longest,list,full
 set conceallevel=0
 
 " OS spesific settings
