@@ -147,6 +147,9 @@ if has("unix")
   endif
 endif
 
+" Disable auto commenting
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 """"""""""
 "Mappings"
