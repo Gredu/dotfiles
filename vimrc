@@ -24,11 +24,6 @@ call plug#begin('~/.vim/plugged')
 
 " Javascript {{{
 
-" Better indentation
-" Plug 'gavocanov/vim-js-indent', {
-" \   'for': ['javascript']
-" \ }
-
 " JS syntax, supports ES6
 Plug 'othree/yajs.vim', { 'for': ['javascript'] }
 
@@ -37,19 +32,27 @@ Plug 'othree/javascript-libraries-syntax.vim', {'for': ['javascript'] }
 
 " Makes gf work on node require statements
 Plug 'moll/vim-node', { 'for': ['javascript'] }
-" }}}
 
-
+" Javascript compilation
 Plug 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+
+" }}}
+
+" Writing {{{
+
+Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex', 'fountain'] }
+Plug 'vim-scripts/fountain.vim'
+
+" }}}
+
 Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'zchee/deoplete-go', { 'do': 'make' }
 " Plug 'shmargum/vim-sass-colors'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
-Plug 'junegunn/goyo.vim', { 'for': ['markdown', 'text', 'tex', 'fountain'] }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
@@ -65,7 +68,6 @@ Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/Vimchant'
-Plug 'vim-scripts/fountain.vim'
 Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'w0ng/vim-hybrid'
