@@ -30,6 +30,14 @@ if ! zgen saved; then
   zgen save
 fi
 
+# Colors for man pages
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -139,12 +147,6 @@ SAVEHIST=1000
 
 # export TERM='tmux-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Ruby on Rails course
-# eval "$(rbenv init -)"
-# export APIKEY="7a700ad0762213f3a25a67de7a5de226"
-# export GITHUB_KEY="2941e20cafd98da9daab"
-# export GITHUB_SECRET="3469e6d6fcbe873e7b1921d19a9bf5287735ad4d"
 
 # Ruby on Rail project for Kisällioppiminen
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
