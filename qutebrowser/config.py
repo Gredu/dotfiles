@@ -1211,7 +1211,7 @@ c.tabs.background = True
 ## Either ''webkit'' or ''webengine'' * `{private}` : Indicates when
 ## private mode is enabled.
 ## Type: FormatString
-c.tabs.title.format = ' {title}'
+c.tabs.title.format = '{audio}: {current_title}'
 
 ## The format to use for the tab title for pinned tabs. The same
 ## placeholders like for `tabs.title.format` are defined.
