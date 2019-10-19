@@ -528,7 +528,8 @@ c.content.geolocation = False
 ## User agent to send. Unset to send the default.
 ## Type: String
 # c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.128 Safari/537.36'
-c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'
+# c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36'
+# c.content.headers.user_agent = 'Chrome/77.0.3865.75'
 
 ## Whether host blocking is enabled.
 ## Type: Bool
@@ -625,7 +626,7 @@ c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.
 ##   - true
 ##   - false
 ##   - ask
-# c.content.notifications = False
+c.content.notifications = False
 
 ## Enable pdf.js to view PDF files in the browser. Note that the files
 ## can still be downloaded by clicking the download button in the pdf.js
@@ -1085,7 +1086,7 @@ c.input.rocker_gestures = True
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-# c.statusbar.hide = False
+c.statusbar.hide = False
 
 ## Padding for the statusbar.
 ## Type: Padding
@@ -1096,7 +1097,7 @@ c.input.rocker_gestures = True
 ## Valid values:
 ##   - top
 ##   - bottom
-# c.statusbar.position = 'bottom'
+c.statusbar.position = 'bottom'
 
 ## Open new tabs (middleclick/ctrl+click) in the background.
 ## Type: Bool
