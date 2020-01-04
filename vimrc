@@ -68,7 +68,6 @@ Plug 'honza/vim-snippets'
 Plug 'tomtom/tcomment_vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/Vimchant'
-Plug 'neomake/neomake'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'w0ng/vim-hybrid'
 Plug 'Yggdroot/indentLine'
@@ -78,6 +77,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/vim-grammarous'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " Looks out the type of the file, and sets correct indenting
@@ -244,26 +244,6 @@ let g:user_emmet_leader_key='<C-e>'
 let g:indentLine_color_term = 236
 let g:indentLine_concealcursor=""
 
-" Neomake
-" Use Neomake when writing to a file
-call neomake#configure#automake('w')
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_open_list = 2
-
-" let g:neomake_open_list = m
-" let g:neomake_list_height = 4
-" let g:neomake_javascript_jshint_maker = {
-    " \ 'args': ['--verbose'],
-    " \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    " \ }
-" let g:neomake_javascript_flow_maker = {
-    " \ 'args': ['check', '--all'],
-    " \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    " \ }
-" let g:neomake_javascript_enabled_makers = ['jshint']
-" let g:neomake_javascript_enabled_makers = ['jslint']
-" let g:neomake_javascript_enabled_makers = ['flow']
-
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
@@ -380,6 +360,9 @@ let g:go_highlight_build_constraints = 1
 
 " Compile less
 nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+"ALE
+
 
 
 """"""""""
