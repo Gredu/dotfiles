@@ -69,6 +69,9 @@ alias setkb='setxkbmap -layout fi -variant programmer'
 # Torrent
 alias stig='transmission-daemon; stig'
 
+# Directory
+alias cdw='cd ~/Documents/work/'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
