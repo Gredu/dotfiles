@@ -219,7 +219,7 @@ let g:airline_theme= 'hybrid'
 let g:airline#extensions#tabline#enabled = 2
 let g:airline#extensions#tabline#fnamemod = ':t'
 " let g:airline_left_sep='\e0cd'
-let g:airline_right_sep=''
+" let g:airline_right_sep=''
 
 " Ctrlp
 " Open file menu
