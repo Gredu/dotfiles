@@ -34,3 +34,8 @@ include /usr/share/doc/task/rc/dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
+taskd.server=freecinc.com:53589
+taskd.key=\/home\/greatman\/.task\/freecinc_32a292ae.key.pem
+taskd.certificate=\/home\/greatman\/.task\/freecinc_32a292ae.cert.pem
+taskd.ca=\/home\/greatman\/.task\/freecinc_32a292ae.ca.pem
+taskd.credentials=FreeCinc\/freecinc_32a292ae\/d7bf021f-6894-4710-8cd2-6a2df44363ed
