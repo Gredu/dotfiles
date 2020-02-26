@@ -189,7 +189,7 @@ nnoremap <Leader>t :Tagbar<CR>
 """""""
 
 " let g:hybrid_custom_term_colors = 1
-colorscheme base16-default-dark
+colorscheme hybrid
 set background=dark
 
 
