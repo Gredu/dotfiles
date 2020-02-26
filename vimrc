@@ -373,7 +373,7 @@ nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 " COC
 " Install extensions
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
-let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-css']
+let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-css', 'coc-json', 'coc-html', 'coc-yaml', 'coc-highlight', 'coc-markdownlint']
 
 " Navigate through autocomplete suggestions and add them
 " https://github.com/Shougo/deoplete.nvim/issues/246#issuecomment-344463696
