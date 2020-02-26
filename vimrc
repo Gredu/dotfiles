@@ -60,6 +60,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/Vimchant'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'micke/vim-hybrid'
+Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -187,8 +188,8 @@ nnoremap <Leader>t :Tagbar<CR>
 "Looks"
 """""""
 
-let g:hybrid_custom_term_colors = 1
-colors hybrid
+" let g:hybrid_custom_term_colors = 1
+colorscheme base16-default-dark
 set background=dark
 
 
