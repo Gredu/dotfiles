@@ -63,6 +63,7 @@ Plug 'micke/vim-hybrid'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'plasticboy/vim-markdown'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
@@ -190,9 +191,10 @@ nnoremap <Leader>t :Tagbar<CR>
 colorscheme hybrid
 set background=dark
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ }
+let g:lightline                  = {'colorscheme': 'wombat'}
+let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type   = {'buffers': 'tabsel'}
 
 
 """""""""""
@@ -230,12 +232,10 @@ let g:airline#extensions#coc#enabled = 1
 
 " FZF
 nnoremap <Leader>o :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " Vimchant
 let g:vimchant_spellcheck_lang = 'fi'
-
-" Bufferline
-" let g:bufferline_echo = 0
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
