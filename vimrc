@@ -228,17 +228,6 @@ let g:airline#extensions#branch#enabled = 1
 " Enable coc integration
 let g:airline#extensions#coc#enabled = 1
 
-
-" Ctrlp
-" Open file menu
-nnoremap <Leader>o :CtrlP<CR>
-" Open buffer menu
-nnoremap <Leader>b :CtrlPBuffer<CR>
-" Open most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
-let g:ctrlp_map = ''
-let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Store|git|hg|svn|optimized|compiled|node_modules)$'
-
 " FZF
 nnoremap <Leader>o :Files<CR>
 
