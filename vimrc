@@ -62,8 +62,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'micke/vim-hybrid'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
@@ -188,9 +187,12 @@ nnoremap <Leader>t :Tagbar<CR>
 "Looks"
 """""""
 
-" let g:hybrid_custom_term_colors = 1
 colorscheme hybrid
 set background=dark
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
 
 
 """""""""""
