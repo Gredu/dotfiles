@@ -192,10 +192,12 @@ nnoremap <Leader>t :Tagbar<CR>
 colorscheme hybrid
 set background=dark
 
-let g:lightline                  = {'colorscheme': 'wombat'}
-let g:lightline.tabline          = {'left': [['buffers']], 'right': [['close']]}
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type   = {'buffers': 'tabsel'}
+let g:lightline                    = {'colorscheme': 'wombat'}
+let g:lightline.tabline            = {'left': [['buffers']], 'right': [['close']]}
+let g:lightline.component_expand   = {'buffers': 'lightline#bufferline#buffers'}
+let g:lightline.component_type     = {'buffers': 'tabsel'}
+let g:lightline.active             = {'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']]}
+let g:lightline.component_function = {'gitbranch': 'FugitiveHead'}
 
 
 """""""""""
