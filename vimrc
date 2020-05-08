@@ -128,6 +128,7 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 set termguicolors
+set showtabline=2
 
 " OS spesific settings
 if has("unix")
