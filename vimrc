@@ -65,7 +65,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'plasticboy/vim-markdown'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/vim-grammarous'
@@ -198,6 +197,7 @@ let g:lightline.component_expand   = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type     = {'buffers': 'tabsel'}
 let g:lightline.active             = {'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']]}
 let g:lightline.component_function = {'gitbranch': 'FugitiveHead'}
+let g:lightline.mode_map           = {'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'VL', "\<C-v>": 'VB', 'c': 'C', 's': 'S', 'S': 'SL', "\<C-s>": 'SB', 't': 'T'}
 
 
 """""""""""
