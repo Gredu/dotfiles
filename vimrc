@@ -128,8 +128,10 @@ set shortmess+=c
 set signcolumn=yes
 set termguicolors
 set showtabline=2
+set noshowmode                  " Lightline plugin shows the mode
 
-" OS spesific settings
+
+"OS spesific settings
 if has("unix")
   let s:uname = system("uname")
   if s:uname == "Darwin\n"
