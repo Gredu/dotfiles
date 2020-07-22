@@ -781,7 +781,9 @@ c.editor.command = ['termite', '-e', 'nvim {}']
 
 ## Font used in the tab bar.
 ## Type: QtFont
-c.fonts.tabs = '8pt DejaVu Sans Mono'
+# c.fonts.tabs = '8pt DejaVu Sans Mono'
+c.fonts.tabs.selected = '8pt DejaVu Sans Mono'
+c.fonts.tabs.unselected = '8pt DejaVu Sans Mono'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -939,7 +941,7 @@ c.fonts.tabs = '8pt DejaVu Sans Mono'
 ## Enable Opera-like mouse rocker gestures. This disables the context
 ## menu.
 ## Type: Bool
-c.input.rocker_gestures = True
+c.input.mouse.rocker_gestures = True
 
 ## Enable Spatial Navigation. Spatial navigation consists in the ability
 ## to navigate between focusable elements in a Web page, such as
@@ -1084,7 +1086,7 @@ c.input.rocker_gestures = True
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-c.statusbar.hide = False
+c.statusbar.show = 'in-mode'
 
 ## Padding for the statusbar.
 ## Type: Padding
