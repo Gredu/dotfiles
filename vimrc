@@ -497,6 +497,9 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 
+" tex flavor
+let g:tex_flavor = 'latex'
+
 """"""""""
 "Filetype"
 """"""""""
