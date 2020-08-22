@@ -1086,7 +1086,7 @@ c.input.mouse.rocker_gestures = True
 
 ## Hide the statusbar unless a message is shown.
 ## Type: Bool
-c.statusbar.show = 'in-mode'
+c.statusbar.show = 'always'
 
 ## Padding for the statusbar.
 ## Type: Padding
