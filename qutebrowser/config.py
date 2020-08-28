@@ -1267,14 +1267,15 @@ c.tabs.title.format_pinned = ''
 ## Type: Dict
 c.url.searchengines = {
         'DEFAULT': 'https://www.google.com/search?hl=en&q={}',
-        'yt': 'https://www.youtube.com/results?search_query={}',
-        't': 'https://bea247.in/s/?q={}&page=0&orderby=99',
-        'r': 'https://www.rottentomatoes.com/search/?search={}',
-        'github': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
-        'wa': 'https://wiki.archlinux.org/?search={}',
-        'fi': 'https://fi.wikipedia.org/wiki/{}',
+        'a': 'https://www.aliexpress.com/wholesale?SearchText={}',
         'en': 'https://en.wikipedia.org/wiki/{}',
-        'a': 'https://www.aliexpress.com/wholesale?SearchText={}'
+        'fi': 'https://fi.wikipedia.org/wiki/{}',
+        'github': 'https://github.com/search?utf8=%E2%9C%93&q={}&type=',
+        'r': 'https://www.rottentomatoes.com/search/?search={}',
+        't': 'https://www.pirate-bay.net/search?q={}',
+        'tori': 'https://www.tori.fi/uusimaa?q={}',
+        'wa': 'https://wiki.archlinux.org/?search={}',
+        'yt': 'https://www.youtube.com/results?search_query={}'
         }
 
 ## The page(s) to open at the start.
