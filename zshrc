@@ -71,6 +71,7 @@ alias stig='transmission-daemon; stig'
 
 # Directory
 alias cdw='cd ~/Documents/work/'
+alias cdd='cd ~/Downloads/'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
