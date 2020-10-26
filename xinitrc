@@ -13,9 +13,8 @@ xset m 0 0
 dropbox start &
 
 # setting dual screens
-# xrandr --auto --output DVI-1 --mode 1680x1050 --left-of DVI-0 --output DVI-0 --primary
-# xrandr --auto --output DVI-I-3 --mode 1680x1050 --left-of DVI-I-2 --output DVI-I-2 --primary
-xrandr --output HDMI-1 --off
+# xrandr --output HDMI-1 --off
+xrandr --output DVI-D-1 --left-of DVI-I-1 --output DVI-I-1 --primary --output HDMI-1 --same-as DVI-I-1 --set underscan on --set "underscan vborder" 34 --set "underscan hborder" 52
 
 # start xmonad
 exec xmonad
