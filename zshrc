@@ -77,7 +77,7 @@ alias cdd='cd ~/Downloads/'
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
