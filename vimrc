@@ -45,7 +45,8 @@ Plug 'vim-scripts/fountain.vim'
 Plug 'fatih/vim-go', { 'for': ['go'] }
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'derekwyatt/vim-scala', { 'for': ['scala'] }
-Plug 'mattn/emmet-vim', { 'for': ['html'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'vue'] }
+Plug 'leafOfTree/vim-vue-plugin'
 Plug 'Shougo/unite.vim'
 Plug 'shougo/vimfiler.vim'
 Plug 'majutsushi/tagbar'
