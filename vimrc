@@ -367,6 +367,9 @@ let g:go_highlight_build_constraints = 1
 " Compile less
 nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
+" Use highlight scss syntax in
+let g:vim_vue_plugin_use_scss = 1
+
 " COC
 " Install extensions
 " https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#install-extensions
