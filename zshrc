@@ -114,10 +114,7 @@ DISABLE_AUTO_UPDATE="true"
 
 export GOPATH="${HOME}/Code/go"
 export RUBYPATH="${HOME}/.gem/ruby/2.4.0"
-export PATH="${RUBYPATH}/bin:${GOPATH}/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
-# export PATH="$HOME/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.cabal/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
-# export PATH="$HOME/heroku-client/bin:$HOME/bin:$HOME/.rbenv/bin:/Users/gredu/Applications/homebrew/bin:~/.xmonad/bin:/usr/local/heroku/bin:/home/greatman/.rbenv/shims:/home/greatman/.cabal/bin:/home/greatman/.rbenv/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/bin:/usr/local/bin:/usr/sbin:/sbin:/bin:/usr/games:/usr/local/games"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="${HOME}/.npm-global/bin:${RUBYPATH}/bin:${GOPATH}/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
