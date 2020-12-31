@@ -24,12 +24,6 @@ call plug#begin('~/.vim/plugged')
 
 " Javascript {{{
 
-" JS syntax, supports ES6
-Plug 'othree/yajs.vim', { 'for': ['javascript'] }
-
-" JS syntax for common libraries
-Plug 'pangloss/vim-javascript'
-
 " Makes gf work on node require statements
 Plug 'moll/vim-node', { 'for': ['javascript'] }
 
@@ -211,6 +205,9 @@ let g:lightline.mode_map           = {'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V
 """""""""""""""""
 "Plugin settings"
 """""""""""""""""
+
+" Vim Vue
+let g:vim_vue_plugin_load_full_syntax = 1
 
 " YCM
 let g:UltiSnipsExpandTrigger = '<C-Space>'
