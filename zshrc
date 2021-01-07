@@ -1,3 +1,7 @@
+# Disable auto update
+# https://stackoverflow.com/questions/11378607/oh-my-zsh-disable-would-you-like-to-check-for-updates-prompt
+DISABLE_AUTO_UPDATE="true"
+
 # Use zgen to handle all plugins
 source "${HOME}/.zgen/zgen.zsh"
 
