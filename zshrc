@@ -71,7 +71,7 @@ alias subfi='subliminal download -s -l fi '
 alias setkb='setxkbmap -layout fi -variant programmer'
 
 # Torrent
-alias stig='transmission-daemon; stig'
+alias torrent='transmission-daemon; stig'
 
 # Directory
 alias cdw='cd ~/Documents/work/'
