@@ -22,6 +22,9 @@ tomorrow = {
 ## Remove it to not load settings done via the GUI.
 config.load_autoconfig(False)
 
+## Lazy load tabs
+c.session.lazy_restore = True
+
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
 ## Type: Dict
