@@ -234,7 +234,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 
 " FZF
-nnoremap <Leader>o :Files<CR>
+nnoremap <Leader>o :GFiles<CR>
 nnoremap <Leader>b :Buffers<CR>
 
 " Vimchant
