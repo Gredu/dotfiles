@@ -1,37 +1,31 @@
-# Disable auto update
-# https://stackoverflow.com/questions/11378607/oh-my-zsh-disable-would-you-like-to-check-for-updates-prompt
-DISABLE_AUTO_UPDATE="true"
+# Use zplug to handle all plugins
+source "${HOME}/.zplug/init.zsh"
 
-# Use zgen to handle all plugins
-source "${HOME}/.zgen/zgen.zsh"
+# Async for zsh, used by pure
+zplug "mafredri/zsh-async", from:github, defer:0
+zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
 
-# check if there's no init script
-if ! zgen saved; then
-  echo "Creating a zgen save"
+# oh-my-zsh
+zplug 'plugins/git', from:oh-my-zsh
+zplug 'plugins/github', from:oh-my-zsh
+zplug 'plugins/extract', from:oh-my-zsh
+zplug 'plugins/vi-mode', from:oh-my-zsh
+zplug "lib/completion", from:oh-my-zsh
+zplug "lib/theme-and-appearance", from:oh-my-zsh
 
-  zgen oh-my-zsh
+# zsh-users
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search", defer:3
 
-  # plugins
-  zgen oh-my-zsh plugins/git
-  zgen oh-my-zsh plugins/github
-  zgen oh-my-zsh plugins/extract
-  zgen oh-my-zsh plugins/vi-mode
+zplug load
 
-  zgen load zsh-users/zsh-syntax-highlighting
-
-  # completions
-  zgen load zsh-users/zsh-completions src
-
-  # theme
-  # Order matters
-  zgen load mafredri/zsh-async
-  zgen load sindresorhus/pure
-
-  # autosuggestions should be loaded last
-  # zgen load tarruda/zsh-autosuggestions
-
-  # save all to init script
-  zgen save
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install zplug plugins? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
 fi
 
 # Colors for man pages
