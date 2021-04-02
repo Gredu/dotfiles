@@ -22,6 +22,10 @@ tomorrow = {
 ## Remove it to not load settings done via the GUI.
 # config.load_autoconfig(False)
 
+## Newer qutebrowser require this config to be set
+if hasattr(config, 'load_autoconfig'):
+    config.load_autoconfig(False)
+
 ## Lazy load tabs
 c.session.lazy_restore = True
 
