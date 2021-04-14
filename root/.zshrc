@@ -71,6 +71,12 @@ alias torrent='transmission-daemon; stig'
 alias cdw='cd ~/Documents/work/'
 alias cdd='cd ~/Downloads/'
 
+# Single monitor
+alias singlemonitor='xrandr --output DVI-D-1 --off'
+
+# Multimonitor
+alias dualmonitor='xrandr --output DVI-D-1 --left-of DVI-I-1 --auto --output DVI-I-1 --primary --output HDMI-1 --same-as DVI-I-1'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
