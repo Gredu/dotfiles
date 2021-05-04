@@ -124,6 +124,7 @@ set signcolumn=yes
 set termguicolors
 set showtabline=2
 set noshowmode                  " Lightline plugin shows the mode
+set nofixendofline
 
 
 "OS spesific settings
