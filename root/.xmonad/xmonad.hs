@@ -223,7 +223,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      
   -- Suspend system
   , ((modMask, xK_End),
-     spawn "sudo systemctl suspend")
+     spawn "systemctl suspend")
 
   -- Start dmenu for passwords
   , ((modMask, xK_s),
