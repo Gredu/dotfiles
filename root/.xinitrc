@@ -9,6 +9,9 @@ setxkbmap -layout fi -variant programmer
 # no mouse accelaration
 xset m 0 0
 
+# do not turn off monitors
+xset s off -dpms
+
 # start dropbox
 dropbox start &
 
