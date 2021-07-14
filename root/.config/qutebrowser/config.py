@@ -2,7 +2,6 @@
 ## Documentation:
 ##   qute://help/configuring.html
 ##   qute://help/settings.html
-
 tomorrow = {
         'background' : "#1d1f21",
         'current' : "#282a2e",
@@ -631,7 +630,7 @@ c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.
 ##   - true
 ##   - false
 ##   - ask
-c.content.notifications = False
+c.content.notifications.enabled = False
 
 ## Enable pdf.js to view PDF files in the browser. Note that the files
 ## can still be downloaded by clicking the download button in the pdf.js
