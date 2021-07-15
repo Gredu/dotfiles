@@ -117,8 +117,7 @@ DISABLE_AUTO_UPDATE="true"
 # User configuration
 
 export GOPATH="${HOME}/Code/go"
-export RUBYPATH="${HOME}/.gem/ruby/2.4.0"
-export PATH="${HOME}/.npm-global/bin:${RUBYPATH}/bin:${GOPATH}/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
+export PATH="${HOME}/.npm-global/bin:${GOPATH}/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -152,6 +151,3 @@ SAVEHIST=1000
 
 # export TERM='tmux-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
-
-# Ruby on Rail project for Kisällioppiminen
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
