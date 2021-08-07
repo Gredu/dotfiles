@@ -533,7 +533,7 @@ c.content.geolocation = False
 
 ## User agent to send. Unset to send the default.
 ## Type: String
-c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.128 Safari/537.36'
+# c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.128 Safari/537.36'
 
 ## Whether host blocking is enabled.
 ## Type: Bool
@@ -736,6 +736,9 @@ c.editor.command = ['termite', '-e', 'nvim {}']
 ## Type: Encoding
 # c.editor.encoding = 'utf-8'
 
+c.fonts.default_family = 'MonoLisa'
+c.fonts.default_size = '8pt'
+
 ## Font used in the completion categories.
 ## Type: Font
 # c.fonts.completion.category = 'bold 8pt monospace'
@@ -788,8 +791,10 @@ c.editor.command = ['termite', '-e', 'nvim {}']
 ## Font used in the tab bar.
 ## Type: QtFont
 # c.fonts.tabs = '8pt DejaVu Sans Mono'
-c.fonts.tabs.selected = '8pt DejaVu Sans Mono'
-c.fonts.tabs.unselected = '8pt DejaVu Sans Mono'
+# c.fonts.tabs.selected = '8pt MonoLisa'
+# c.fonts.tabs.selected = '8pt DejaVu Sans Mono'
+# c.fonts.tabs.unselected = '8pt MonoLisa'
+# c.fonts.tabs.unselected = '8pt DejaVu Sans Mono'
 
 ## Font family for cursive fonts.
 ## Type: FontFamily
@@ -848,7 +853,7 @@ c.fonts.tabs.unselected = '8pt DejaVu Sans Mono'
 
 ## CSS border value for hints.
 ## Type: String
-# c.hints.border = '1px solid #E3BE23'
+c.hints.border = '1px solid #DE935F'
 
 ## Chars used for hint strings.
 ## Type: UniqueCharString
