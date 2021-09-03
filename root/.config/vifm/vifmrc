@@ -210,7 +210,7 @@ filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mo
         \ {View using Dragon}
         \ dragon %f,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
-         \ ffprobe -pretty %c 2>&1
+         \ ffprobe -hide_banner -pretty %c 2>&1
 
 " Web
 filextype *.html,*.htm
