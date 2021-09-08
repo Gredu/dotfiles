@@ -23,6 +23,7 @@ map('n', '<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
 map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
 map('n', '<leader>fh', ':Telescope help_tags<CR>', {noremap = true})
 map('n', '<leader>fr', ':Telescope registers<CR>', {noremap = true})
+map('n', '<leader>fs', ':Telescope git_status<CR>', {noremap = true})
 
 -- Gitsigns
 map('n', '<leader>gv', ':Gitsigns preview_hunk<CR>', {noremap = true})
@@ -31,6 +32,7 @@ map('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', {noremap = true})
 map('n', '<leader>ga', ':Gitsigns stage_hunk<CR>', {noremap = true})
 map('n', '<leader>gr', ':Gitsigns reset_hunk<CR>', {noremap = true})
 map('n', '<leader>gw', ':Gitsigns stage_buffer<CR>', {noremap = true})
+map('n', '<leader>gb', ':Gitsigns blame_line<CR>', {noremap = true})
 
 -- Barbar
 -- map('n', 'J', ':BufferNext<CR>', {noremap = true})
