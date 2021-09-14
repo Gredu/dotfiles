@@ -75,6 +75,14 @@ require('lspconfig').bashls.setup{on_attach=require('completion').on_attach}
 
 -- Prefix with let g:indent_blankline
 
+-- Circles
+require('circles').setup({
+  icons = {
+    empty = '●',
+    filled = '○',
+    lsp_prefix = '✗';
+  }
+})
 
 -- vim-markdown
 g.vim_markdown_folding_disabled = 1

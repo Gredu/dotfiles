@@ -6,7 +6,10 @@ return require('packer').startup(function()
   use { 'arcticicestudio/nord-vim', opt = true }
   use { 'micke/vim-hybrid', opt = true }
   use { 'monsonjeremy/onedark.nvim', opt = true }
-
+  use {
+    "projekt0n/circles.nvim",
+    requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}}
+  }
   use 'cakebaker/scss-syntax.vim'
   use 'christoomey/vim-tmux-navigator'
   use { 'fatih/vim-go', ft = { 'go' }}
