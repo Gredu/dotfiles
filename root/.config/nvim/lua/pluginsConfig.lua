@@ -49,6 +49,9 @@ require('bufferline').setup{
   }
 }
 
+-- Autopairs
+require('nvim-autopairs').setup{}
+
 -- Indent Blanklines
 g.indent_blankline_show_first_indent_level = false
 g.indent_blankline_use_treesitter = true

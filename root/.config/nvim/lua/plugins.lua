@@ -14,7 +14,7 @@ return require('packer').startup(function()
   use 'christoomey/vim-tmux-navigator'
   use { 'fatih/vim-go', ft = { 'go' }}
   use 'itchyny/lightline.vim'
-  use 'jiangmiao/auto-pairs'
+  use 'windwp/nvim-autopairs'
   use 'leafOfTree/vim-vue-plugin'
   use 'lervag/vimtex'
   use { 'lewis6991/gitsigns.nvim', requires= { 'nvim-lua/plenary.nvim' }}
