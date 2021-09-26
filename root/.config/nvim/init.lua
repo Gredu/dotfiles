@@ -19,4 +19,4 @@ require('keymaps')
 require('pluginsConfig')
 
 -- Load old configs
-cmd('source /home/greatmanl/.config/nvim/oldInit.vim')
+cmd('source ' .. vim.loop.os_homedir() .. '/.config/nvim/oldInit.vim')
