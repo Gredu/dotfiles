@@ -77,6 +77,7 @@ require('lspconfig').denols.setup{on_attach=require('completion').on_attach}
 -- require('lspconfig').vuels.setup{on_attach=require('completion').on_attach}
 require('lspconfig').vuels.setup{on_attach=require('completion').on_attach}
 require('lspconfig').bashls.setup{on_attach=require('completion').on_attach}
+require('lspconfig').intelephense.setup{on_attach=require('completion').on_attach}
 
 -- Prefix with let g:indent_blankline
 
