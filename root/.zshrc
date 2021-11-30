@@ -42,8 +42,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="af-magic"
 
-# Aliases
-alias irs='ssh fitzz@vauhtis.thegroup.fi'
+# Misc
 alias o='ls -latr'
 
 # Start Eclim server
