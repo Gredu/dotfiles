@@ -36,6 +36,13 @@ return require('packer').startup(function()
   use 'nvim-lua/completion-nvim'
   use 'neovim/nvim-lspconfig'
   use { 'junegunn/goyo.vim', ft = { 'markdown' }}
+
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+
   -- use { 
   --   'glepnir/galaxyline.nvim',
   --   opt = true,
