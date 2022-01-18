@@ -331,6 +331,10 @@ fileviewer .*/,*/ tree %f
 "
 " fileviewer * pygmentize -O style=monokai -f console256 -g
 
+" Code
+" filextype *.js,*.json,*.html,*.htm,*.php,*.hs,*.scss,*.css
+fileviewer *.[ch],*.[ch]pp,*.[ch]xx,*.js,*php,*.json,*.html,*.html,*.hs,*.scss,*.css bat --theme=Nord --color always --wrap never --pager never %c -p
+
 " Displaying pictures in terminal
 "
 " fileviewer *.jpg,*.png shellpic %c
