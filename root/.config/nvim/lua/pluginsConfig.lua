@@ -71,15 +71,13 @@ require('indent_blankline').setup {
 }
 
 -- LSP
-require('lspconfig').pyright.setup{on_attach=require('completion').on_attach}
--- require('lspconfig').denols.setup{on_attach=require('completion').on_attach}
-require('lspconfig').denols.setup{on_attach=require('completion').on_attach}
--- require('lspconfig').vuels.setup{on_attach=require('completion').on_attach}
-require('lspconfig').vuels.setup{on_attach=require('completion').on_attach}
-require('lspconfig').bashls.setup{on_attach=require('completion').on_attach}
-require('lspconfig').intelephense.setup{on_attach=require('completion').on_attach}
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- Prefix with let g:indent_blankline
+require('lspconfig').pyright.setup{cababilities=cababilities}
+require('lspconfig').denols.setup{cababilities=cababilities}
+require('lspconfig').vuels.setup{cababilities=cababilities}
+require('lspconfig').bashls.setup{cababilities=cababilities}
+require('lspconfig').intelephense.setup{cababilities=cababilities}
 
 -- Circles
 require('circles').setup({
