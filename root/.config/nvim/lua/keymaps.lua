@@ -17,11 +17,11 @@ map('n', '<rigth>', ':vertical resize +11<CR>', {noremap = true})
 
 -- Telescope
 map('n', '<c-n>', ':Telescope buffers<CR>', {noremap = true})
-map('n', '<leader>fn', ':Telescope file_browser<CR>', {noremap = true})
+map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
 map('n', '<leader>ff', ':Telescope find_files<CR>', {noremap = true})
 map('n', '<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
-map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
 map('n', '<leader>fh', ':Telescope help_tags<CR>', {noremap = true})
+map('n', '<leader>fk', ':Telescope keymaps<CR>', {noremap = true})
 map('n', '<leader>fr', ':Telescope registers<CR>', {noremap = true})
 map('n', '<leader>fs', ':Telescope git_status<CR>', {noremap = true})
 
