@@ -20,16 +20,18 @@ o.backup = true                       -- Make backup files
 
 -- general
 o.clipboard = vim.opt.clipboard + 'unnamed'
+o.completeopt = 'menuone,noinsert,noselect'
 o.cursorline = true
+o.fixendofline = false
 o.foldenable = false                  -- auto
-o.foldmethod = 'expr'
 o.foldexpr = 'nvim_treesitter#foldexpr()'
+o.foldmethod = 'expr'
 o.hidden = true                       -- You don't have to save constantly when switching between buffers
 o.ignorecase =  true                  -- You always want this
 o.incsearch = true                    -- Jumps right to the search
+o.laststatus = 3
 o.lazyredraw = true                   -- Don't update display while executing macros
 o.mouse = 'a'                         -- Enable mouse
-o.fixendofline = false
 o.number = true                       -- Show line numbers
 o.rnu = true                          -- Use relative numbers
 o.shortmess = vim.opt.shortmess + 'c'
@@ -43,8 +45,6 @@ o.wildignore = vim.opt.wildignore + '*.o,*.obj,*.bak,*.exe,*.so,*.swp,*.zip,*.so
 o.wildignore = vim.opt.wildignore + '*/tmp/*'         --  MacOSX/Linux
 o.wildignore = vim.opt.wildignore + '*\\tmp\\*'       --  Windows'
 o.wrap = false
-o.fixendofline = false
-o.completeopt = 'menuone,noinsert,noselect'
 
 g.mapleader = ' '
 
