@@ -3,7 +3,6 @@
 local cmd = vim.cmd
 local g = vim.g
 
-
 --  Gitsigns
 require('gitsigns').setup {
   signs = {
@@ -26,8 +25,20 @@ require('telescope').setup {
       horizontal = {
         prompt_position = 'top'
       },
-    }
-  }
+    },
+  },
+  extensions = {
+    file_browser = {
+      theme = 'ivy',
+      layout_strategy = 'horizontal',
+      sorting_strategy = 'ascending',
+      layout_config = {
+        horizontal = {
+          prompt_position = 'top'
+        },
+      },
+    },
+  },
 }
 
 -- Bufferline
