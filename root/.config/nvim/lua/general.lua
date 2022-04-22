@@ -29,7 +29,6 @@ o.foldmethod = 'expr'
 o.hidden = true                       -- You don't have to save constantly when switching between buffers
 o.ignorecase =  true                  -- You always want this
 o.incsearch = true                    -- Jumps right to the search
-o.laststatus = 3
 o.lazyredraw = true                   -- Don't update display while executing macros
 o.mouse = 'a'                         -- Enable mouse
 o.number = true                       -- Show line numbers
