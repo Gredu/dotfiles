@@ -35,6 +35,8 @@ return require('packer').startup(function()
   use 'nvim-lua/completion-nvim'
   use 'neovim/nvim-lspconfig'
   use { 'junegunn/goyo.vim', ft = { 'markdown' }}
+  use 'rafamadriz/friendly-snippets'
+  use 'dhruvasagar/vim-table-mode'
 
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
