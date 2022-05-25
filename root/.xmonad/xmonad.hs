@@ -225,6 +225,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_End),
      spawn "systemctl suspend")
 
+  -- Lock
+  , ((modMask, xK_c),
+     spawn "slock")
+
   -- Start dmenu for passwords
   , ((modMask, xK_s),
       spawn "passmenu -fn 'xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=8' -nb '#1d1f21' -nf '#c5c8c6' -sb '#1d1f21' -sf '#de935f'")
