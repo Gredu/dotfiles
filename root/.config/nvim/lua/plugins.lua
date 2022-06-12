@@ -3,7 +3,6 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Themes
-  use { 'arcticicestudio/nord-vim', opt = true }
   use { 'micke/vim-hybrid', opt = true }
   use {
     "projekt0n/circles.nvim",
