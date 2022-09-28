@@ -1552,7 +1552,7 @@ config.bind('b', 'set-cmd-text -s :buffer')
 # config.bind('<Return>', 'follow-hint', mode='hint')
 
 ## Bindings for insert mode
-# config.bind('<Ctrl-E>', 'open-editor', mode='insert')
+config.bind('<Ctrl-E>', 'edit-text', mode='insert')
 # config.bind('<Escape>', 'leave-mode', mode='insert')
 # config.bind('<Shift-Ins>', 'insert-text {primary}', mode='insert')
 
