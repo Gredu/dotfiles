@@ -155,17 +155,13 @@ require('nvim-autopairs').setup{}
 -- Indent Blanklines
 g.indent_blankline_show_first_indent_level = false
 g.indent_blankline_use_treesitter = true
-g.indent_blankline_show_current_context = true
 
 -- Emmet
 g.user_emmet_leader_key = '<c-e>'
 
 -- Indent Blanklines
-require('indent_blankline').setup {
-  char = '¦',
-  buftype_exclude = {'terminal'},
-  filetype_exclude = {'dashboard', 'help', 'packer'},
-  context_patterns = { "^for", "^if", "^object", "^table", "^while", "arguments", "block", "catch_clause", "class", "else_clause", "function", "if_statement", "import_statement", "jsx_element", "jsx_element", "jsx_self_closing_element", "method", "operation_type", "return", "try_statement", "element"}
+require('ibl').setup {
+  indent = { highlight = highlight, char = '¦'},
 }
 
 -- LSP
@@ -229,6 +225,8 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
+
+require("mason").setup()
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
