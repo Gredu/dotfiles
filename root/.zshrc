@@ -148,3 +148,10 @@ SAVEHIST=1000
 
 # export TERM='tmux-256color'
 # export JAVA_HOME=$(/usr/libexec/java_home)
+
+# bun completions
+[ -s "/home/greatmanl/.bun/_bun" ] && source "/home/greatmanl/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -120,8 +120,8 @@
 " set wildignore+=*\\tmp\\*       " Windows
 
 " Tabs
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Set completeopt to have a better completion experience
 " set completeopt=menuone,noinsert,noselect
@@ -132,20 +132,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Avoid showing message extra message when using completion
 " set shortmess+=c
-
-
-"OS spesific settings
-" if has("unix")
-"   let s:uname = system("uname")
-"   if s:uname == "Darwin\n"
-"     lan en_US
-"     let g:python_host_prog = '/usr/local/bin/python2'
-"     let g:python3_host_prog = '/usr/local/bin/python3'
-"   else 
-"     let g:python_host_prog = '/usr/bin/python2'
-"     let g:python3_host_prog = '/usr/bin/python'
-"   endif
-" endif
 
 " Disable auto commenting
 " autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -191,13 +177,13 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 " colorscheme hybrid
 " set background=dark
 
-let g:lightline                    = {'colorscheme': 'wombat'}
-let g:lightline.tabline            = {'left': [['buffers']], 'right': [['']]}
-" let g:lightline.component_expand   = {'buffers': 'lightline#bufferline#buffers'}
-" let g:lightline.component_type     = {'buffers': 'tabsel'}
-let g:lightline.active             = {'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']]}
-let g:lightline.component_function = {'gitbranch': 'FugitiveHead'}
-let g:lightline.mode_map           = {'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'VL', "\<C-v>": 'VB', 'c': 'C', 's': 'S', 'S': 'SL', "\<C-s>": 'SB', 't': 'T'}
+" let g:lightline                    = {'colorscheme': 'rosepine'}
+" let g:lightline.tabline            = {'left': [['buffers']], 'right': [['']]}
+" " let g:lightline.component_expand   = {'buffers': 'lightline#bufferline#buffers'}
+" " let g:lightline.component_type     = {'buffers': 'tabsel'}
+" let g:lightline.active             = {'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified']]}
+" let g:lightline.component_function = {'gitbranch': 'FugitiveHead'}
+" let g:lightline.mode_map           = {'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V': 'VL', "\<C-v>": 'VB', 'c': 'C', 's': 'S', 'S': 'SL', "\<C-s>": 'SB', 't': 'T'}
 
 
 " let g:indent_blankline_show_first_indent_level = v:false
@@ -219,7 +205,7 @@ let g:lightline.mode_map           = {'n': 'N', 'i': 'I', 'R': 'R', 'v': 'V', 'V
 " let bufferline.icon_close_tab = ''
 
 " Vim Vue
-let g:vim_vue_plugin_load_full_syntax = 1
+" let g:vim_vue_plugin_load_full_syntax = 1
 
 " YCM
 " let g:UltiSnipsExpandTrigger = '<C-Space>'
@@ -317,37 +303,34 @@ let g:vim_vue_plugin_load_full_syntax = 1
 " 						\ })
 
 " Tagbar for golang
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
 
-" Tern
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
+" let g:tagbar_type_go = {
+"     \ 'ctagstype' : 'go',
+"     \ 'kinds'     : [
+"         \ 'p:package',
+"         \ 'i:imports:1',
+"         \ 'c:constants',
+"         \ 'v:variables',
+"         \ 't:types',
+"         \ 'n:interfaces',
+"         \ 'w:fields',
+"         \ 'e:embedded',
+"         \ 'm:methods',
+"         \ 'r:constructor',
+"         \ 'f:functions'
+"     \ ],
+"     \ 'sro' : '.',
+"     \ 'kind2scope' : {
+"         \ 't' : 'ctype',
+"         \ 'n' : 'ntype'
+"     \ },
+"     \ 'scope2kind' : {
+"         \ 'ctype' : 't',
+"         \ 'ntype' : 'n'
+"     \ },
+"     \ 'ctagsbin'  : 'gotags',
+"     \ 'ctagsargs' : '-sort -silent'
+" \ }
 
 " Supertab
 " let g:SuperTabClosePreviewOnPopupClose = 1
@@ -355,36 +338,39 @@ let g:tern#arguments = ['--persistent']
 "
 " Vim-go
 " use goimports for formatting
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
 
 " turn highlighting on
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
+" let g:go_highlight_functions = 1
+" let g:go_highlight_methods = 1
+" let g:go_highlight_structs = 1
+" let g:go_highlight_operators = 1
+" let g:go_highlight_build_constraints = 1
 
 " Compile less
 " nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
 " Use highlight scss syntax in
-let g:vim_vue_plugin_use_scss = 1
+" let g:vim_vue_plugin_use_scss = 1
 
 
 " tex flavor
-let g:tex_flavor = 'latex'
+" let g:tex_flavor = 'latex'
 
 """"""""""
 "Auto Commands"
 """"""""""
 
-au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-au BufNewFile,BufRead *.fountain set filetype=fountain
+" au BufNewFile,BufRead *.fountain set filetype=fountain
 
-au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
-au Filetype go nnoremap <leader>t :w<CR>:GoTest<CR>
+" au BufRead,BufNewFile *.underscore set syntax=html
+" au BufRead,BufNewFile *.underscore set filetype=html
 
-au FileType markdown,mkd,txt,tex,fountain set wrap lbr 
-au FileType markdown,mkd,txt,tex,fountain nnoremap j gj
-au FileType markdown,mkd,txt,tex,fountain nnoremap k gk
+" au Filetype go nnoremap <leader>r :w<CR>:GoRun<CR>
+" au Filetype go nnoremap <leader>t :w<CR>:GoTest<CR>
+
+" au FileType markdown,mkd,txt,tex,fountain set wrap lbr 
+" au FileType markdown,mkd,txt,tex,fountain nnoremap j gj
+" au FileType markdown,mkd,txt,tex,fountain nnoremap k gk

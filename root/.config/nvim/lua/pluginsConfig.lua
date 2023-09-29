@@ -1,7 +1,92 @@
 -- Plugins Config
-
+local o = vim.opt
 local cmd = vim.cmd
 local g = vim.g
+
+-- Github theme
+g.material_terminal_italics = 1
+
+-- Material theme
+require('material').setup({
+   plugins = { -- Uncomment the plugins that you use to highlight them
+    -- "dap",
+    -- "dashboard",
+    "gitsigns",
+    -- "hop",
+    "indent-blankline",
+    -- "lspsaga",
+    -- "mini",
+    -- "neogit",
+    "nvim-cmp",
+    -- "nvim-navic",
+    "nvim-tree",
+    -- "sneak",
+    "telescope",
+    -- "trouble",
+    -- "which-key",
+  },
+})
+
+-- Colorscheme
+o.background ='dark'
+g.material_style = 'darker'
+-- g.material_style = 'deep ocean'
+
+-- cmd[[colorscheme minimal]] -- for minimal
+cmd[[colorscheme material]] -- for minimal
+
+-- Vim Go
+g.go_fmt_command = "goimports"
+
+g.go_highlight_functions = 1
+g.go_highlight_methods = 1
+g.go_highlight_structs = 1
+g.go_highlight_operators = 1
+g.go_highlight_build_constraints = 1
+
+-- Vim Vue
+g.vim_vue_plugin_use_scss = 1
+g.vim_vue_plugin_load_full_syntax = 1
+
+-- Latex
+g.tex_flavor = 'latex'
+
+-- Lualine
+require('lualine').setup {
+  options = {
+    icons_enabled = false,
+    theme = 'auto',
+    component_separators = '',
+    section_separators = '',
+  },
+  sections = { 
+    lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,1) end }}
+  }
+}
+
+-- Treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {"javascript" , "lua", "java", "php", "html", "css", "scss", "vim", "make", "bash", "python", "typescript", "svelte"},
+  sync_install = true,
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable= {},
+    additional_vim_regex_higlighting = false,
+  },
+  indent = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      node_decremental = "grm",
+      scope_incremental = "grc",
+    },
+  },
+}
 
 --  Gitsigns
 require('gitsigns').setup {
@@ -41,6 +126,8 @@ require('telescope').setup {
   },
 }
 
+require('telescope').load_extension 'file_browser'
+
 -- Bufferline
 require('bufferline').setup{
   options = {
@@ -49,16 +136,16 @@ require('bufferline').setup{
     close_icon = '',
     seperator_style = 'slant',
     diagnostics = 'nvim_lsp',
-    diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      local s = ' '
-      for e, n in pairs(diagnostics_dict) do
-        local sym = e == 'error' and '✗ '
-        -- or (e == "warning" and ' ' or ' ' )
-        or (e == "warning" and ' ' or ' ' )
-        s = s .. n .. sym
-      end
-      return s
-    end
+    -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+    --   -- local s = '○'
+    --   local s = ' '
+    --   for e, n in pairs(diagnostics_dict) do
+    --     local sym = e == 'error' and '✗ '
+    --     or (e == "warning" and ' ' or ' ' )
+    --     s = s .. n .. sym
+    --   end
+    --   return s
+    -- end
   }
 }
 
@@ -82,20 +169,25 @@ require('indent_blankline').setup {
 }
 
 -- LSP
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+require('lspconfig').tsserver.setup{cababilities=cababilities}
 require('lspconfig').pyright.setup{cababilities=cababilities}
 require('lspconfig').denols.setup{cababilities=cababilities}
 require('lspconfig').vuels.setup{cababilities=cababilities}
 require('lspconfig').bashls.setup{cababilities=cababilities}
 require('lspconfig').intelephense.setup{cababilities=cababilities}
+require('lspconfig').svelte.setup{cababilities=cababilities}
 
 -- Circles
 require('circles').setup({
   icons = {
     empty = '●',
     filled = '○',
-    lsp_prefix = '▪';
+    -- lsp_prefix = '▪';
+    -- lsp_prefix = '●';
+    -- lsp_prefix = '█';
+    lsp_prefix = '■';
   }
 })
 
@@ -129,7 +221,7 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
-    -- { name = 'vsnip' }, -- For vsnip users.
+    { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.

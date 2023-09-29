@@ -3,8 +3,8 @@
 local map = vim.api.nvim_set_keymap
 
 -- General
-map('n', ',', ':', {noremap = true})  -- faster command mode enter
-map('n', 'H', 'J', {noremap = true})  -- J is reserved for barbar
+-- map('n', ',', ':', {noremap = true})  -- faster command mode enter
+map('n', 'H', 'J', {noremap = true})  -- J is reserved for cycling trough buffers
 map('n', '<leader>s', ':source ~/.config/nvim/init.lua<CR>', {noremap = true})  -- quick reload sources
 map('n', '<c-p>', ':b#<CR>', {noremap = true})  -- select previous buffer
 map('n', 'Y', 'y$', {noremap = true})  -- select previous buffer
@@ -17,18 +17,20 @@ map('n', '<rigth>', ':vertical resize +11<CR>', {noremap = true})
 
 -- Telescope
 map('n', '<c-n>', ':Telescope buffers<CR>', {noremap = true})
-map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
+-- map('n', '<leader>fb', ':Telescope buffers<CR>', {noremap = true})
+map('n', 'L', ':Telescope buffers<CR>', {noremap = true})
 map('n', '<leader>ff', ':Telescope find_files<CR>', {noremap = true})
 map('n', '<leader>fg', ':Telescope live_grep<CR>', {noremap = true})
 map('n', '<leader>fh', ':Telescope help_tags<CR>', {noremap = true})
 map('n', '<leader>fk', ':Telescope keymaps<CR>', {noremap = true})
+map('n', '<leader>fn', ':Telescope file_browser<CR>', {noremap = true})
 map('n', '<leader>fr', ':Telescope registers<CR>', {noremap = true})
 map('n', '<leader>fs', ':Telescope git_status<CR>', {noremap = true})
 
 -- Gitsigns
 map('n', '<leader>gv', ':Gitsigns preview_hunk<CR>', {noremap = true})
-map('n', '<leader>gn', ':Gitsigns next_hunk<CR>', {noremap = true})
-map('n', '<leader>gp', ':Gitsigns prev_hunk<CR>', {noremap = true})
+map('n', 'gj', ':Gitsigns next_hunk<CR>', {noremap = true})
+map('n', 'gk', ':Gitsigns prev_hunk<CR>', {noremap = true})
 map('n', '<leader>ga', ':Gitsigns stage_hunk<CR>', {noremap = true})
 map('n', '<leader>gr', ':Gitsigns reset_hunk<CR>', {noremap = true})
 map('n', '<leader>gw', ':Gitsigns stage_buffer<CR>', {noremap = true})
@@ -49,8 +51,8 @@ map('n', '<space>D', ':lua vim.lsp.buf.type_definition()<CR>', opts)
 map('n', '<space>rn', ':lua vim.lsp.buf.rename()<CR>', opts)
 map('n', 'gr', ':lua vim.lsp.buf.references()<CR>', opts)
 map('n', '<space>e', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-map('n', '[d', ':lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-map('n', ']d', ':lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+map('n', 'gJ', ':lua vim.diagnostic.goto_next()<CR>', opts)
+map('n', 'gK', ':lua vim.diagnostic.goto_prev()<CR>', opts)
 map('n', '<space>q', ':lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 
 -- Barbar
@@ -67,6 +69,8 @@ map('n', '<leader>bb', ':BufferLinePick<CR>', {noremap = true})
 
 -- Tags
 map('n', '<leader>t', ':Tagbar<CR>', {noremap = true})
+
+map('i', '<C-j>', 'copilot#Accept("<CR>")', {expr=true, silent=true})
 
 -- tab selects completion
 -- _G.tab_complete = function()

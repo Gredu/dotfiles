@@ -7,6 +7,7 @@ local indent = 2
 o.shiftwidth = indent
 o.tabstop = indent
 o.expandtab = true
+o.softtabstop = indent
 
 -- edge scroll
 local edgeScroll = 5
@@ -23,9 +24,10 @@ o.clipboard = vim.opt.clipboard + 'unnamed'
 o.completeopt = 'menuone,noinsert,noselect'
 o.cursorline = true
 o.fixendofline = false
-o.foldenable = false                  -- auto
-o.foldexpr = 'nvim_treesitter#foldexpr()'
 o.foldmethod = 'expr'
+o.foldexpr = 'nvim_treesitter#foldexpr()'
+o.foldenable = false                   -- auto
+o.foldcolumn = '0'
 o.hidden = true                       -- You don't have to save constantly when switching between buffers
 o.ignorecase =  true                  -- You always want this
 o.incsearch = true                    -- Jumps right to the search
@@ -47,10 +49,38 @@ o.wrap = false
 
 g.mapleader = ' '
 
--- Colorscheme
-o.background ='dark'
-cmd('colorscheme hybrid')
-
-
 -- Autocommands
-vim.api.nvim_command('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+-- vim.api.nvim_command('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
+vim.api.nvim_create_autocmd(
+  'FileType',
+  { pattern = { 'markdown', 'mkd', 'txt', 'tex', 'fountain' },
+    command = 'set wrap lbr'
+  }
+)
+vim.api.nvim_create_autocmd(
+  'FileType',
+  { pattern = { 'markdown', 'mkd', 'txt', 'tex', 'fountain' },
+    command = 'nnoremap j gj'
+  }
+)
+vim.api.nvim_create_autocmd(
+  'FileType',
+  { 
+    pattern = { 'markdown', 'mkd', 'txt', 'tex', 'fountain' },
+    command = 'nnoremap k gk'
+  }
+)
+vim.api.nvim_create_autocmd(
+  { 'BufRead', 'BufNewFile' },
+  { 
+    pattern = '*.underscore',
+    command = 'set syntax=html',
+  }
+)
+vim.api.nvim_create_autocmd(
+  { 'BufRead', 'BufNewFile' },
+  { 
+    pattern = '*.underscore',
+    command = 'set filetype=html',
+  }
+)
