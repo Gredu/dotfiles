@@ -45,6 +45,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 # Misc
 alias o='ls -latr'
 alias ntmp='nvim ~/Documents/tmp.md'
+alias t='task'
 
 alias ppminit='ppm docker down && ppm docker up && ppm dev docker init'
 
