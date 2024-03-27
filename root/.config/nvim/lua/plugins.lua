@@ -3,7 +3,8 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Themes
-  use 'marko-cerovac/material.nvim'
+  -- use 'marko-cerovac/material.nvim'
+  use { "HoNamDuong/hybrid.nvim" }
 
   use { "projekt0n/circles.nvim", requires = {{"kyazdani42/nvim-web-devicons"}, {"kyazdani42/nvim-tree.lua", opt = true}}}
   use 'cakebaker/scss-syntax.vim'
