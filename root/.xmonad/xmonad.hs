@@ -244,7 +244,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask, xK_space), nextScreen)
 
   -- Move to 9:monitoring
-  , ((modMask .|. mod1Mask, xK_space), shiftTo Next EmptyWS)
+  , ((modMask .|. mod1Mask, xK_space), shiftTo Next emptyWS)
   -- , ((modMask .|. mod1Mask, xK_space), doShift "9:monitoring")
 
   -- Cycle through the available layout algorithms.

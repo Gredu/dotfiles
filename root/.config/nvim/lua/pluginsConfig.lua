@@ -4,36 +4,38 @@ local cmd = vim.cmd
 local g = vim.g
 
 -- Github theme
-g.material_terminal_italics = 1
+-- g.material_terminal_italics = 1
 
 -- Material theme
-require('material').setup({
-   plugins = { -- Uncomment the plugins that you use to highlight them
-    -- "dap",
-    -- "dashboard",
-    "gitsigns",
-    -- "hop",
-    "indent-blankline",
-    -- "lspsaga",
-    -- "mini",
-    -- "neogit",
-    "nvim-cmp",
-    -- "nvim-navic",
-    "nvim-tree",
-    -- "sneak",
-    "telescope",
-    -- "trouble",
-    -- "which-key",
-  },
-})
+-- require('material').setup({
+--    plugins = { -- Uncomment the plugins that you use to highlight them
+--     -- "dap",
+--     -- "dashboard",
+--     "gitsigns",
+--     -- "hop",
+--     "indent-blankline",
+--     -- "lspsaga",
+--     -- "mini",
+--     -- "neogit",
+--     "nvim-cmp",
+--     -- "nvim-navic",
+--     "nvim-tree",
+--     -- "sneak",
+--     "telescope",
+--     -- "trouble",
+--     -- "which-key",
+--   },
+-- })
 
 -- Colorscheme
-o.background ='dark'
-g.material_style = 'darker'
+-- o.background ='dark'
+-- g.material_style = 'darker'
 -- g.material_style = 'deep ocean'
 
 -- cmd[[colorscheme minimal]] -- for minimal
-cmd[[colorscheme material]] -- for minimal
+-- cmd[[colorscheme material]] -- for minimal
+-- cmd[[colorscheme hybrid]] -- for minimal
+cmd.colorscheme("hybrid")
 
 -- Vim Go
 g.go_fmt_command = "goimports"
@@ -161,11 +163,21 @@ g.user_emmet_leader_key = '<c-e>'
 
 -- Indent Blanklines
 require('ibl').setup {
-  indent = { highlight = highlight, char = '¦'},
+  indent = { 
+    char = '¦',
+  },
+  scope = {
+    enabled = true,
+    show_start = false,
+  },
 }
 
 -- LSP
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- LSP Mason
+require("mason").setup()
+require("mason-lspconfig").setup()
 
 require('lspconfig').tsserver.setup{cababilities=cababilities}
 require('lspconfig').pyright.setup{cababilities=cababilities}
@@ -174,6 +186,7 @@ require('lspconfig').vuels.setup{cababilities=cababilities}
 require('lspconfig').bashls.setup{cababilities=cababilities}
 require('lspconfig').intelephense.setup{cababilities=cababilities}
 require('lspconfig').svelte.setup{cababilities=cababilities}
+require('lspconfig').jdtls.setup{cababilities=cababilities}
 
 -- Circles
 require('circles').setup({
@@ -225,8 +238,6 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-
-require("mason").setup()
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {

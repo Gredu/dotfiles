@@ -32,6 +32,8 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use {'akinsho/bufferline.nvim', tag="v1.0.0", requires = 'kyazdani42/nvim-web-devicons'}
   use 'nvim-lua/completion-nvim'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
   -- use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
   use { 'junegunn/goyo.vim', ft = { 'markdown' }}
