@@ -180,6 +180,7 @@ require('lspconfig').pyright.setup{cababilities=cababilities}
 require('lspconfig').svelte.setup{cababilities=cababilities}
 require('lspconfig').tsserver.setup{cababilities=cababilities}
 require('lspconfig').vuels.setup{cababilities=cababilities}
+require('lspconfig').eslint.setup{cababilities=cababilities}
 
 -- Circles
 require('circles').setup({
