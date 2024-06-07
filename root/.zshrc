@@ -161,6 +161,3 @@ SAVEHIST=1000
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-
-# Chatgpt
-export OPENAI_KEY=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
