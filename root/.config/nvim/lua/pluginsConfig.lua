@@ -46,10 +46,6 @@ g.go_highlight_structs = 1
 g.go_highlight_operators = 1
 g.go_highlight_build_constraints = 1
 
--- Vim Vue
-g.vim_vue_plugin_use_scss = 1
-g.vim_vue_plugin_load_full_syntax = 1
-
 -- Latex
 g.tex_flavor = 'latex'
 
@@ -179,7 +175,6 @@ require('lspconfig').jdtls.setup{cababilities=cababilities}
 require('lspconfig').pyright.setup{cababilities=cababilities}
 require('lspconfig').svelte.setup{cababilities=cababilities}
 require('lspconfig').tsserver.setup{cababilities=cababilities}
-require('lspconfig').vuels.setup{cababilities=cababilities}
 require('lspconfig').eslint.setup{cababilities=cababilities}
 
 -- Circles
