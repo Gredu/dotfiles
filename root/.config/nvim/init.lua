@@ -1,19 +1,19 @@
--- Aliases
-local cmd = vim.cmd
-local fn = vim.fn
--- local g = vim.g
--- local map = vim.api.nvim_set_keymap
--- local execute = vim.api.nvim_command
--- local fn = vim.fn
-
--- Install packer if it is not installed
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-  execute 'packadd packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-require('plugins')
-require('general')
-require('keymaps')
-require('pluginsConfig')
+vim.g.mapleader = ' '  -- needs to be loaded before lazy
+
+require("lazy").setup(
+  { import = "custom/plugins" },
+  { change_detection = { notify = false, }}
+)

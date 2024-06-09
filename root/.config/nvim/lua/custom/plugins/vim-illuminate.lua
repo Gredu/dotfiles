@@ -1,0 +1,5 @@
+return {
+  {
+    "Rrethy/vim-illuminate"
+  }
+}
