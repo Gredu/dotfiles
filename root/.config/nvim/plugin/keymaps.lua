@@ -38,7 +38,7 @@ map('n', 'gd',        ':lua vim.lsp.buf.definition()<CR>',                      
 map('n', 'ga',        ':lua vim.lsp.buf.code_action()<CR>',                                opts)
 map('n', 'K',         ':lua vim.lsp.buf.hover()<CR>',                                      opts)
 map('n', 'gi',        ':lua vim.lsp.buf.implementation()<CR>',                             opts)
-map('n', '<C-k>',     ':lua vim.lsp.buf.signature_help()<CR>',                             opts)
+-- map('n', '<C-k>',     ':lua vim.lsp.buf.signature_help()<CR>',                             opts)
 map('n', '<space>wa', ':lua vim.lsp.buf.add_workspace_folder()<CR>',                       opts)
 map('n', '<space>wr', ':lua vim.lsp.buf.remove_workspace_folder()<CR>',                    opts)
 map('n', '<space>wl', ':lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
