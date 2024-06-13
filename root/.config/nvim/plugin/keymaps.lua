@@ -50,6 +50,8 @@ map('n', 'gJ',        ':lua vim.diagnostic.goto_next()<CR>',                    
 map('n', 'gK',        ':lua vim.diagnostic.goto_prev()<CR>',                               opts)
 map('n', '<space>q',  ':lua vim.lsp.diagnostic.set_loclist()<CR>',                         opts)
 
+vim.g.user_emmet_leader_key = '<C-e>'
+
 -- Barbar
 -- map('n', 'J', ':BufferNext<CR>', {noremap = true})
 -- map('n', 'K', ':BufferPrevious<CR>', {noremap = true})
