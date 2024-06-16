@@ -10,6 +10,7 @@ zplug 'plugins/git', from:oh-my-zsh
 zplug 'plugins/github', from:oh-my-zsh
 zplug 'plugins/extract', from:oh-my-zsh
 zplug 'plugins/vi-mode', from:oh-my-zsh
+zplug 'plugins/colored-man-pages', from:oh-my-zsh
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/theme-and-appearance", from:oh-my-zsh
 
@@ -27,20 +28,6 @@ if ! zplug check --verbose; then
         echo; zplug install
     fi
 fi
-
-# Colors for man pages
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[01;33m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-# ZSH_THEME="af-magic"
 
 # Misc
 alias o='ls -latr'
