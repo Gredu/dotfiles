@@ -1336,7 +1336,7 @@ c.url.searchengines = {
 # config.bind('-', 'zoom-out')
 # config.bind('.', 'repeat-command')
 # config.bind('/', 'set-cmd-text /')
-config.bind(',', 'set-cmd-text :')
+# config.bind(',', 'set-cmd-text :')
 # config.bind(';I', 'hint images tab')
 # config.bind(';O', 'hint links fill :open -t -r {hint-url}')
 # config.bind(';R', 'hint --rapid links window')
