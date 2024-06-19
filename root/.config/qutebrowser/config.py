@@ -730,7 +730,7 @@ c.content.notifications.enabled = False
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-c.editor.command = ['termite', '-e', 'nvim {}']
+c.editor.command = ['wezterm', '-e', 'nvim {}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
