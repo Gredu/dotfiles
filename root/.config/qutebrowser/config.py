@@ -732,7 +732,7 @@ c.content.notifications.enabled = False
 ## The editor (and arguments) to use for the `open-editor` command. `{}`
 ## gets replaced by the filename of the file to be edited.
 ## Type: ShellCommand
-c.editor.command = ['termite', '-e', 'nvim {}']
+c.editor.command = ['wezterm', '-e', 'nvim {}']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -1338,7 +1338,7 @@ c.url.searchengines = {
 # config.bind('-', 'zoom-out')
 # config.bind('.', 'repeat-command')
 # config.bind('/', 'set-cmd-text /')
-config.bind(',', 'set-cmd-text :')
+# config.bind(',', 'set-cmd-text :')
 # config.bind(';I', 'hint images tab')
 # config.bind(';O', 'hint links fill :open -t -r {hint-url}')
 # config.bind(';R', 'hint --rapid links window')
@@ -1419,7 +1419,6 @@ config.bind('F', 'hint all tab-bg')
 # config.bind(']]', 'navigate next')
 # config.bind('`', 'enter-mode set_mark')
 # config.bind('ad', 'download-cancel')
-config.bind('b', 'set-cmd-text -s :buffer')
 # config.bind('b', 'set-cmd-text -s :quickmark-load')
 # config.bind('cd', 'download-clear')
 # config.bind('co', 'tab-only')
