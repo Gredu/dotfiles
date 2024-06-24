@@ -25,6 +25,8 @@ tomorrow = {
 if hasattr(config, 'load_autoconfig'):
     config.load_autoconfig(False)
 
+c.content.autoplay = False
+
 ## Lazy load tabs
 c.session.lazy_restore = True
 
