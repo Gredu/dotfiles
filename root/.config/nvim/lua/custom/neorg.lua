@@ -18,8 +18,9 @@ require("neorg").setup({
     ["core.dirman"] = { -- Manages Neorg workspaces
       config = {
         workspaces = {
-          notes = "~/notes/notes",
-          work = "~/notes/work",
+          comets = "~/notes/comets",
+          personal = "~/notes/personal",
+          saashop = "~/notes/saashop",
         },
         default_workspace = "work",
       },
