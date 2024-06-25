@@ -47,3 +47,4 @@ require("lspconfig").lua_ls.setup({
     }
   }
 })
+require('lspsaga').setup()
