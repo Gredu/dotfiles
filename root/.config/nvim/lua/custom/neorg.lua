@@ -22,7 +22,7 @@ require("neorg").setup({
           personal = "~/notes/personal",
           saashop = "~/notes/saashop",
         },
-        default_workspace = "work",
+        default_workspace = "personal",
       },
     },
   },
