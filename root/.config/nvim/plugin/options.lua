@@ -49,7 +49,6 @@ opt.showmatch = true
 opt.signcolumn = 'yes'
 opt.ignorecase =  true
 opt.smartcase = true                    -- Smarter case search
-opt.termguicolors = true
 opt.wrap = false
 opt.inccommand ="split"
 opt.formatoptions:remove "o"            -- Don't add comment when `o`
