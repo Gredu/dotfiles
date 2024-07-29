@@ -202,14 +202,14 @@ fileviewer *.mp3 mp3info
 fileviewer *.flac soxi
 
 " Video
-filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
+filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.m4v
         \ {View using MPV}
         \ mpv %f,
         \ {View using ffplay}
         \ ffplay -fs %c,
         \ {View using Dragon}
         \ dragon %f,
-fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
+fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.m4v
          \ ffprobe -hide_banner -pretty %c 2>&1
 
 " Web
@@ -333,7 +333,7 @@ fileviewer .*/,*/ tree %f
 
 " Code
 " filextype *.js,*.json,*.html,*.htm,*.php,*.hs,*.scss,*.css
-fileviewer *.[ch],*.[ch]pp,*.[ch]xx,*.js,*php,*.json,*.html,*.html,*.hs,*.scss,*.css bat --theme=Nord --color always --wrap never --pager never %c -p
+fileviewer *.[ch],*.[ch]pp,*.[ch]xx,*.js,*php,*.json,*.html,*.html,*.hs,*.scss,*.css,*.ts,*.vue bat --theme=Sublime\ Snazzy --color always --wrap never --pager never %c -p
 
 " Displaying pictures in terminal
 "
