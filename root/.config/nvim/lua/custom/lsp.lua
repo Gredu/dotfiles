@@ -47,4 +47,9 @@ require("lspconfig").lua_ls.setup({
     }
   }
 })
-require('lspsaga').setup()
+require('lspsaga').setup({
+  -- code_action_prompt = { enabled = false}
+  ui = {
+    code_action = ''
+  }
+})
