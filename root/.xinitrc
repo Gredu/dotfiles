@@ -12,9 +12,6 @@ xset m 0 0
 # do not turn off monitors
 xset s off -dpms
 
-# start dropbox
-dropbox start &
-
 # three screen setting
 xrandr --output DVI-D-1 --left-of DVI-I-1 --output DVI-I-1 --primary --output HDMI-1 --same-as DVI-I-1 
 
