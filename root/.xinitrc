@@ -4,7 +4,10 @@ xsetroot -cursor_name left_ptr
 
 # set Finnish programming keyboard layout
 # source: https://eagleflow.fi/posts/2015-01-10/keyboard-layout
-setxkbmap -layout fi -variant programmer
+setxkbmap -layout fiWithProgrammer -variant programmer
+
+# use caps for escaping
+setxkbmap -option caps:swapescape
 
 # no mouse accelaration
 xset m 0 0
