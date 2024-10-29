@@ -39,7 +39,7 @@ alias t='task'
 alias ta='task add'
 
 # Keyboard
-alias setkp='setxkbmap -option caps:escape -layout fiWithProgrammer -variant programmer'
+alias setkb='setxkbmap -option caps:escape -layout fiWithProgrammer -variant programmer'
 
 alias ppminit='ppm docker down && ppm docker up && ppm dev docker init'
 

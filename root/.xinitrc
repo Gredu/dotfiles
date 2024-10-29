@@ -4,7 +4,10 @@ xsetroot -cursor_name left_ptr
 
 # set Finnish programming keyboard layout
 # source: https://eagleflow.fi/posts/2015-01-10/keyboard-layout
-setxkbmap -layout fi -variant programmer
+setxkbmap -layout fiWithProgrammer -variant programmer
+
+# use caps for escaping
+setxkbmap -option caps:swapescape
 
 # no mouse accelaration
 xset m 0 0
@@ -12,11 +15,8 @@ xset m 0 0
 # do not turn off monitors
 xset s off -dpms
 
-# start dropbox
-dropbox start &
-
 # three screen setting
-xrandr --output DVI-D-1 --left-of DVI-I-1 --output DVI-I-1 --primary --output HDMI-1 --same-as DVI-I-1 
+xrandr --output HDMI-1 --primary --output DP-1 --right-of HDMI-1
 
 # start xmonad
 exec xmonad
