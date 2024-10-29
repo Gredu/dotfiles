@@ -23,7 +23,7 @@ require('lspconfig').volar.setup({
 })
 local mason_packages = vim.fn.stdpath("data") .. "/mason/packages"
 local volar_path = mason_packages .. "/vue-language-server/node_modules/@vue/language-server"
-require("lspconfig").tsserver.setup({
+require("lspconfig").ts_ls.setup({
   -- NOTE: To enable Hybrid Mode, change hybrideMode to true above and uncomment the following filetypes block.
   -- WARN: THIS MAY CAUSE HIGHLIGHTING ISSUES WITHIN THE TEMPLATE SCOPE WHEN TSSERVER ATTACHES TO VUE FILES
 
