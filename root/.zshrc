@@ -53,6 +53,10 @@ alias subfi='subliminal download -s -l fi '
 # Torrent
 alias torrent='transmission-daemon; stig'
 
+# Bluetooth
+alias btc='bluetoothctl connect'
+alias btd="bluetoothctl disconnect"
+
 # Directory
 alias cdw='cd ~/Documents/work/'
 alias cdd='cd ~/Downloads/'
