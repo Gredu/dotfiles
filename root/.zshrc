@@ -34,10 +34,6 @@ fi
 alias o='ls -latr'
 alias ntmp='nvim ~/Documents/tmp.md'
 
-# Taskwarrior
-alias t='task'
-alias ta='task add'
-
 # Keyboard
 alias setkb='setxkbmap -option caps:escape -layout fiWithProgrammer -variant programmer'
 
