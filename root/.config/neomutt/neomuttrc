@@ -68,10 +68,13 @@ unset markers
 unmailboxes *
 
 # in/out mail servers
-set imap_pass = "SOYcb[P;10Ys'Az1sLkL$x4cl"
-set smtp_url = "smtps://greatman.lim@mahti.org@mail.mahti.org:465"
-set smtp_pass = "SOYcb[P;10Ys'Az1sLkL$x4cl"
-set folder = "imaps://greatman.lim@mahti.org@mail.mahti.org:993"
+
+set imap_pass = "1RXt2GemyxUnGTDHgZBhYX1zYo"
+# set smtp_url = "smtps://greatman.lim@mahti.org@mail.mahti.org:465"
+set smtp_url = "mail.privateemail.com:465"
+set smtp_pass = "1RXt2GemyxUnGTDHgZBhYX1zYo"
+# set folder = "imaps://greatman.lim@mahti.org@mail.mahti.org:993"
+set folder = "imaps://greatman.lim@mahti.org@mail.privateemail.com:993"
 
 set realname = "Greatman Lim"
 set from = "greatman.lim@mahti.org"

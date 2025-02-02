@@ -1,6 +1,6 @@
 -- xmonad config used by Vic Fryzel
 -- Author: Vic Fryzel
--- https://github.com/vicfryzel/xmonad-config
+-- http://github.com/vicfryzel/xmonad-config
 
 import System.IO
 import System.Exit
@@ -17,7 +17,6 @@ import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
-import Graphics.X11.ExtraTypes.XF86
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -27,33 +26,15 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal = "termite"
+myTerminal = "wezterm"
+myLauncher = "rofi -show drun"
 
--- The command to lock the screen or show the screensaver.
-myScreensaver = "/usr/bin/xscreensaver-command -l"
-
--- The command to take a selective screenshot, where you select
--- what you'd like to capture on the screen.
-mySelectScreenshot = "select-screenshot"
-
--- The command to take a fullscreen screenshot.
-myScreenshot = "screenshot"
-
--- The command to use as a launcher, to launch commands that don't have
--- preset keybindings.
-
--- myLauncher = "$(yeganesh -x -- -fn 'monospace-8' -nb '#000000' -nf '#FFFFFF' -sb '#7C7C7C' -sf '#CEFFAC')"
-
-myLauncher = "$(yegonesh -x -- -fn 'xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=8' -nb '#1d1f21' -nf '#c5c8c6' -sb '#1d1f21' -sf '#de935f')"
-
--------------------------'-----------------------------------------------
+------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
--- myWorkspaces = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX:monitoring"]
--- myWorkspaces = ["● trm", "● qt1", "● qt2", "● web", "●", "●", "●", "●", "mon"]
--- myWorkspaces = ["1:trm", "2:qt1", "3:qt2", "4:web", "", "", "", "", "mon"]
+-- myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..8] ++ ["9:minimized"]
+myWorkspaces = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX:monitoring"]
 
 
 ------------------------------------------------------------------------
@@ -72,9 +53,11 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 --
 myManageHook = composeAll
     [ resource  =? "desktop_window" --> doIgnore
+    , className =? "Galculator"     --> doFloat
+    , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
-    , className =? "mpv"            --> doFloat
-    , className =? "stalonetray"    --> doIgnore
+    , resource  =? "gpicview"       --> doFloat
+    , className =? "mpv"        --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -89,7 +72,6 @@ myManageHook = composeAll
 -- which denotes layout choice.
 -- --
 myLayout = avoidStruts (
-    ThreeColMid 1 (3/100) (1/2) |||
     Tall 1 (3/100) (1/2) |||
     Mirror (Tall 1 (3/100) (1/2))) |||
     noBorders (fullscreenFull Full)
@@ -97,46 +79,23 @@ myLayout = avoidStruts (
 
 ------------------------------------------------------------------------
 -- Colors and borders
--- Currently based on the tomorrow-night theme.
+-- Currently based on the ir_black theme.
 --
-
-cBackground = "#1d1f21"
-cCurrent = "#282a2e"
-cSelection = "#373b41" 
-cForeground = "#c5c8c6" 
-cComment = "#969896" 
-cRed = "#cc6666" 
-cOrange = "#de935f" 
-cYellow = "#f0c674" 
-cGreen = "#b5bd68" 
-cAqua = "#8abeb7" 
-cBlue = "#81a2be" 
-cPurple = "#b294bb" 
-
-colorBlue      = "#81a2be"
-colorGreen     = "#b5bd68"
-colorRed       = "#cc6666"
-colorGray      = "#373b41"
-colorWhite     = "#c5c8c6"
-colorNormalbg  = "#1d1f21"
-colorfg        = "#c5c8c6"
-colorOrange    = "#de935f"
-
-myNormalBorderColor  = colorNormalbg
-myFocusedBorderColor = colorOrange
+myNormalBorderColor  = "#7c7c7c"
+myFocusedBorderColor = "#de935f"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
-tabConfig = defaultTheme {
-    activeBorderColor = "#7C7C7C",
-    activeTextColor = "#CEFFAC",
-    activeColor = "#000000",
-    inactiveBorderColor = "#7C7C7C",
-    inactiveTextColor = "#EEEEEE",
-    inactiveColor = "#000000"
-}
+-- tabConfig = defaultTheme {
+--     activeBorderColor = "#7C7C7C",
+--     activeTextColor = "#CEFFAC",
+--     activeColor = "#000000",
+--     inactiveBorderColor = "#7C7C7C",
+--     inactiveTextColor = "#EEEEEE",
+--     inactiveColor = "#000000"
+-- }
 
 -- Color of current window title in xmobar.
-xmobarTitleColor = "#FFB6B0"
+xmobarTitleColor = "#de935f"
 
 -- Color of current workspace in xmobar.
 xmobarCurrentWorkspaceColor = "#CEFFAC"
@@ -164,34 +123,33 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [ ((modMask .|. shiftMask, xK_Return),
      spawn $ XMonad.terminal conf)
 
-  -- Lock the screen using command specified by myScreensaver.
-  , ((modMask .|. controlMask, xK_l),
-     spawn myScreensaver)
+  -- Lock the screen using xscreensaver.
+  , ((modMask, xK_End),
+     spawn "sudo systemctl suspend")
 
-  -- Spawn the launcher using command specified by myLauncher.
+  -- Lock the screen using xscreensaver.
+  , ((modMask .|. controlMask, xK_l),
+     spawn "xscreensaver-command -lock")
+
+  -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
   , ((modMask, xK_p),
      spawn myLauncher)
 
-  -- Take a selective screenshot using the command specified by mySelectScreenshot.
+  -- Take a screenshot in select mode.
+  -- After pressing this key binding, click a window, or draw a rectangle with
+  -- the mouse.
   , ((modMask .|. shiftMask, xK_p),
-     spawn mySelectScreenshot)
+     spawn "select-screenshot")
 
-  -- Take a full screenshot using the command specified by myScreenshot.
+  -- Take full screenshot in multi-head mode.
+  -- That is, take a screenshot of everything you see.
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn myScreenshot)
+     spawn "screenshot")
 
-  -- Mute volume.
-  , ((0, xF86XK_AudioMute),
-     spawn "amixer -q set Master toggle")
-
-  -- Decrease volume.
-  , ((0, xF86XK_AudioLowerVolume),
-     spawn "amixer -q set Master 5%-")
-
-  -- Increase volume.
-  , ((0, xF86XK_AudioRaiseVolume),
-     spawn "amixer -q set Master 5%+")
+  -- Fetch a single use password.
+  , ((modMask .|. shiftMask, xK_o),
+     spawn "fetchotp -x")
 
   -- Mute volume.
   , ((modMask .|. controlMask, xK_m),
@@ -199,11 +157,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Decrease volume.
   , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 5%-")
+     spawn "amixer -q set Master 10%-")
 
   -- Increase volume.
   , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 5%+")
+     spawn "amixer -q set Master 10%+")
 
   -- Audio previous.
   , ((0, 0x1008FF16),
@@ -219,37 +177,24 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Eject CD tray.
   , ((0, 0x1008FF2C),
-     spawn "eject -T")
-     
-  -- Suspend system
-  , ((modMask, xK_End),
-     spawn "systemctl suspend")
-
-  -- Lock
-  , ((modMask, xK_c),
-     spawn "slock")
-
-  -- Start dmenu for passwords
-  , ((modMask, xK_s),
-      spawn "passmenu -fn 'xft:DejaVu Sans Mono for Powerline Plus Nerd File Types Mono Plus Font Awesome Plus Octicons Plus Pomicons:size=8' -nb '#1d1f21' -nf '#c5c8c6' -sb '#1d1f21' -sf '#de935f'")
+      spawn "eject -T")
 
   -- CycleWS and toggling.
   -- Toggle between screens.
-  , ((modMask, xK_space), swapNextScreen)
+    , ((modMask, xK_space), swapNextScreen)
 
-  -- Move to next screen.
-  , ((modMask .|. shiftMask, xK_space), shiftNextScreen)
+    -- Move to next screen.
+    , ((modMask .|. shiftMask, xK_space), shiftNextScreen)
 
-  -- Focus next screen.
-  , ((modMask .|. controlMask, xK_space), nextScreen)
+    -- Focus next screen.
+    , ((modMask .|. controlMask, xK_space), nextScreen)
 
-  -- Move to 9:monitoring
-  , ((modMask .|. mod1Mask, xK_space), shiftTo Next emptyWS)
-  -- , ((modMask .|. mod1Mask, xK_space), doShift "9:monitoring")
+    -- Move to 9:monitoring
+    , ((modMask .|. mod1Mask, xK_space), shiftTo Next emptyWS)
+    -- , ((modMask .|. mod1Mask, xK_space), doShift "9:monitoring")
 
-  -- Cycle through the available layout algorithms.
-  , ((modMask, xK_o),
-     sendMessage NextLayout)
+  -- Fix some keypresses with some applications
+  -- , ((mod5Mask, xK_h), shiftTo Next EmptyWS)
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
@@ -259,8 +204,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. shiftMask, xK_c),
      kill)
 
+  -- Cycle through the available layout algorithms.
+  , ((modMask, xK_o),
+     sendMessage NextLayout)
+
   --  Reset the layouts on the current workspace to default.
-  , ((modMask .|. shiftMask, xK_space),
+  , ((modMask .|. shiftMask, xK_o),
      setLayout $ XMonad.layoutHook conf)
 
   -- Resize viewed windows to the correct size.
@@ -268,8 +217,8 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
      refresh)
 
   -- Move focus to the next window.
-  -- , ((modMask, xK_Tab),
-  --    windows W.focusDown)
+  , ((modMask, xK_Tab),
+     windows W.focusDown)
 
   -- Move focus to the next window.
   , ((modMask, xK_j),
@@ -317,8 +266,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Toggle the status bar gap.
   -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
-  , ((modMask, xK_x),
-     sendMessage ToggleStruts)
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
@@ -400,12 +347,12 @@ main = do
   xmonad $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOrder           = \(ws:l:t:_)  -> [ws,t]
-          , ppCurrent         = xmobarColor colorOrange     colorNormalbg . \s -> "●"
-          , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
-          , ppVisible         = xmobarColor colorGreen     colorNormalbg . \s -> "●"
-          , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
-          , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
-          , ppTitle           = xmobarColor colorGreen     colorNormalbg
+          -- , ppCurrent         = xmobarColor colorOrange     colorNormalbg . \s -> "●"
+          -- , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
+          -- , ppVisible         = xmobarColor colorGreen     colorNormalbg . \s -> "●"
+          -- , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
+          -- , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
+          -- , ppTitle           = xmobarColor colorGreen     colorNormalbg
           , ppOutput = hPutStrLn xmproc
           -- , ppOutput          = putStrLn
           , ppWsSep           = " "
@@ -418,7 +365,7 @@ main = do
       , manageHook = manageDocks <+> myManageHook
 --      , startupHook = docksStartupHook <+> setWMName "LG3D"
       , startupHook = setWMName "LG3D"
-      , handleEventHook = docksEventHook
+      -- , handleEventHook = docksEventHook
   }
 
 
@@ -430,7 +377,8 @@ main = do
 --
 -- No need to modify this.
 --
-defaults = docks defaultConfig {
+-- defaults = defaultConfig {
+defaults = def {
     -- simple stuff
     terminal           = myTerminal,
     focusFollowsMouse  = myFocusFollowsMouse,
