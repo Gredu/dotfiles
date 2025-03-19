@@ -1,5 +1,5 @@
 require('ibl').setup {
-  indent = { 
+  indent = {
     char = '¦',
   },
   scope = {
