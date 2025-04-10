@@ -3,7 +3,6 @@ local opts = { noremap=true, silent=true }
 local map = vim.api.nvim_set_keymap
 
 -- General
-map('n', 'H',         'J',                                   opts)  -- J is reserved for cycling trough buffers
 map('n', '<leader>s', ':source ~/.config/nvim/init.lua<CR>', opts)  -- quick reload sources
 
 -- Window resizing
