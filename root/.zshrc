@@ -32,7 +32,7 @@ fi
 
 # Misc
 alias o='ls -latr'
-alias ntmp='nvim ~/Documents/tmp.md'
+alias ns='nvim ~/notes/scratchpad.md'
 
 # Keyboard
 alias setkb='setxkbmap -option caps:escape -layout fiWithProgrammer -variant programmer'
