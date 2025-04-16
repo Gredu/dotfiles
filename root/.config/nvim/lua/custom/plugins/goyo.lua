@@ -1,6 +1,6 @@
 return {
-  { 
+  {
     'junegunn/goyo.vim',
-    ft = { 'markdown' }
+    ft = { 'markdown', 'md' }
   },
 }
