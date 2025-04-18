@@ -69,12 +69,7 @@ alias cdw='cd ~/Documents/work/'
 alias cdd='cd ~/Downloads/'
 alias cdc='cd ~/Documents/'
 alias cdr='cd ~/dotfiles/root/'
-alias cdp='cd ~/Projects/pilvi/code/'
-alias cdpm='cd ~/Projects/pilvi/code/manager/'
-
-# User configuration
-export GOPATH="${HOME}/Code/go"
-export PATH="${HOME}/.npm-global/bin:${GOPATH}/bin:/usr/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
+alias cdp='cd ~/Projects/'
 
 export EDITOR='nvim'
 
