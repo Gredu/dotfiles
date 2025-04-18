@@ -1,5 +1,16 @@
-# Use zplug to handle all plugins
-source "${HOME}/.zplug/init.zsh"
+case "$(uname)" in
+  Darwin)
+    # macOS specific config
+    source ~/.zshrc-macos
+    ;;
+  Linux)
+    # Linux-specific config
+    source ~/.zshrc-linux
+    ;;
+  *)
+    echo "Unknown OS, no spesific configuration for: $(uname)"
+    ;;
+esac
 
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github
@@ -52,10 +63,6 @@ alias subfi='subliminal download -s -l fi '
 
 # Torrent
 alias torrent='transmission-daemon; stig'
-
-# Bluetooth
-alias btc='bluetoothctl connect'
-alias btd="bluetoothctl disconnect"
 
 # Directory
 alias cdw='cd ~/Documents/work/'
