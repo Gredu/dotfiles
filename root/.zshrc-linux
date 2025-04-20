@@ -1,3 +1,6 @@
+
+source ${HOME}/.zplug/init.zsh
+
 # Bluetooth
 alias btc='bluetoothctl connect'
 alias btd="bluetoothctl disconnect"
