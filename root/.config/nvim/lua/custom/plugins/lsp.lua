@@ -4,7 +4,6 @@ return {
     dependencies = {
       "neovim/nvim-lspconfig",
       "williamboman/mason-lspconfig.nvim",
-      "nvimdev/lspsaga.nvim",
       "mfussenegger/nvim-lint",
    },
    config = function()
