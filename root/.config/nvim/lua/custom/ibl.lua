@@ -1,4 +1,4 @@
-vim.cmd([[ highlight IblScope guifg=#545c7e gui=nocombine ]])
+vim.api.nvim_set_hl(0, "IblScope", { fg = "#545c7e", nocombine = true })
 
 require('ibl').setup {
   indent = {
@@ -6,8 +6,8 @@ require('ibl').setup {
   },
   scope = {
     enabled = true,
-    show_start = true,
-    show_end = true,
+    show_start = false,
+    show_end = false,
     highlight = { "IblScope" },
   },
 }
