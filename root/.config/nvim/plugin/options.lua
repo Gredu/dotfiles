@@ -52,39 +52,3 @@ opt.smartcase = true                    -- Smarter case search
 opt.wrap = false
 opt.inccommand ="split"
 opt.formatoptions:remove "o"            -- Don't add comment when `o`
-
--- Autocommands
--- vim.api.nvim_command('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o')
--- vim.api.nvim_create_autocmd(
---   'FileType',
---   { pattern = { 'markdown', 'mkd', 'txt', 'tex', 'fountain' },
---     command = 'set wrap lbr'
---   }
--- )
--- vim.api.nvim_create_autocmd(
---   'FileType',
---   { pattern = { 'markdown', 'mkd', 'txt', 'tex', 'fountain' },
---     command = 'nnoremap j gj'
---   }
--- )
--- vim.api.nvim_create_autocmd(
---   'FileType',
---   { 
---     pattern = { 'markdown', 'mkd', 'txt', 'tex', 'fountain' },
---     command = 'nnoremap k gk'
---   }
--- )
--- vim.api.nvim_create_autocmd(
---   { 'BufRead', 'BufNewFile' },
---   { 
---     pattern = '*.underscore',
---     command = 'set syntax=html',
---   }
--- )
--- vim.api.nvim_create_autocmd(
---   { 'BufRead', 'BufNewFile' },
---   { 
---     pattern = '*.underscore',
---     command = 'set filetype=html',
---   }
--- )
