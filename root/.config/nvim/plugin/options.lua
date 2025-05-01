@@ -52,4 +52,11 @@ opt.smartcase = true                    -- Smarter case search
 opt.wrap = false
 opt.inccommand ="split"
 opt.formatoptions:remove "o"            -- Don't add comment when `o`
+
+-- Neovim
 opt.guifont = "MonoLisa:h12"
+if vim.g.neovide then
+  vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
+  vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
+  vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
+end
