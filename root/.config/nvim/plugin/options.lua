@@ -52,3 +52,4 @@ opt.smartcase = true                    -- Smarter case search
 opt.wrap = false
 opt.inccommand ="split"
 opt.formatoptions:remove "o"            -- Don't add comment when `o`
+opt.guifont = "MonoLisa:h10"
