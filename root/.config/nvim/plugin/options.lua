@@ -48,6 +48,7 @@ vim.o.ignorecase =  true
 vim.o.smartcase = true                    -- Smarter case search
 vim.o.wrap = false
 vim.o.inccommand ="split"
+vim.opt.formatoptions:remove({ 'r', 'o' })
 
 -- Neovim
 if vim.g.neovide then
