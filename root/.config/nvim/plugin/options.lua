@@ -42,19 +42,21 @@ vim.o.lazyredraw = true                   -- Don't update display while executin
 vim.o.mouse = 'a'                         -- Mouse
 vim.o.number = true                       -- Line numbers
 vim.o.rnu = true                          -- Relative numbers
--- vim.o.shortmess = vim.opt.shortmess + 'c'
 vim.o.showmatch = true
 vim.o.signcolumn = 'yes'
 vim.o.ignorecase =  true
 vim.o.smartcase = true                    -- Smarter case search
 vim.o.wrap = false
 vim.o.inccommand ="split"
--- vim.o.formatoptions:remove "o"            -- Don't add comment when `o`
 
 -- Neovim
--- vim.opt.guifont = "MonoLisa-Light:h12:#e-antialias:#h-full" -- text below applies for VimScript
-vim.o.guifont = "MonoLisa:h12"
 if vim.g.neovide then
+  vim.o.guifont = "MonoLisa:h12"
+-- vim.opt.guifont = "MonoLisa-Light:h12:#e-antialias:#h-full" -- text below applies for VimScript
+
+  vim.api.nvim_set_hl(0, "Cursor", { bg = "#FFA500" }) -- Bright orange cursor
+  vim.opt.guicursor = "n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
+
   vim.keymap.set({ "n", "v" }, "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>")
   vim.keymap.set({ "n", "v" }, "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>")
   vim.keymap.set({ "n" , "v" }, "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>")
