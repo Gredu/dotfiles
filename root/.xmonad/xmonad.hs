@@ -27,7 +27,7 @@ import qualified Data.Map        as M
 -- certain contrib modules.
 --
 myTerminal = "wezterm"
-myLauncher = "rofi -show drun"
+myLauncher = "yegonesh"
 
 ------------------------------------------------------------------------
 -- Workspaces
