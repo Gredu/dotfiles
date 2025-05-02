@@ -27,15 +27,12 @@ import qualified Data.Map        as M
 -- certain contrib modules.
 --
 myTerminal = "wezterm"
-myLauncher = "yegonesh"
+myLauncher = "$(yegonesh -x -- -fn 'xft:MonoLisa:size=8' -nb '#1d1f21' -nf '#c5c8c6' -sb '#1d1f21' -sf '#de935f')"
 
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
---
--- myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..8] ++ ["9:minimized"]
-myWorkspaces = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX:monitoring"]
-
+myWorkspaces = ["●", "●", "●", "●", "●", "●", "●", "●", "●"]
 
 ------------------------------------------------------------------------
 -- Window rules
@@ -57,7 +54,7 @@ myManageHook = composeAll
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "gpicview"       --> doFloat
-    , className =? "mpv"        --> doFloat
+    , className =? "mpv"            --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -83,6 +80,30 @@ myLayout = avoidStruts (
 --
 myNormalBorderColor  = "#7c7c7c"
 myFocusedBorderColor = "#de935f"
+
+-- Are these hybrid colors? Not used anywhere.
+
+-- cBackground = "#1d1f21"
+-- cCurrent = "#282a2e"
+-- cSelection = "#373b41" 
+-- cForeground = "#c5c8c6" 
+-- cComment = "#969896" 
+-- cRed = "#cc6666" 
+-- cOrange = "#de935f" 
+-- cYellow = "#f0c674" 
+-- cGreen = "#b5bd68" 
+-- cAqua = "#8abeb7" 
+-- cBlue = "#81a2be" 
+-- cPurple = "#b294bb" 
+
+colorBlue      = "#81a2be"
+colorGreen     = "#b5bd68"
+colorRed       = "#cc6666"
+colorGray      = "#373b41"
+colorWhite     = "#c5c8c6"
+colorNormalbg  = "#1d1f21"
+colorfg        = "#c5c8c6"
+colorOrange    = "#de935f"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 -- tabConfig = defaultTheme {
@@ -120,21 +141,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   --
 
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
-  [ ((modMask .|. shiftMask, xK_Return),
-     spawn $ XMonad.terminal conf)
-
-  -- Lock the screen using xscreensaver.
-  , ((modMask, xK_End),
-     spawn "sudo systemctl suspend")
-
-  -- Lock the screen using xscreensaver.
-  , ((modMask .|. controlMask, xK_l),
-     spawn "xscreensaver-command -lock")
-
-  -- Launch dmenu via yeganesh.
-  -- Use this to launch programs without a key binding.
-  , ((modMask, xK_p),
-     spawn myLauncher)
+  [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+  , ((modMask, xK_End), spawn "sudo systemctl suspend")
+  , ((modMask .|. controlMask, xK_l), spawn "xscreensaver-command -lock")
+  , ((modMask, xK_p), spawn myLauncher)
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -342,30 +352,22 @@ myStartupHook = return ()
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  -- xmproc <- spawnPipe ("xmobar " ++ myXmobarrc)
   xmproc <- spawnPipe ("xmobar ~/.xmonad/xmobar.hs")
-  xmonad $ defaults {
+  xmonad $ docks $ defaults {
       logHook = dynamicLogWithPP $ xmobarPP {
             ppOrder           = \(ws:l:t:_)  -> [ws,t]
-          -- , ppCurrent         = xmobarColor colorOrange     colorNormalbg . \s -> "●"
-          -- , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
-          -- , ppVisible         = xmobarColor colorGreen     colorNormalbg . \s -> "●"
-          -- , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
-          -- , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
-          -- , ppTitle           = xmobarColor colorGreen     colorNormalbg
+          , ppCurrent         = xmobarColor colorOrange     colorNormalbg . \s -> "●"
+          , ppUrgent          = xmobarColor colorGray    colorNormalbg . \s -> "●"
+          , ppVisible         = xmobarColor colorGreen     colorNormalbg . \s -> "●"
+          , ppHidden          = xmobarColor colorGray    colorNormalbg . \s -> "●"
+          , ppHiddenNoWindows = xmobarColor colorGray    colorNormalbg . \s -> "○"
+          , ppTitle           = xmobarColor colorGreen     colorNormalbg
           , ppOutput = hPutStrLn xmproc
-          -- , ppOutput          = putStrLn
           , ppWsSep           = " "
           , ppSep             = " "
-
-          -- , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
-          -- , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-          -- , ppSep = "   "
       }
       , manageHook = manageDocks <+> myManageHook
---      , startupHook = docksStartupHook <+> setWMName "LG3D"
       , startupHook = setWMName "LG3D"
-      -- , handleEventHook = docksEventHook
   }
 
 
