@@ -69,9 +69,14 @@ alias torrent='transmission-daemon; stig'
 # Directory
 alias cdw='cd ~/Documents/work/'
 alias cdd='cd ~/Downloads/'
+alias cddt='cd ~/Downloads/transmission'
 alias cdc='cd ~/Documents/'
 alias cdr='cd ~/dotfiles/root/'
+alias cdrc='cd ~/dotfiles/root/.config/'
 alias cdp='cd ~/Projects/'
+alias cdpl='cd ~/Projects/louhi/'
+alias cdps='cd ~/Projects/saashop/'
+alias cdpp='cd ~/Projects/personal/'
 
 export EDITOR='nvim'
 
