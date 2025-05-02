@@ -14,6 +14,7 @@ cmp.setup {
     -- { name = "cody" },
     { name = "path" },
     { name = "buffer" },
+    { name = 'render-markdown' },
   },
   mapping = {
     ["<Tab>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },

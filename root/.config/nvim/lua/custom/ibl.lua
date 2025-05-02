@@ -1,4 +1,4 @@
-vim.api.nvim_set_hl(0, "IblScope", { fg = "#545c7e", nocombine = true })
+vim.api.nvim_set_hl(0, "IblScope", { fg = "#875f00", nocombine = true })
 
 require('ibl').setup {
   indent = {

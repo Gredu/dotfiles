@@ -12,6 +12,8 @@ case "$(uname)" in
     ;;
 esac
 
+source ${HOME}/.env
+
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github
 zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
