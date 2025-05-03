@@ -32,7 +32,7 @@ myLauncher = "$(yegonesh -x -- -fn 'xft:MonoLisa:size=8' -nb '#1d1f21' -nf '#c5c
 ------------------------------------------------------------------------
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
-myWorkspaces = ["●", "●", "●", "●", "●", "●", "●", "●", "●"]
+myWorkspaces = ["1:●", "2:●", "3:●", "4:●", "5:●", "6:●", "7:●", "8:●", "9:●"]
 
 ------------------------------------------------------------------------
 -- Window rules
