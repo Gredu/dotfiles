@@ -67,7 +67,6 @@ alias subfi='subliminal download -s -l fi '
 alias torrent='transmission-daemon; stig'
 
 # Directory
-alias cdw='cd ~/Documents/work/'
 alias cdd='cd ~/Downloads/'
 alias cddt='cd ~/Downloads/transmission'
 alias cdc='cd ~/Documents/'
