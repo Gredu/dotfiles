@@ -4,8 +4,8 @@ local opts = { noremap=true, silent=true }
 -- Window resizing
 vim.keymap.set('n', '<down>',  ':resize -1<CR>',           opts)
 vim.keymap.set('n', '<up>',    ':resize +1<CR>',           opts)
-vim.keymap.set('n', '<left>',  ':vertical resize -11<CR>',  opts)
-vim.keymap.set('n', '<rigth>', ':vertical resize +11<CR>', opts)
+vim.keymap.set('n', '<left>',  ':vertical resize -11<CR>', opts)
+vim.keymap.set('n', '<right>', ':vertical resize +11<CR>', opts)
 
 -- Telescope
 vim.keymap.set('n', '<c-n>',      ':Telescope buffers<CR>',      opts)
