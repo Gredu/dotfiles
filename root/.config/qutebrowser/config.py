@@ -1587,3 +1587,13 @@ config.bind('<Ctrl-E>', 'edit-text', mode='insert')
 
 ## Bindings for register mode
 # config.bind('<Escape>', 'leave-mode', mode='register')
+
+## Bindings for userscripts
+# config.bind('<Alt-s>', 'spawn --userscript qute-pass')
+config.bind('<z><l>', 'spawn --userscript qute-pass --username-target secret --username-pattern "username: (.+)"')
+config.bind('<z><u><l>', 'spawn --userscript qute-pass --username-only')
+config.bind('<z><p><l>', 'spawn --userscript qute-pass --password-only')
+
+# requires dependencies like pass-extension-opt in linux and pass-otp in MacOs brew
+# config.bind('<z><o><l>', 'spawn --userscript qute-pass --otp-only')
+
