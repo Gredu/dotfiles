@@ -49,12 +49,11 @@ myWorkspaces = ["1:●", "2:●", "3:●", "4:●", "5:●", "6:●", "7:●", "
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ resource  =? "desktop_window" --> doIgnore
-    , className =? "Galculator"     --> doFloat
-    , className =? "Steam"          --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "gpicview"       --> doFloat
-    , className =? "mpv"            --> doFloat
+    [ resource  =? "desktop_window"             --> doIgnore
+    , className =? "Steam"                      --> doFloat
+    , className =? "Gimp"                       --> doFloat
+    , className =? "mpv"                        --> doFloat
+    , className =? "org.mozilla.thunderbird"    --> doFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
