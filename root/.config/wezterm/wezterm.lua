@@ -14,6 +14,11 @@ config.font = wezterm.font_with_fallback {
   { family = 'Symbols Nerd Font Mono' }
 }
 
-config.enable_tab_bar = false
+config.window_decorations = 'RESIZE'
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = true
+
+config.max_fps = 120
 
 return config
