@@ -77,7 +77,7 @@ tabline.setup({
     tab_separators = '',
   },
   sections = {
-    tabline_a = { 'mode' },
+    tabline_a = {{  'mode', fmt = function(str) return str:sub(1,1) end }},
     tabline_b = { 'workspace' },
     tabline_c = { ' ' },
     tab_active = {
