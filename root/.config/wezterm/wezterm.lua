@@ -15,7 +15,6 @@ config.font = wezterm.font_with_fallback {
 
 config.window_decorations = 'RESIZE'
 config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
 config.show_new_tab_button_in_tab_bar = false
 
 config.max_fps = 120
