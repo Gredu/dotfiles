@@ -42,13 +42,13 @@ config.keys = {
   { key = 'k', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
   { key = 'j', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(1) },
 
-  { key = 'v', mods = 'SHIFT|CTRL', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
-  { key = 's', mods = 'SHIFT|CTRL', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+  { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+  { key = 's', mods = 'ALT', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
 
   { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
 
-  { key = 'k', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
-  { key = 'j', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
+  { key = 'j', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
+  { key = 'k', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
   { key = 'u', mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },
   { key = 'd', mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },
 
