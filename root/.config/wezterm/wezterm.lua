@@ -72,8 +72,6 @@ tabline.setup({
   options = {
     icons_enabled = true,
     theme = 'Hybrid',
-    tabs_enabled = true,
-    theme_overrides = {},
     section_separators = '',
     component_separators = '',
     tab_separators = '',
