@@ -16,75 +16,9 @@ config.font = wezterm.font_with_fallback {
 config.window_decorations = 'RESIZE'
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
+config.show_new_tab_button_in_tab_bar = false
 
 config.max_fps = 120
-
--- config.tab_max_width = 50
-
--- -- 161719 current background
---
--- -- The filled in variant of the < symbol
--- local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
---
--- -- The filled in variant of the > symbol
--- local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
---
--- -- This function returns the suggested title for a tab.
--- -- It prefers the title that was set via `tab:set_title()`
--- -- or `wezterm cli set-tab-title`, but falls back to the
--- -- title of the active pane in that tab.
--- function tab_title(tab_info)
---   local title = tab_info.tab_title
---   -- if the tab title is explicitly set, take that
---   if title and #title > 0 then
---     return title
---   end
---   -- Otherwise, use the title from the active pane
---   -- in that tab
---   return tab_info.active_pane.title
--- end
-
--- wezterm.on(
---   'format-tab-title',
---   function(tab, tabs, panes, config, hover, max_width)
---     -- local edge_background = '#0b0022'
---     local edge_background = '#161719'
---     -- local background = '#1b1032'
---     local background = '#333333'
---     local foreground = '#808080'
---
---     if tab.is_active then
---       background = '#161719'
---       foreground = '#ffa622'
---     elseif hover then
---       background = '#333333'
---       foreground = '#909090'
---     end
---
---     local edge_foreground = background
---
---     local title = tab_title(tab)
---
---     -- ensure that the titles fit in the available space,
---     -- and that we have room for the edges.
---     -- title = wezterm.truncate_right(title, max_width + 22)
---
---     return {
---       { Background = { Color = edge_background } },
---       { Foreground = { Color = edge_foreground } },
---       -- { Text = SOLID_LEFT_ARROW },
---       { Text = ' ' },
---       { Background = { Color = background } },
---       { Foreground = { Color = foreground } },
---       { Text = title },
---       { Background = { Color = edge_background } },
---       { Foreground = { Color = edge_foreground } },
---       { Text = ' ' },
---       -- { Text = SOLID_RIGHT_ARROW },
---     }
---   end
--- )
 
 local act = wezterm.action
 
@@ -128,5 +62,40 @@ config.keys = {
   { key = 'j', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Down', 1 } },
   { key = 'h', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Left', 1 } },
 }
+
+-- Plugins
+-- -------
+
+-- Tabline
+local tabline = wezterm.plugin.require("https://github.com/michaelbrusegard/tabline.wez")
+
+tabline.setup({
+  options = {
+    icons_enabled = true,
+    theme = 'Hybrid',
+    tabs_enabled = true,
+    theme_overrides = {},
+    section_separators = '',
+    component_separators = '',
+    tab_separators = '',
+  },
+  sections = {
+    tabline_a = { 'mode' },
+    tabline_b = { 'workspace' },
+    tabline_c = { ' ' },
+    tab_active = {
+      'index',
+      { 'parent', padding = 0 },
+      '/',
+      { 'cwd', padding = { left = 0, right = 1 } },
+      { 'zoomed', padding = 0 },
+    },
+    tab_inactive = { 'index', { 'process', padding = { left = 0, right = 1 } } },
+    tabline_x = { 'ram', 'cpu' },
+    tabline_y = { 'datetime', 'battery' },
+    tabline_z = { 'domain' },
+  },
+  extensions = {},
+})
 
 return config
