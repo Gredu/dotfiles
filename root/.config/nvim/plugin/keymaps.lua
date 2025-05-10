@@ -50,6 +50,3 @@ vim.g.user_emmet_leader_key = '<C-e>'
 
 -- Terminal
 vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]], opts)
-
--- Floatterm
-vim.keymap.set('n', '<leader>tt', ':FloatermToggle<CR>')
