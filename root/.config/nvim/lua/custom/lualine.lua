@@ -4,7 +4,7 @@ require("lualine").setup {
     component_separators = '',
     section_separators = '',
   },
-  sections = { 
+  sections = {
     lualine_a = {{ 'mode', fmt = function(str) return str:sub(1,1) end }}
   }
 }
