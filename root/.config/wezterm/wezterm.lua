@@ -44,7 +44,8 @@ config.keys = {
   { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
   { key = 's', mods = 'ALT', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
 
-  { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
+  -- Conflicts with Yabai
+  -- { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
 
   { key = 'j', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
   { key = 'k', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
