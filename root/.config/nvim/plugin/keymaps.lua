@@ -8,13 +8,11 @@ vim.keymap.set('n', '<left>',  ':vertical resize -11<CR>', opts)
 vim.keymap.set('n', '<right>', ':vertical resize +11<CR>', opts)
 
 -- Telescope
-vim.keymap.set('n', '<c-n>',      ':Telescope buffers<CR>',      opts)
 vim.keymap.set('n', 'L',          ':Telescope buffers<CR>',      opts)
 vim.keymap.set('n', '<leader>ff', ':Telescope find_files<CR>',   opts)
 vim.keymap.set('n', '<leader>fg', ':Telescope live_grep<CR>',    opts)
 vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>',    opts)
 vim.keymap.set('n', '<leader>fk', ':Telescope keymaps<CR>',      opts)
-vim.keymap.set('n', '<leader>fn', ':Telescope file_browser<CR>', opts)
 vim.keymap.set('n', '<leader>fr', ':Telescope registers<CR>',    opts)
 vim.keymap.set('n', '<leader>fs', ':Telescope git_status<CR>',   opts)
 
