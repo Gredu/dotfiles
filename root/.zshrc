@@ -33,6 +33,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search", defer:3
 
+zplug "MichaelAquilina/zsh-you-should-use"
+
 zplug load
 
 # Install plugins if there are plugins that have not been installed
