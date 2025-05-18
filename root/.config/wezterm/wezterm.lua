@@ -73,6 +73,12 @@ tabline.setup({
   options = {
     icons_enabled = true,
     theme = 'Hybrid',
+    theme_overrides = {
+      tab = {
+        active = { fg = '#b6bcba', bg = '#161719' },
+        inactive = { fg = '#6491b3', bg = '#30343a' },
+      },
+    },
     section_separators = '',
     component_separators = '',
     tab_separators = '',
