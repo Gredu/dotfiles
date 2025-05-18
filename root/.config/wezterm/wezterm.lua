@@ -24,9 +24,6 @@ config.max_fps = 120
 local act = wezterm.action
 
 config.keys = {
-  { key = 'W', mods = 'ALT', action = act.CloseCurrentTab{ confirm = true } },
-  { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
-
   { key = 'k', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
   { key = 'j', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(1) },
 
