@@ -36,8 +36,8 @@ config.keys = {
   -- Conflicts with Yabai
   -- { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
 
-  { key = 'j', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
-  { key = 'k', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
+  { key = 'k', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(-1) },
+  { key = 'j', mods = 'SHIFT|CTRL|ALT', action = act.MoveTabRelative(1) },
   { key = 'u', mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },
   { key = 'd', mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },
 
