@@ -10,4 +10,9 @@ require('ibl').setup {
     show_end = false,
     highlight = { "IblScope" },
   },
+  exclude = {
+    filetypes = {
+      "dashboard",
+    },
+  },
 }
