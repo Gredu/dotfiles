@@ -15,6 +15,7 @@ vim.keymap.set('n', '<leader>fh', ':Telescope help_tags<CR>',    opts)
 vim.keymap.set('n', '<leader>fk', ':Telescope keymaps<CR>',      opts)
 vim.keymap.set('n', '<leader>fr', ':Telescope registers<CR>',    opts)
 vim.keymap.set('n', '<leader>fs', ':Telescope git_status<CR>',   opts)
+vim.keymap.set('n', '<leader>fp', ':Telescope projects<CR>',   opts)
 
 -- Gitsigns
 vim.keymap.set('n', '<leader>gv', ':Gitsigns preview_hunk<CR>', opts)
