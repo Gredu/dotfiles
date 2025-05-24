@@ -52,8 +52,7 @@ vim.opt.formatoptions:remove({ 'r', 'o' })
 
 -- Neovim
 if vim.g.neovide then
-  vim.o.guifont = "MonoLisa:h12"
--- vim.opt.guifont = "MonoLisa-Light:h12:#e-antialias:#h-full" -- text below applies for VimScript
+  vim.o.guifont = "MonoLisa,Symbols Nerd Font Mono:h14"
 
   vim.api.nvim_set_hl(0, "Cursor", { bg = "#FFA500" }) -- Bright orange cursor
   vim.opt.guicursor = "n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor"
