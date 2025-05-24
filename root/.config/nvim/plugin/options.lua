@@ -50,7 +50,7 @@ vim.o.wrap = false
 vim.o.inccommand ="split"
 vim.opt.formatoptions:remove({ 'r', 'o' })
 
--- Neovim
+-- Neovide
 if vim.g.neovide then
   vim.o.guifont = "MonoLisa,Symbols Nerd Font Mono:h14"
 

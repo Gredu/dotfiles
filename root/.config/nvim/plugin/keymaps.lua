@@ -44,3 +44,28 @@ vim.g.user_emmet_leader_key = '<C-e>'
 
 -- Terminal
 vim.keymap.set('t', '<Esc><Esc>', [[<C-\><C-n>]], opts)
+
+-- Neovide only mappings, because conflicting with WezTerm
+if vim.g.neovide then
+  -- Tab navigation with CMD/SUPER + number
+  vim.keymap.set('n', '<D-1>', '1gt', opts)
+  vim.keymap.set('n', '<D-2>', '2gt', opts)
+  vim.keymap.set('n', '<D-3>', '3gt', opts)
+  vim.keymap.set('n', '<D-4>', '4gt', opts)
+  vim.keymap.set('n', '<D-5>', '5gt', opts)
+  vim.keymap.set('n', '<D-6>', '6gt', opts)
+  vim.keymap.set('n', '<D-7>', '7gt', opts)
+  vim.keymap.set('n', '<D-8>', '8gt', opts)
+  vim.keymap.set('n', '<D-9>', '9gt', opts)
+
+  -- Make these work in terminal mode too
+  vim.keymap.set('t', '<D-1>', [[<C-\><C-n>1gt]], opts)
+  vim.keymap.set('t', '<D-2>', [[<C-\><C-n>2gt]], opts)
+  vim.keymap.set('t', '<D-3>', [[<C-\><C-n>3gt]], opts)
+  vim.keymap.set('t', '<D-4>', [[<C-\><C-n>4gt]], opts)
+  vim.keymap.set('t', '<D-5>', [[<C-\><C-n>5gt]], opts)
+  vim.keymap.set('t', '<D-6>', [[<C-\><C-n>6gt]], opts)
+  vim.keymap.set('t', '<D-7>', [[<C-\><C-n>7gt]], opts)
+  vim.keymap.set('t', '<D-8>', [[<C-\><C-n>8gt]], opts)
+  vim.keymap.set('t', '<D-9>', [[<C-\><C-n>9gt]], opts)
+end
