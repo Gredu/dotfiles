@@ -49,6 +49,13 @@ if ! zplug check --verbose; then
     fi
 fi
 
+source <(fzf --zsh)
+
+if command -v fd > /dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
+
 # Misc
 alias o='ls -latr'
 alias ns='nvim ~/notes/scratchpad.md'
@@ -85,10 +92,12 @@ alias cdpp='cd ~/Projects/personal/'
 
 export EDITOR='nvim'
 
-bindkey -M vicmd '/' history-incremental-search-backward
+# bindkey -M vicmd '/' fzf-history-widget
 # bindkey '^j' vi-forward-word
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=3000
 SAVEHIST=3000
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
