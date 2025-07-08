@@ -78,7 +78,7 @@ tabline.setup({
       { 'cwd' },
     },
     tab_inactive = { 'index',
-      { 'process', padding = { left = 0, right = 1 } },
+      { 'process', padding = { left = 0, right = 0 } },
       { 'cwd' },
     },
     tabline_x = { '' },
