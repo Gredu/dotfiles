@@ -7,7 +7,7 @@ config.colors = {
   cursor_border = 'orange'
 }
 
-config.font_size = 10.0
+config.font_size = 8.0
 config.font = wezterm.font_with_fallback {
   { family = 'MonoLisa' },
   { family = 'Symbols Nerd Font Mono' }
