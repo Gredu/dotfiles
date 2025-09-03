@@ -24,6 +24,10 @@ config.max_fps = 120
 local act = wezterm.action
 
 config.keys = {
+
+  -- Free Shift Enter to enter new line in gemini-cli
+	{ key = "Enter", mods = "ALT", action = wezterm.action.DisableDefaultAssignment, },
+
   { key = 'k', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
   { key = 'j', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(1) },
 
