@@ -54,6 +54,7 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , className =? "mpv"            --> doFloat
     , resource  =? "Msgcompose"     --> doFloat
+    , className =? "floating-terminal" --> doCenterFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -141,6 +142,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
   [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+  , ((modMask, xK_y), spawn "wezterm start --class floating-terminal")
   , ((modMask, xK_End), spawn "sh -c 'slock & sleep 1; systemctl suspend'")
   , ((modMask .|. controlMask, xK_l), spawn "slock")
   , ((modMask, xK_p), spawn myLauncher)
