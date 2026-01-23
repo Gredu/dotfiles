@@ -41,11 +41,13 @@ config.keys = {
   --   end,
   -- },
 
-  { key = 'k', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(-1) },
-  { key = 'j', mods = 'SHIFT|CTRL', action = act.ActivateTabRelative(1) },
+  { key = 'k', mods = 'ALT', action = act.ActivateTabRelative(-1) },
+  { key = 'j', mods = 'ALT', action = act.ActivateTabRelative(1) },
 
   { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
   { key = 's', mods = 'ALT', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+
+  { key = 'o', mods = 'ALT', action = act.TogglePaneZoomState },
 
   -- Conflicts with Yabai
   -- { key = 'phys:Space', mods = 'SHIFT|CTRL', action = act.QuickSelect },
@@ -64,7 +66,17 @@ config.keys = {
   { key = 'k', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Up', 1 } },
   { key = 'j', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Down', 1 } },
   { key = 'h', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Left', 1 } },
+
+  { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
 }
+
+for i = 1, 8 do
+  table.insert(config.keys, {
+    key = tostring(i),
+    mods = 'ALT',
+    action = act.ActivateTab(i - 1),
+  })
+end
 
 -- Plugins
 -- -------
