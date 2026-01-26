@@ -15,6 +15,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
+import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
@@ -48,13 +49,18 @@ myWorkspaces = ["1:●", "2:●", "3:●", "4:●", "5:●", "6:●", "7:●", "
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
+myScratchpads = [ NS "floating-terminal" spawnTerm findTerm manageTerm ]
+  where
+    spawnTerm  = "wezterm start --class floating-terminal"
+    findTerm   = className =? "floating-terminal"
+    manageTerm = doCenterFloat
+
 myManageHook = composeAll
     [ resource  =? "desktop_window" --> doIgnore
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "mpv"            --> doFloat
     , resource  =? "Msgcompose"     --> doFloat
-    , className =? "floating-terminal" --> doCenterFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
@@ -142,7 +148,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
   [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-  , ((modMask, xK_y), spawn "wezterm start --class floating-terminal")
+  , ((modMask, xK_y), namedScratchpadAction myScratchpads "floating-terminal")
   , ((modMask, xK_End), spawn "sh -c 'slock & sleep 1; systemctl suspend'")
   , ((modMask .|. controlMask, xK_l), spawn "slock")
   , ((modMask, xK_p), spawn myLauncher)
@@ -367,7 +373,7 @@ main = do
           , ppWsSep           = " "
           , ppSep             = " "
       }
-      , manageHook = manageDocks <+> myManageHook
+      , manageHook = manageDocks <+> myManageHook <+> namedScratchpadManageHook myScratchpads
       , startupHook = setWMName "LG3D"
   }
 
