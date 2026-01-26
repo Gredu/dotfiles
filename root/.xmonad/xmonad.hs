@@ -141,6 +141,16 @@ myBorderWidth = 1
 --
 myModMask = mod4Mask
 
+myViewWorkspace :: String -> X ()
+myViewWorkspace w = do
+    ws <- gets windowset
+    let currentId = W.tag $ W.workspace $ W.current ws
+    if currentId == w
+      then case filter (\x -> W.tag x /= "NSP") (W.hidden ws) of
+             (lastWS:_) -> windows $ W.greedyView (W.tag lastWS)
+             []         -> return ()
+      else windows $ W.greedyView w
+
 myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   ----------------------------------------------------------------------
   -- Custom key bindings
@@ -296,9 +306,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- mod-[1..9], Switch to workspace N
   -- mod-shift-[1..9], Move client to workspace N
-  [((m .|. modMask, k), windows $ f i)
-      | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-      , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+  [((modMask, k), myViewWorkspace i)
+      | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]]
+  ++
+  [((shiftMask .|. modMask, k), windows $ W.shift i)
+      | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]]
   ++
 
   -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
