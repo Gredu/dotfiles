@@ -7,7 +7,12 @@ config.colors = {
   cursor_border = 'orange'
 }
 
-config.font_size = 8.0
+if wezterm.target_triple:find('apple-darwin') then
+  config.font_size = 8.0
+else
+  config.font_size = 10.0
+end
+
 config.font = wezterm.font_with_fallback {
   { family = 'MonoLisa' },
   { family = 'Symbols Nerd Font Mono' }
