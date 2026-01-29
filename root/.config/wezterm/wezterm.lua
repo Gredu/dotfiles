@@ -57,19 +57,6 @@ config.keys = {
   -- Free Shift Enter to enter new line in gemini-cli
   { key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\n"), },
 
-  -- {
-  --   key = "Enter",
-  --   mods = "SHIFT",
-  --   action = function(win, pane)
-  --     local process_name = pane:get_foreground_process_name()
-  --     if process_name and string.find(process_name, "gemini-cli", 1, true) then
-  --       win:perform_action(wezterm.action.SendString("\n"), pane)
-  --     else
-  --       win:perform_action(wezterm.action.SendString("\r"), pane)
-  --     end
-  --   end,
-  -- },
-
   { key = 'k', mods = 'ALT', action = act.ActivateTabRelative(-1) },
   { key = 'j', mods = 'ALT', action = act.ActivateTabRelative(1) },
 
