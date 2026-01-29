@@ -28,6 +28,30 @@ config.max_fps = 120
 
 local act = wezterm.action
 
+local direction_keys = {
+    h = "Left",
+    j = "Down",
+    k = "Up",
+    l = "Right",
+}
+
+local function split_nav(key)
+  return {
+    key = key,
+    mods = "CTRL",
+    action = wezterm.action_callback(function(win, pane)
+      if pane:get_user_vars().IS_NVIM == "true" then
+        -- pass the keys through to vim/nvim
+        win:perform_action({
+          SendKey = { key = key, mods = "CTRL" },
+        }, pane)
+      else
+        win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
+      end
+    end),
+  }
+end
+
 config.keys = {
 
   -- Free Shift Enter to enter new line in gemini-cli
@@ -62,10 +86,10 @@ config.keys = {
   { key = 'u', mods = 'SHIFT|CTRL', action = act.ScrollByPage(-1) },
   { key = 'd', mods = 'SHIFT|CTRL', action = act.ScrollByPage(1) },
 
-  { key = 'h', mods = 'CTRL', action = act.ActivatePaneDirection 'Left' },
-  { key = 'l', mods = 'CTRL', action = act.ActivatePaneDirection 'Right' },
-  { key = 'k', mods = 'CTRL', action = act.ActivatePaneDirection 'Up' },
-  { key = 'j', mods = 'CTRL', action = act.ActivatePaneDirection 'Down' },
+  { key = "h", mods = "CTRL|SHIFT", action = act.AdjustPaneSize({ "Left", 5 }), },
+  { key = "l", mods = "CTRL|SHIFT", action = act.AdjustPaneSize({ "Right", 5 }), },
+  { key = "j", mods = "CTRL|SHIFT", action = act.AdjustPaneSize({ "Down", 5 }), },
+  { key = "k", mods = "CTRL|SHIFT", action = act.AdjustPaneSize({ "Up", 5 }), },
 
   { key = 'l', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Right', 1 } },
   { key = 'k', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Up', 1 } },
@@ -73,6 +97,11 @@ config.keys = {
   { key = 'h', mods = 'SHIFT|ALT|CTRL|SUPER', action = act.AdjustPaneSize{ 'Left', 1 } },
 
   { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
+
+  split_nav("h"),
+  split_nav("j"),
+  split_nav("k"),
+  split_nav("l"),
 }
 
 for i = 1, 8 do
