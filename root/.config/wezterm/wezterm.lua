@@ -7,7 +7,7 @@ config.colors = {
   cursor_border = 'orange'
 }
 
-if wezterm.target_triple:find('apple-darwin') then
+if wezterm.target_triple:find('linux') then
   config.font_size = 8.0
 else
   config.font_size = 10.0
