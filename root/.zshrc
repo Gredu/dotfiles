@@ -91,6 +91,7 @@ alias cdps='cd ~/Projects/saashop/'
 alias cdpp='cd ~/Projects/personal/'
 
 export EDITOR='nvim'
+export BROWSER='qutebrowser'
 
 # bindkey -M vicmd '/' fzf-history-widget
 # bindkey '^j' vi-forward-word
