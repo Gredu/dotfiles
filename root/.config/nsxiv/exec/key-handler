@@ -1,0 +1,18 @@
+#!/bin/sh
+
+while read -r file; do
+    files="$files $file"
+done
+
+case "$1" in
+    "d")
+        for f in $files; do
+            trash-put "$f"
+        done
+        ;;
+    "D")
+        for f in $files; do
+            rm -- "$f"
+        done
+        ;;
+esac
