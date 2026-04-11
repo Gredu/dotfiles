@@ -28,6 +28,11 @@ config.max_fps = 120
 
 local act = wezterm.action
 
+local is_mac = wezterm.target_triple:find('darwin')
+-- On Mac, ALT (Option) types special characters (e.g. ALT+2 = @).
+-- Use CMD as the primary modifier on Mac to avoid conflicts.
+local mod = is_mac and 'CMD' or 'ALT'
+
 local direction_keys = {
     h = "Left",
     j = "Down",
@@ -60,8 +65,8 @@ config.keys = {
   { key = 'k', mods = 'ALT', action = act.ActivateTabRelative(-1) },
   { key = 'j', mods = 'ALT', action = act.ActivateTabRelative(1) },
 
-  { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
-  { key = 's', mods = 'ALT', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+  { key = 'v', mods = 'ALT', action = act.SplitHorizontal{ domain = 'CurrentPaneDomain' } },
+  { key = 's', mods = 'ALT', action = act.SplitVertical{ domain = 'CurrentPaneDomain' } },
 
   { key = 'o', mods = 'ALT', action = act.TogglePaneZoomState },
 
@@ -94,7 +99,7 @@ config.keys = {
 for i = 1, 8 do
   table.insert(config.keys, {
     key = tostring(i),
-    mods = 'ALT',
+    mods = mod,
     action = act.ActivateTab(i - 1),
   })
 end
