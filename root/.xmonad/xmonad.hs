@@ -61,6 +61,7 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , className =? "mpv"            --> doFloat
     , resource  =? "Msgcompose"     --> doFloat
+    , className =? "Nsxiv"         --> doFullFloat
     , isFullscreen --> (doF W.focusDown <+> doFullFloat)]
 
 
