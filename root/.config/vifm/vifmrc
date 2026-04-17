@@ -84,6 +84,7 @@ set wildmenu
 
 set ignorecase
 set smartcase
+set caseoptions=P
 
 " Don't highlight search results automatically
 
@@ -231,9 +232,9 @@ fileviewer *.[1-8] gtbl %c | groff -Tascii -man | col -b
 
 " Image
 " Source: https://wiki.archlinux.org/index.php/Vifm#Browse_images_in_current_directory_with_Feh
-filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,*.webp
         \ {View in nsxiv}
-        \ sh -c 'cd %d && files=$(find . -maxdepth 1 -iregex ".*\.\(bmp\|jpg\|jpeg\|png\|gif\|xpm\)" -printf "%%P\n" | sort) && nsxiv -n "$(echo "$files" | grep -nx "%c" | cut -d: -f1)" $files' 2>/dev/null &,
+        \ sh -c 'cd %d && files=$(find . -maxdepth 1 -iregex ".*\.\(bmp\|jpg\|jpeg\|png\|gif\|xpm\|webp\)" -printf "%%P\n" | sort) && nsxiv -n "$(echo "$files" | grep -nx "%c" | cut -d: -f1)" $files' 2>/dev/null &,
         \ {View in feh}
         \ feh -FZ %d --start-at %d/%c 2>/dev/null,
         \ {View in gpicview}
