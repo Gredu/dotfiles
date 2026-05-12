@@ -13,6 +13,14 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '  -- needs to be loaded before lazy
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "mail",
+  callback = function()
+    vim.opt_local.textwidth = 80
+    vim.opt_local.formatoptions:append("t")
+  end,
+})
+
 require("lazy").setup(
   { import = "custom/plugins" },
   { change_detection = { notify = false, }}

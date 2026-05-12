@@ -5,10 +5,11 @@ source ${HOME}/.zplug/init.zsh
 alias btc='bluetoothctl connect'
 alias btd="bluetoothctl disconnect"
 
-export PATH="${HOME}/.npm-global/bin:${GOPATH}/bin:/usr/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
 export GOPATH="${HOME}/Code/go"
 
 # nvm (Arch only — Fedora install handled separately)
 if [ -f /etc/arch-release ] && [ -s /usr/share/nvm/init-nvm.sh ]; then
   source /usr/share/nvm/init-nvm.sh
 fi
+
+export PATH="${HOME}/.npm-global/bin:${GOPATH}/bin:/usr/bin:/usr/local/bin:$HOME/.bin:$HOME/.local/bin:$HOME/.cabal/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"

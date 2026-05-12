@@ -49,11 +49,16 @@ myWorkspaces = ["1:●", "2:●", "3:●", "4:●", "5:●", "6:●", "7:●", "
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
 --
-myScratchpads = [ NS "floating-terminal" spawnTerm findTerm manageTerm ]
+myScratchpads = [ NS "floating-terminal" spawnTerm findTerm manageTerm
+                 , NS "floating-neovide" spawnNvide findNvide manageNvide
+                 ]
   where
-    spawnTerm  = "wezterm start --class floating-terminal"
-    findTerm   = className =? "floating-terminal"
-    manageTerm = doCenterFloat
+    spawnTerm   = "wezterm start --class floating-terminal"
+    findTerm    = className =? "floating-terminal"
+    manageTerm  = doCenterFloat
+    spawnNvide  = "neovide --x11-wm-class floating-neovide"
+    findNvide   = className =? "floating-neovide"
+    manageNvide = customFloating (W.RationalRect 0.15 0.15 0.7 0.7)
 
 myManageHook = composeAll
     [ resource  =? "desktop_window" --> doIgnore
@@ -160,6 +165,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Start a terminal.  Terminal to start is specified by myTerminal variable.
   [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
   , ((modMask, xK_y), namedScratchpadAction myScratchpads "floating-terminal")
+  , ((modMask, xK_n), namedScratchpadAction myScratchpads "floating-neovide")
   , ((modMask, xK_End), spawn "sh -c 'slock & sleep 1; systemctl suspend'")
   , ((modMask .|. controlMask, xK_l), spawn "slock")
   , ((modMask, xK_p), spawn myLauncher)
