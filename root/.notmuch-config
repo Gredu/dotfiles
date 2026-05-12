@@ -1,0 +1,15 @@
+[database]
+path=/home/greatmanl/.mail
+[user]
+name=Greatman Lim
+primary_email=greatman.lim@mahti.org
+other_email=lim.greatman@gmail.com;greatman@saashop.fi;greatman.lim@comets.fi;
+[new]
+tags=unread;inbox;
+ignore=.mbsyncstate;.uidvalidity;Trash;Spam
+[search]
+exclude_tags=deleted;spam;
+[maildir]
+synchronize_flags=true
+[crypto]
+gpg_path=gpg

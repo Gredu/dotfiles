@@ -1,0 +1,13 @@
+[Unit]
+Description=GoIMAPNotify - IMAP IDLE mail watcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/greatmanl/Code/go/bin/goimapnotify
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=default.target
