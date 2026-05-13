@@ -5,7 +5,8 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/home/greatmanl/Code/go/bin/goimapnotify
+Environment=PATH=%h/Code/go/bin:%h/go/bin:%h/.local/bin:/usr/local/bin:/usr/bin
+ExecStart=/usr/bin/env goimapnotify
 Restart=on-failure
 RestartSec=10s
 

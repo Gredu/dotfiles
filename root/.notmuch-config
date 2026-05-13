@@ -1,5 +1,5 @@
 [database]
-path=/home/greatmanl/.mail
+path=.mail
 [user]
 name=Greatman Lim
 primary_email=greatman.lim@mahti.org
