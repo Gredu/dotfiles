@@ -31,4 +31,4 @@ vim.lsp.config('vue_ls', {
   }
 })
 
-vim.lsp.enable({ 'vtsls', 'vue_ls' })
+vim.lsp.enable({ 'vtsls', 'vue_ls', 'tailwindcss', 'lua_ls', 'eslint' })
