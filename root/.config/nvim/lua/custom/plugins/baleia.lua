@@ -1,6 +1,7 @@
 return {
   'm00qek/baleia.nvim',
   version = '*',
+  submodules = false,
   config = function()
     vim.g.baleia = require("baleia").setup({ })
     vim.api.nvim_create_user_command("BaleiaColorize", function()
