@@ -57,6 +57,9 @@ if command -v fd > /dev/null; then
 fi
 
 # Misc
+if command -v trash-put >/dev/null 2>&1; then
+  alias rm='trash-put'
+fi
 alias o='ls -latr'
 alias ns='nvim ~/notes/scratchpad.md'
 
@@ -100,6 +103,10 @@ export BROWSER='qutebrowser'
 HISTFILE=~/.histfile
 HISTSIZE=3000
 SAVEHIST=3000
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

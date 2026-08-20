@@ -15,4 +15,38 @@ case "$1" in
             rm -- "$f"
         done
         ;;
+    "m")
+        dest=$(realpath "$(dirname "$(echo "$files" | awk '{print $1}')")")
+        while true; do
+            sel=$(printf '%s\n' "== move here ==" ".." $(ls -d "$dest"/*/ 2>/dev/null | xargs -I{} basename {}) \
+                | dmenu -p "$(echo "$dest" | sed "s|^$HOME|~|")/")
+            [ -z "$sel" ] && exit 1
+            [ "$sel" = "== move here ==" ] && break
+            if [ "$sel" = ".." ]; then
+                dest=$(dirname "$dest")
+            else
+                dest="$dest/$sel"
+            fi
+        done
+        for f in $files; do
+            mv -- "$f" "$dest"
+        done
+        ;;
+    "c")
+        dest=$(realpath "$(dirname "$(echo "$files" | awk '{print $1}')")")
+        while true; do
+            sel=$(printf '%s\n' "== copy here ==" ".." $(ls -d "$dest"/*/ 2>/dev/null | xargs -I{} basename {}) \
+                | dmenu -p "$(echo "$dest" | sed "s|^$HOME|~|")/")
+            [ -z "$sel" ] && exit 1
+            [ "$sel" = "== copy here ==" ] && break
+            if [ "$sel" = ".." ]; then
+                dest=$(dirname "$dest")
+            else
+                dest="$dest/$sel"
+            fi
+        done
+        for f in $files; do
+            cp -- "$f" "$dest"
+        done
+        ;;
 esac

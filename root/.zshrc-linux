@@ -5,6 +5,29 @@ source ${HOME}/.zplug/init.zsh
 alias btc='bluetoothctl connect'
 alias btd="bluetoothctl disconnect"
 
+# Disk mount / unmount via udisksctl + fzf
+dmount() {
+  local choice dev
+  choice=$(lsblk -Ppno NAME,FSTYPE,SIZE,LABEL,MOUNTPOINT \
+    | grep 'FSTYPE="[^"]' \
+    | grep 'MOUNTPOINT=""' \
+    | grep -v 'FSTYPE="swap"' \
+    | sed -E 's/NAME="([^"]*)" FSTYPE="([^"]*)" SIZE="([^"]*)" LABEL="([^"]*)" MOUNTPOINT="[^"]*"/\1\t\3\t\2\t\4/' \
+    | fzf --prompt='mount> ' --height=40% --reverse --delimiter=$'\t' \
+        --header=$'DEVICE\tSIZE\tFSTYPE\tLABEL') || return
+  dev=$(echo "$choice" | cut -f1)
+  udisksctl mount -b "$dev"
+}
+
+dumount() {
+  local choice dev
+  choice=$(findmnt -lno SOURCE,TARGET,FSTYPE,SIZE \
+    | awk '$1 ~ /^\/dev\// && $2 ~ /^\/(run\/media|mnt|media)\//' \
+    | fzf --prompt='unmount> ' --height=40% --reverse) || return
+  dev=$(echo "$choice" | awk '{print $1}')
+  udisksctl unmount -b "$dev"
+}
+
 export GOPATH="${HOME}/Code/go"
 
 # nvm (Arch only — Fedora install handled separately)

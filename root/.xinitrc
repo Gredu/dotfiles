@@ -16,8 +16,13 @@ xset m 0 0
 # do not turn off monitors
 xset s off -dpms
 
-# three screen setting
-xrandr --output HDMI-0 --primary --output DP-5 --right-of HDMI-0
+# two screen setting
+xrandr --output HDMI-0 --primary --output DP-3 --right-of HDMI-0
+
+# make DISPLAY/XAUTHORITY visible to systemd-user and dbus-activated services
+# (fixes xdg-desktop-portal-gtk failing with "cannot open display")
+systemctl --user import-environment DISPLAY XAUTHORITY
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY
 
 # start xmonad
 exec xmonad

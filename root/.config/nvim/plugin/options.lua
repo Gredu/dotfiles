@@ -18,7 +18,8 @@ vim.o.backup = true                       -- Make backup files
 -- fold
 vim.o.foldmethod = 'expr'
 vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.o.foldenable = false                  -- auto
+vim.o.foldenable = true                   -- auto
+vim.o.foldlevel = 99                      -- all folds open
 vim.o.foldcolumn = '0'
 
 -- wildignores
