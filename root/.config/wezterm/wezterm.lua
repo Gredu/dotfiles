@@ -8,15 +8,15 @@ config.colors = {
 }
 
 if wezterm.target_triple:find('linux') then
-  config.font_size = 8.0
+  config.font_size = 9.75
+  config.font = wezterm.font_with_fallback({
+    'Cozette',
+    { family = 'Symbols Nerd Font Mono', scale = 0.7 },
+  })
 else
   config.font_size = 10.0
+  config.font = wezterm.font('MonoLisa Nerd Font Mono')
 end
-
-config.font = wezterm.font_with_fallback {
-  { family = 'MonoLisa' },
-  { family = 'Symbols Nerd Font Mono' }
-}
 
 config.window_decorations = 'RESIZE'
 config.use_fancy_tab_bar = false
