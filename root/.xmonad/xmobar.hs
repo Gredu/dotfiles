@@ -11,9 +11,9 @@ Config {
         Run Swap ["-t","swap: <usedratio>%","-H","1024","-L","512","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run DynNetwork ["-t","net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Date "%a %b %_d %H:%M" "date" 10,
-        Run DiskU [("/", "<used>/<size>"), ("/home/greatman", "<usedbar>")]
-            ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
-            20,
+        Run DiskU [("/", "/ <used>/<size>"), ("/home", "~ <usedp>%")]
+            ["-L", "20", "-H", "50", "-m", "1", "-p", "3", "-h", "#FFB6B0", "-l", "#CEFFAC", "-n", "#FFFFCC"]
+            600,
         Run UnsafeStdinReader
     ],
     sepChar = "%",
