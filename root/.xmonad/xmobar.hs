@@ -16,5 +16,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%UnsafeStdinReader% }{ %multicpu%   %memory%   %swap%   %disku%   %dynnetwork%   <fc=#FFFFCC>%date%</fc>"
+    template = "%UnsafeStdinReader% }{ %multicpu%   %memory%   %swap%   %disku%   %dynnetwork%   <fc=#FFFFCC>%date%</fc> "
 }
