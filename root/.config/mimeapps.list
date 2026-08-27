@@ -1,23 +1,25 @@
 [Added Associations]
 video/mp4=vlc.desktop;
-application/pdf=evince.desktop;
-application/x-pdf=zathura.desktop;
+application/pdf=org.pwmt.zathura.desktop;org.gnome.Evince.desktop;
 x-scheme-handler/mailto=userapp-Thunderbird-G4WSS2.desktop;userapp-Thunderbird-APAWS2.desktop;
-x-scheme-handler/mid=userapp-Thunderbird-G4WSS2.desktop;userapp-Thunderbird-APAWS2.desktop;
-x-scheme-handler/webcal=userapp-Thunderbird-OIX6S2.desktop;userapp-Thunderbird-KM12S2.desktop;
-x-scheme-handler/webcals=userapp-Thunderbird-OIX6S2.desktop;userapp-Thunderbird-KM12S2.desktop;
 
 [Default Applications]
 x-scheme-handler/mailto=userapp-Thunderbird-APAWS2.desktop
 message/rfc822=userapp-Thunderbird-APAWS2.desktop
-x-scheme-handler/mid=userapp-Thunderbird-APAWS2.desktop
-x-scheme-handler/webcal=userapp-Thunderbird-KM12S2.desktop
-text/calendar=userapp-Thunderbird-KM12S2.desktop
-application/x-extension-ics=userapp-Thunderbird-KM12S2.desktop
-x-scheme-handler/webcals=userapp-Thunderbird-KM12S2.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
 x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
 text/html=org.qutebrowser.qutebrowser.desktop
 application/xhtml+xml=org.qutebrowser.qutebrowser.desktop
+application/pdf=org.pwmt.zathura.desktop
+image/jpeg=nsxiv.desktop
+image/png=nsxiv.desktop
+image/gif=nsxiv.desktop
+image/webp=nsxiv.desktop
+image/tiff=nsxiv.desktop
+image/bmp=nsxiv.desktop
+image/heic=nsxiv.desktop
+image/avif=nsxiv.desktop
+image/jxl=nsxiv.desktop
+image/x-xpixmap=nsxiv.desktop
