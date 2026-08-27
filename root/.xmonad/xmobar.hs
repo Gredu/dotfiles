@@ -14,7 +14,7 @@ Config {
         Run DiskU [("/", "<used>/<size>"), ("/home/greatman", "<usedbar>")]
             ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
             20,
-        Run StdinReader
+        Run UnsafeStdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
