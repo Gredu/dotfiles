@@ -9,6 +9,8 @@ config.colors = {
 
 if wezterm.target_triple:find('linux') then
   config.font_size = 9.75
+  config.freetype_load_target = 'Light'
+  config.freetype_render_target = 'Light'
   config.font = wezterm.font_with_fallback({
     'Cozette',
     { family = 'Symbols Nerd Font Mono', scale = 0.7 },
