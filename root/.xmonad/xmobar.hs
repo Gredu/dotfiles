@@ -2,7 +2,7 @@ Config {
     font = "xft:Cozette-13px",
     bgColor = "#1D1F21",
     fgColor = "#c5c8c6",
-    position = Static { xpos = 0, ypos = 0, width = 1920, height = 20 },
+    position = Top,
     commands = [
         -- Run MultiCpu ["-t","cpu: <total0> <total1> <total2> <total3> <total4> <total5> <total6> <total7>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
         -- Run MultiCpu ["-t","cpu: <usedratio>%","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
