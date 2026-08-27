@@ -3,7 +3,7 @@
 -- http://github.com/vicfryzel/xmonad-config
 
 Config {
-    font = "xft:MonoLisa-8",
+    font = "xft:Cozette-13px",
     bgColor = "#1D1F21",
     fgColor = "#c5c8c6",
     position = Static { xpos = 0, ypos = 0, width = 1920, height = 20 },
