@@ -1,14 +1,9 @@
--- xmobar config used by Vic Fryzel
--- Author: Vic Fryzel
--- http://github.com/vicfryzel/xmonad-config
-
 Config {
     font = "xft:Cozette-13px",
     bgColor = "#1D1F21",
     fgColor = "#c5c8c6",
     position = Static { xpos = 0, ypos = 0, width = 1920, height = 20 },
     commands = [
-        Run Weather "EFHF" ["-t","<tempC>° <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
         -- Run MultiCpu ["-t","cpu: <total0> <total1> <total2> <total3> <total4> <total5> <total6> <total7>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
         -- Run MultiCpu ["-t","cpu: <usedratio>%","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
         Run MultiCpu ["-t","cpu: <total>%","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
