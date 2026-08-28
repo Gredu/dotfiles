@@ -2,8 +2,16 @@
 -- Author: Vic Fryzel
 -- http://github.com/vicfryzel/xmonad-config
 
+import Control.Monad (unless, forM, filterM)
+import Data.Char (isSpace)
+import Data.List (sortBy, nub, dropWhileEnd)
+import Data.Maybe (fromMaybe)
+import Data.Ord (comparing)
+import System.Directory (listDirectory, doesDirectoryExist, doesFileExist, getPermissions, executable)
+import System.Environment (lookupEnv)
 import System.IO
 import System.Exit
+import Text.Read (readMaybe)
 import XMonad
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.DynamicLog
@@ -16,7 +24,7 @@ import XMonad.Layout.Spiral
 import XMonad.Layout.Tabbed
 import XMonad.Layout.ThreeColumns
 import XMonad.Util.NamedScratchpad
-import XMonad.Util.Run(spawnPipe)
+import XMonad.Util.Run(spawnPipe, runProcessWithInput)
 import XMonad.Util.EZConfig(additionalKeys)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -28,7 +36,6 @@ import qualified Data.Map        as M
 -- certain contrib modules.
 --
 myTerminal = "wezterm"
-myLauncher = "$(yegonesh -x -- -fn 'xft:MonoLisa:size=8' -nb '#1d1f21' -nf '#c5c8c6' -sb '#1d1f21' -sf '#de935f')"
 
 ------------------------------------------------------------------------
 -- Workspaces
@@ -138,6 +145,83 @@ myBorderWidth = 1
 
 
 ------------------------------------------------------------------------
+-- Launcher
+-- dmenu-based application launcher with usage history, replacing the
+-- unmaintained yeganesh/yegonesh wrappers. Ranks $PATH executables by how
+-- often they've been picked before; the ranking is persisted across
+-- restarts in ~/.cache/dmenu-history.
+--
+dmenuArgs :: [String]
+dmenuArgs =
+  [ "-fn", "xft:MonoLisa Nerd Font Mono:size=8"
+  , "-nb", colorNormalbg
+  , "-nf", colorfg
+  , "-sb", colorNormalbg
+  , "-sf", colorOrange
+  ]
+
+dmenuHistoryFile :: IO FilePath
+dmenuHistoryFile = do
+  home <- fromMaybe "" <$> lookupEnv "HOME"
+  return (home ++ "/.cache/dmenu-history")
+
+pathExecutables :: IO [String]
+pathExecutables = do
+  mpath <- lookupEnv "PATH"
+  let dirs = maybe [] (splitOn ':') mpath
+  entries <- forM dirs $ \d -> do
+    exists <- doesDirectoryExist d
+    if not exists
+      then return []
+      else do
+        fs <- listDirectory d
+        filterM (\f -> executable <$> getPermissions (d ++ "/" ++ f)) fs
+  return (nub (concat entries))
+  where
+    splitOn c s = case break (== c) s of
+      (a, [])     -> [a]
+      (a, _:rest) -> a : splitOn c rest
+
+readHistory :: FilePath -> IO (M.Map String Int)
+readHistory f = do
+  exists <- doesFileExist f
+  if not exists
+    then return M.empty
+    else do
+      contents <- readFile f
+      return $ M.fromList
+        [ (cmd, cnt)
+        | line <- lines contents
+        , (cntStr:cmdWords) <- [words line]
+        , Just cnt <- [readMaybe cntStr]
+        , let cmd = unwords cmdWords
+        ]
+
+writeHistory :: FilePath -> M.Map String Int -> IO ()
+writeHistory f hist =
+  writeFile f $ unlines [ show cnt ++ " " ++ cmd | (cmd, cnt) <- M.toList hist ]
+
+trimSel :: String -> String
+trimSel = dropWhileEnd isSpace . dropWhile isSpace
+
+-- Prompts dmenu with history-ranked $PATH entries, then runs whatever was
+-- picked and bumps its usage count.
+dmenuLaunch :: X ()
+dmenuLaunch = do
+  histFile <- io dmenuHistoryFile
+  hist     <- io (readHistory histFile)
+  cmds     <- io pathExecutables
+  let ranked     = map fst (sortBy (comparing (negate . snd)) (M.toList hist))
+      unranked   = filter (`M.notMember` hist) cmds
+      candidates = nub (ranked ++ unranked)
+  raw <- runProcessWithInput "dmenu" dmenuArgs (unlines candidates)
+  let sel = trimSel raw
+  unless (null sel) $ do
+    io $ writeHistory histFile (M.insertWith (+) sel 1 hist)
+    spawn sel
+
+
+------------------------------------------------------------------------
 -- Key bindings
 --
 -- modMask lets you specify which modkey you want to use. The default
@@ -168,7 +252,7 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask, xK_n), namedScratchpadAction myScratchpads "floating-neovide")
   , ((modMask, xK_End), spawn "sh -c 'slock & sleep 1; systemctl suspend'")
   , ((modMask .|. controlMask, xK_l), spawn "slock")
-  , ((modMask, xK_p), spawn myLauncher)
+  , ((modMask, xK_p), dmenuLaunch)
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
