@@ -18,6 +18,7 @@ if wezterm.target_triple:find('linux') then
 else
   config.font_size = 10.0
   config.font = wezterm.font('MonoLisa Nerd Font Mono')
+  config.line_height = 1.2
 end
 
 config.window_decorations = 'RESIZE'
