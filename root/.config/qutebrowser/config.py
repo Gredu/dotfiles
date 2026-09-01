@@ -738,7 +738,12 @@ c.editor.command = ['wezterm', '-e', 'nvim', '{}']
 ## Type: Encoding
 # c.editor.encoding = 'utf-8'
 
-c.fonts.default_family = 'Cozette'
+import sys
+
+if sys.platform == 'darwin':
+    c.fonts.default_family = 'MonoLisa'
+else:
+    c.fonts.default_family = 'Cozette'
 c.fonts.default_size = '8pt'
 
 ## Font used in the completion categories.
