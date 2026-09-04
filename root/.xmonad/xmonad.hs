@@ -2,6 +2,7 @@
 -- Author: Vic Fryzel
 -- http://github.com/vicfryzel/xmonad-config
 
+import Control.Exception (SomeException, try)
 import Control.Monad (unless, forM, filterM)
 import Data.Char (isSpace)
 import Data.List (sortBy, nub, dropWhileEnd)
@@ -165,6 +166,14 @@ dmenuHistoryFile = do
   home <- fromMaybe "" <$> lookupEnv "HOME"
   return (home ++ "/.cache/dmenu-history")
 
+-- Broken symlinks (e.g. a package leaving a dangling entry in /usr/bin)
+-- make getPermissions throw; treat those as simply not executable instead
+-- of letting one bad PATH entry kill the whole launcher.
+isExecutableFile :: FilePath -> IO Bool
+isExecutableFile f = do
+  result <- try (executable <$> getPermissions f) :: IO (Either SomeException Bool)
+  return $ either (const False) id result
+
 pathExecutables :: IO [String]
 pathExecutables = do
   mpath <- lookupEnv "PATH"
@@ -175,7 +184,7 @@ pathExecutables = do
       then return []
       else do
         fs <- listDirectory d
-        filterM (\f -> executable <$> getPermissions (d ++ "/" ++ f)) fs
+        filterM (\f -> isExecutableFile (d ++ "/" ++ f)) fs
   return (nub (concat entries))
   where
     splitOn c s = case break (== c) s of
