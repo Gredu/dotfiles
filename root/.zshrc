@@ -68,9 +68,6 @@ alias setkb='setxkbmap -option caps:escape -layout fiWithProgrammer -variant pro
 
 alias ppminit='ppm docker down && ppm docker up && ppm dev docker init'
 
-# Look weather
-alias weather='curl wttr.in/'
-
 # Dictionary
 alias enfi='trans en:fi '
 alias fien='trans fi:en '
