@@ -63,7 +63,7 @@ myScratchpads = [ NS "floating-terminal" spawnTerm findTerm manageTerm
   where
     spawnTerm   = "wezterm start --class floating-terminal"
     findTerm    = className =? "floating-terminal"
-    manageTerm  = doCenterFloat
+    manageTerm  = customFloating (W.RationalRect 0.1 0.1 0.8 0.8)
     spawnNvide  = "neovide --x11-wm-class floating-neovide"
     findNvide   = className =? "floating-neovide"
     manageNvide = customFloating (W.RationalRect 0.15 0.15 0.7 0.7)
@@ -154,7 +154,7 @@ myBorderWidth = 1
 --
 dmenuArgs :: [String]
 dmenuArgs =
-  [ "-fn", "xft:MonoLisa Nerd Font Mono:size=8"
+  [ "-fn", "Cozette-13px"
   , "-nb", colorNormalbg
   , "-nf", colorfg
   , "-sb", colorNormalbg
