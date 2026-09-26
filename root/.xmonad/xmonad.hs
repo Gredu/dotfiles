@@ -280,15 +280,20 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Mute volume.
   , ((modMask .|. controlMask, xK_m),
-     spawn "amixer -q set Master toggle")
+     spawn "send-notify mute")
 
   -- Decrease volume.
   , ((modMask .|. controlMask, xK_j),
-     spawn "amixer -q set Master 10%-")
+     spawn "send-notify down")
 
   -- Increase volume.
   , ((modMask .|. controlMask, xK_k),
-     spawn "amixer -q set Master 10%+")
+     spawn "send-notify up")
+
+  -- Keyboard media keys (e.g. Ducky One 3 Pro Mini's Fn+A/S/D layer).
+  , ((0, 0x1008FF12), spawn "send-notify mute")  -- XF86AudioMute
+  , ((0, 0x1008FF11), spawn "send-notify down")  -- XF86AudioLowerVolume
+  , ((0, 0x1008FF13), spawn "send-notify up")    -- XF86AudioRaiseVolume
 
   -- Audio previous.
   , ((0, 0x1008FF16),
