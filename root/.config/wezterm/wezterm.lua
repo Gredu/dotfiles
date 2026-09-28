@@ -62,9 +62,6 @@ end
 
 config.keys = {
 
-  -- Free Shift Enter to enter new line in gemini-cli
-  { key = "Enter", mods = "SHIFT", action = wezterm.action.SendString("\n"), },
-
   { key = 'k', mods = 'ALT', action = act.ActivateTabRelative(-1) },
   { key = 'j', mods = 'ALT', action = act.ActivateTabRelative(1) },
 
