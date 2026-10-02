@@ -1264,6 +1264,11 @@ c.tabs.title.format_pinned = ''
 ## Type: FuzzyUrl
 # c.url.default_page = 'https://start.duckduckgo.com/'
 
+## Open base URL of the searchengine if a searchengine shortcut is
+## invoked without parameters.
+## Type: Bool
+c.url.open_base_url = True
+
 ## The URL segments where `:navigate increment/decrement` will search for
 ## a number.
 ## Type: FlagList
