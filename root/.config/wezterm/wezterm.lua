@@ -96,11 +96,20 @@ config.keys = {
   split_nav("l"),
 }
 
+-- Jump to tab i; if already on it, toggle back to the previously active tab
 for i = 1, 8 do
   table.insert(config.keys, {
     key = tostring(i),
     mods = mod,
-    action = act.ActivateTab(i - 1),
+    action = wezterm.action_callback(function(win, pane)
+      for _, t in ipairs(win:mux_window():tabs_with_info()) do
+        if t.is_active and t.index == i - 1 then
+          win:perform_action(act.ActivateLastTab, pane)
+          return
+        end
+      end
+      win:perform_action(act.ActivateTab(i - 1), pane)
+    end),
   })
 end
 
