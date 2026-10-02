@@ -23,3 +23,5 @@ image/heic=nsxiv.desktop
 image/avif=nsxiv.desktop
 image/jxl=nsxiv.desktop
 image/x-xpixmap=nsxiv.desktop
+text/plain=nvim.desktop
+text/csv=nvim.desktop
