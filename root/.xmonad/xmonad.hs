@@ -15,6 +15,7 @@ import System.Exit
 import Text.Read (readMaybe)
 import XMonad
 import XMonad.Actions.CycleWS
+import XMonad.Actions.Submap
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
@@ -403,9 +404,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- Toggle the status bar gap.
   -- TODO: update this binding with avoidStruts, ((modMask, xK_b),
 
-  -- Quit xmonad.
+  -- Quit xmonad: first press warns, second Super+Shift+Q quits, any other key cancels.
   , ((modMask .|. shiftMask, xK_q),
-     io (exitWith ExitSuccess))
+     spawn "notify-send -a xmonad -i system-log-out -t 3000 -h string:x-dunst-stack-tag:xmonad-quit 'Quit xmonad?' 'Press Super+Shift+Q again to quit'"
+       >> submap (M.fromList [((modMask .|. shiftMask, xK_q), io (exitWith ExitSuccess))]))
 
   -- Restart xmonad.
   , ((modMask, xK_q),
