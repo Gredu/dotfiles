@@ -290,6 +290,10 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask, xK_k),
      spawn "send-notify up")
 
+  -- Toggle audio output between HDMI and headset (this machine only).
+  , ((modMask .|. controlMask, xK_a),
+     spawn "audio-toggle")
+
   -- Keyboard media keys (e.g. Ducky One 3 Pro Mini's Fn+A/S/D layer).
   , ((0, 0x1008FF12), spawn "send-notify mute")  -- XF86AudioMute
   , ((0, 0x1008FF11), spawn "send-notify down")  -- XF86AudioLowerVolume
