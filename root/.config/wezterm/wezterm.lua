@@ -90,6 +90,20 @@ config.keys = {
 
   { key = 't', mods = 'ALT', action = act.SpawnTab 'CurrentPaneDomain' },
 
+  -- Label every URL on screen; typing its label opens it in the default browser (like qutebrowser's f)
+  {
+    key = 'f',
+    mods = 'ALT',
+    action = act.QuickSelectArgs {
+      label = 'open url',
+      patterns = { 'https?://\\S+' },
+      action = wezterm.action_callback(function(window, pane)
+        local url = window:get_selection_text_for_pane(pane)
+        wezterm.open_with(url)
+      end),
+    },
+  },
+
   split_nav("h"),
   split_nav("j"),
   split_nav("k"),
