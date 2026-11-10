@@ -36,30 +36,6 @@ local is_mac = wezterm.target_triple:find('darwin')
 -- Use CMD as the primary modifier on Mac to avoid conflicts.
 local mod = is_mac and 'CMD' or 'ALT'
 
-local direction_keys = {
-    h = "Left",
-    j = "Down",
-    k = "Up",
-    l = "Right",
-}
-
-local function split_nav(key)
-  return {
-    key = key,
-    mods = "CTRL",
-    action = wezterm.action_callback(function(win, pane)
-      if pane:get_user_vars().IS_NVIM == "true" then
-        -- pass the keys through to vim/nvim
-        win:perform_action({
-          SendKey = { key = key, mods = "CTRL" },
-        }, pane)
-      else
-        win:perform_action({ ActivatePaneDirection = direction_keys[key] }, pane)
-      end
-    end),
-  }
-end
-
 config.keys = {
 
   { key = 'k', mods = 'ALT', action = act.ActivateTabRelative(-1) },
@@ -103,12 +79,18 @@ config.keys = {
       end),
     },
   },
-
-  split_nav("h"),
-  split_nav("j"),
-  split_nav("k"),
-  split_nav("l"),
 }
+
+-- CTRL+hjkl moves and ALT+arrows resizes across WezTerm panes and Neovim splits.
+-- Pairs with smart-splits.nvim + backend-wezterm in Neovim. Must come after config.keys is set.
+local smart_splits = wezterm.plugin.require('https://github.com/smart-splits-nvim/backend-wezterm')
+smart_splits.apply_to_config(config, {
+  direction_keys = {
+    move = { 'h', 'j', 'k', 'l' },
+    resize = { 'LeftArrow', 'DownArrow', 'UpArrow', 'RightArrow' },
+  },
+  modifiers = { move = 'CTRL', resize = 'ALT' },
+})
 
 -- Jump to tab i; if already on it, toggle back to the previously active tab
 for i = 1, 8 do
