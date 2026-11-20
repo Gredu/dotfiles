@@ -63,6 +63,19 @@ fi
 alias o='ls -latr'
 alias ns='nvim ~/notes/scratchpad.md'
 
+# Open the newest file in ~/Downloads using vifm's filetype/filextype rules
+op() {
+  local f=( ~/Downloads/*(N.om[1]) )
+  (( $#f )) || { echo "op: no files in ~/Downloads" >&2; return 1 }
+  if command -v vifm >/dev/null 2>&1; then
+    vifm --select "$f[1]" +'normal! l' +'quit'
+  elif [[ "$(uname)" == Darwin ]]; then
+    open "$f[1]"
+  else
+    xdg-open "$f[1]" >/dev/null 2>&1 &!
+  fi
+}
+
 # Keyboard
 alias setkb='setxkbmap -option caps:escape -layout fiWithProgrammer -variant programmer'
 
