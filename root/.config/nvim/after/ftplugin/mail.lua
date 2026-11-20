@@ -78,6 +78,15 @@ end
 
 join_address_headers()
 
+-- Same header highlighting as the aerc pager, refreshed while editing.
+local mail_headers = require "custom.mail_headers"
+mail_headers.highlight(0)
+vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
+  group = vim.api.nvim_create_augroup("MailHeaderHighlight" .. vim.api.nvim_get_current_buf(), { clear = true }),
+  buffer = 0,
+  callback = function(args) mail_headers.highlight(args.buf) end,
+})
+
 -- Long single-line headers soft-wrap instead of running off screen (wrap is
 -- off globally). The body is hard-wrapped at textwidth, so it is unaffected.
 vim.opt_local.wrap = true

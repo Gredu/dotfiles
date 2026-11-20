@@ -1,6 +1,7 @@
 -- Highlight the header block that aerc writes at the top of the pager
--- ([viewer] show-headers=true + the .headers filter), so headers stand apart
--- from the body: a darker band, per-header colours and a separator line.
+-- ([viewer] show-headers=true + the .headers filter) and of the composer
+-- ([compose] edit-headers=true), so headers stand apart from the body: a
+-- darker band, per-header colours and a separator line.
 -- Colours come from the hybrid colorscheme palette.
 
 local M = {}
@@ -62,12 +63,12 @@ end
 
 function M.highlight(buf)
   buf = buf or vim.api.nvim_get_current_buf()
+  vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
   local n = M.header_count(buf)
   if n == 0 then
     return
   end
   define_highlights()
-  vim.api.nvim_buf_clear_namespace(buf, ns, 0, -1)
 
   local key
   for row, line in ipairs(vim.api.nvim_buf_get_lines(buf, 0, n, false)) do
