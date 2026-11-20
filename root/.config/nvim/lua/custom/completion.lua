@@ -19,6 +19,8 @@ cmp.setup {
   mapping = {
     ["<Tab>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
     ["<S-Tab>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+    ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
     -- ["<C-y>"] = cmp.mapping(
     ["<CR>"] = cmp.mapping(
       cmp.mapping.confirm {
@@ -36,6 +38,16 @@ cmp.setup {
   --   end,
   -- },
 }
+
+-- Email addresses from notmuch in aerc's To/Cc/Bcc/From headers
+require("custom.notmuch_address").register()
+cmp.setup.filetype("mail", {
+  sources = {
+    { name = "notmuch_address", keyword_length = 2 },
+    { name = "path" },
+    { name = "buffer" },
+  },
+})
 
 -- Setup up vim-dadbod
 -- cmp.setup.filetype({ "sql" }, {
