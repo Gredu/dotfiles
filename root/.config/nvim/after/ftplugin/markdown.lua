@@ -36,3 +36,8 @@ local function open_link()
   end
 end
 vim.keymap.set('n', 'gx', open_link, { buffer = true, desc = 'Open link under cursor (incl. markdown reference links)' })
+
+-- aerc pager (stdin buffer): highlight the mail header block at the top.
+if vim.api.nvim_buf_get_name(0) == "" then
+  require("custom.mail_headers").highlight(0)
+end

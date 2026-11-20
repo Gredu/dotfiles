@@ -1,0 +1,69 @@
+#!/usr/bin/env python3
+# aerc ".headers" filter: aerc pipes the raw RFC 5322 headers of the viewed
+# message here when [viewer] show-headers=true. Print only the useful ones,
+# MIME-decoded and unfolded to one line each, so they read like the composer's
+# edit-headers block. The trailing blank line separates them from the body.
+import sys
+from email.header import decode_header, make_header
+from email.utils import getaddresses, parsedate_to_datetime
+
+SHOW = ["From", "To", "Cc", "Bcc", "Reply-To", "Date", "Subject", "Labels"]
+ADDRESS = {"from", "to", "cc", "bcc", "reply-to"}
+
+
+def decode(value):
+    try:
+        return str(make_header(decode_header(value)))
+    except Exception:
+        return value
+
+
+def fmt_addresses(value):
+    out = []
+    for name, addr in getaddresses([value]):
+        name = decode(name).strip()
+        if name and addr:
+            # Quote names like "Lim, G" so commas still separate entries.
+            if any(c in name for c in ',;<>@"'):
+                name = '"' + name.replace('"', '\\"') + '"'
+            out.append(f"{name} <{addr}>")
+        elif addr or name:
+            out.append(addr or name)
+    return ", ".join(out)
+
+
+def fmt_date(value):
+    try:
+        return parsedate_to_datetime(value).astimezone().strftime("%a, %d %b %Y %H:%M")
+    except Exception:
+        return value
+
+
+raw = sys.stdin.buffer.read().decode("utf-8", errors="replace").replace("\r", "")
+headers = {}
+current = None
+for line in raw.split("\n"):
+    if line[:1] in (" ", "\t") and current:
+        headers[current] += " " + line.strip()
+    elif ":" in line:
+        key, value = line.split(":", 1)
+        current = key.strip().lower()
+        # Keep the first occurrence (e.g. ignore repeated trace headers).
+        headers.setdefault(current, value.strip())
+        if headers[current] != value.strip():
+            current = None
+    else:
+        current = None
+
+for name in SHOW:
+    value = headers.get(name.lower())
+    if not value:
+        continue
+    if name.lower() in ADDRESS:
+        value = fmt_addresses(value)
+    elif name == "Date":
+        value = fmt_date(value)
+    else:
+        value = decode(value)
+    print(f"{name}: {value}")
+print()
