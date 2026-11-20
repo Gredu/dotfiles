@@ -1,5 +1,9 @@
 {
+  "attribution": {
+    "commit": ""
+  },
   "tui": "fullscreen",
-  "theme": "dark",
-  "editorMode": "vim"
+  "theme": "auto",
+  "editorMode": "vim",
+  "switchModelsOnFlag": false
 }
