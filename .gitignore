@@ -1,1 +1,7 @@
 .DS_store
+
+# xmonad build artifacts
+root/.xmonad/.stack-work/
+root/.xmonad/build-x86_64-linux/
+root/.xmonad/xmonad-x86_64-linux
+root/.xmonad/xmonad.errors
