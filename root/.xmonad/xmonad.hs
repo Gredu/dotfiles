@@ -264,16 +264,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   , ((modMask .|. controlMask, xK_l), spawn "slock")
   , ((modMask, xK_p), dmenuLaunch)
 
-  -- Take a screenshot in select mode.
-  -- After pressing this key binding, click a window, or draw a rectangle with
-  -- the mouse.
-  , ((modMask .|. shiftMask, xK_p),
-     spawn "select-screenshot")
-
-  -- Take full screenshot in multi-head mode.
-  -- That is, take a screenshot of everything you see.
-  , ((modMask .|. controlMask .|. shiftMask, xK_p),
-     spawn "screenshot")
+  -- maim screenshots to ~/Downloads/<date-and-time>.png.
+  -- mod-s: select a region or click a window; mod-ctrl-s: full screen.
+  , ((modMask, xK_s),
+     spawn "maim -s \"$HOME/Downloads/$(date +%Y-%m-%d_%H-%M-%S).png\"")
+  , ((modMask .|. controlMask, xK_s),
+     spawn "maim \"$HOME/Downloads/$(date +%Y-%m-%d_%H-%M-%S).png\"")
 
   -- Fetch a single use password.
   , ((modMask .|. shiftMask, xK_o),
